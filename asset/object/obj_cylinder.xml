@@ -1,0 +1,49 @@
+<mujocoinclude>
+
+    <worldbody>
+
+        <!-- Cylinder objects -->
+        <body name="obj_cylinder_01" pos="0.0 0.1 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_02" pos="0.0 0.2 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_03" pos="0.0 0.3 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_04" pos="0.0 0.4 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_05" pos="0.0 0.5 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_06" pos="0.0 0.6 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_07" pos="0.0 0.7 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+        <body name="obj_cylinder_08" pos="0.0 0.8 0.0">
+            <joint type="free" />
+            <geom fromto="0.0 0.0 0.3  0.0 0.0 0.0" size="0.025"
+                density="500" friction="1 0.005 0.0001" type="cylinder" rgba="0.5 0.56 0.43 1" />
+        </body>
+
+    </worldbody>
+
+</mujocoinclude>

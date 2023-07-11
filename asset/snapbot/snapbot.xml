@@ -1,0 +1,387 @@
+<mujoco model="snapbot">
+
+    <!-- Complier -->
+    <compiler inertiafromgeom="auto" meshdir="./mesh" angle="radian" coordinate="local" />
+
+    <!-- Default -->
+    <default>
+        <joint limited="false" armature="0.01" />
+        <site type="sphere" rgba=".5 .5 .5 1" size="0.01" />
+        <equality solref="0.0002 1" solimp="0.99 0.99 0.0001" />
+    </default>
+
+    <!-- Option -->
+    <option timestep="0.002" iterations="100" solver="Newton" gravity="0 0 -9.81" integrator="RK4"></option>
+
+    <!-- Mesh files -->
+    <asset>
+        <mesh name="Body" file="Body.STL" />
+        <mesh name="Camera_module_1" file="Camera_module_1.STL" />
+        <mesh name="Camera_module_2" file="Camera_module_2.STL" />
+
+        <mesh name="Leg_module_1_1" file="Leg_module_1_1.STL" />
+        <mesh name="Leg_module_1_2" file="Leg_module_1_2.STL" />
+        <mesh name="Leg_module_1_3" file="Leg_module_1_3.STL" />
+        <mesh name="Leg_module_1_4" file="Leg_module_1_4.STL" />
+        <mesh name="Leg_module_1_4bar" file="Leg_module_1_4bar.STL" />
+
+        <mesh name="Leg_module_2_1" file="Leg_module_2_1.STL" />
+        <mesh name="Leg_module_2_2" file="Leg_module_2_2.STL" />
+        <mesh name="Leg_module_2_3" file="Leg_module_2_3.STL" />
+        <mesh name="Leg_module_2_4" file="Leg_module_2_4.STL" />
+        <mesh name="Leg_module_2_4bar" file="Leg_module_2_4bar.STL" />
+
+        <mesh name="Leg_module_3_1" file="Leg_module_3_1.STL" />
+        <mesh name="Leg_module_3_2" file="Leg_module_3_2.STL" />
+        <mesh name="Leg_module_3_3" file="Leg_module_3_3.STL" />
+        <mesh name="Leg_module_3_4" file="Leg_module_3_4.STL" />
+        <mesh name="Leg_module_3_4bar" file="Leg_module_3_4bar.STL" />
+
+        <mesh name="Leg_module_4_1" file="Leg_module_4_1.STL" />
+        <mesh name="Leg_module_4_2" file="Leg_module_4_2.STL" />
+        <mesh name="Leg_module_4_3" file="Leg_module_4_3.STL" />
+        <mesh name="Leg_module_4_4" file="Leg_module_4_4.STL" />
+        <mesh name="Leg_module_4_4bar" file="Leg_module_4_4bar.STL" />
+
+        <mesh name="Leg_module_5_1" file="Leg_module_5_1.STL" />
+        <mesh name="Leg_module_5_2" file="Leg_module_5_2.STL" />
+        <mesh name="Leg_module_5_3" file="Leg_module_5_3.STL" />
+        <mesh name="Leg_module_5_4" file="Leg_module_5_4.STL" />
+        <mesh name="Leg_module_5_4bar" file="Leg_module_5_4bar.STL" />
+
+        <mesh name="Leg_module_6_1" file="Leg_module_6_1.STL" />
+        <mesh name="Leg_module_6_2" file="Leg_module_6_2.STL" />
+        <mesh name="Leg_module_6_3" file="Leg_module_6_3.STL" />
+        <mesh name="Leg_module_6_4" file="Leg_module_6_4.STL" />
+        <mesh name="Leg_module_6_4bar" file="Leg_module_6_4bar.STL" />
+        <mesh name="Mario_case" file="Mario_case.STL" />
+        <mesh name="Ship" file="ship.stl" />
+    </asset>
+
+    <!--  -->
+    <worldbody>
+
+        <body name="torso" pos="0 0 0.1" euler="0 0 0">
+            <!-- if you want to fix snapbot -->
+            <!-- <joint type="hinge" axis="1 0 0" limited="true" range="-0.00001 0.00001"/> -->
+            <!-- if you want to simulate locomotion -->
+            <joint type="free" name="free" />
+            <body name="Camera_module_1" pos="0 0 0.0476705257539267" euler="0 0 2.71487279909846">
+                <joint name="camera_1" type="hinge" pos="0 0 0" axis="0 0 1" frictionloss="0.7" />
+                <inertial pos="0.00652656979384509 0.00344579233179434 0.0166383716296387"
+                    mass="0.0631785349056668"
+                    fullinertia="1.62642913929261E-06 2.16302130147651E-06 2.57241198744282E-06 -2.15537782337987E-07 -2.3575284377688E-08 -1.07181784470334E-08" />
+
+                <body name="Camera_module_2" pos="0 0 0.0183294742460734"
+                    euler="-0.00940777862508657 0.016293068306851 -7.66430506155596E-05">
+                    <joint name="camera_2" type="hinge" pos="0 0 0" axis="0.4 -0.866025403784438 0"
+                        limited="true" range="-3.14 0" frictionloss="0.7" />
+                    <inertial pos="0.00652656979384509 0.00344579233179434 0.0166383716296387"
+                        mass="0.0631785349056668"
+                        fullinertia="1.62642913929261E-06 2.16302130147651E-06 2.57241198744282E-06 -2.15537782337987E-07 -2.3575284377688E-08 -1.07181784470334E-08" />
+                    <geom name="camera_module_2" type="mesh" mesh="Camera_module_2"
+                        rgba="0.55 0.55 0.55 1" />
+                </body>
+                <geom name="camera_module_1" type="mesh" mesh="Camera_module_1"
+                    rgba="0.55 0.55 0.55 1" />
+            </body>
+
+            <body name="Leg_module_1_1"
+                pos="-0.0389249999999994 -0.067420077684619 0.00800000000000007"
+                euler="1.5707963267949 -0.52359877559829 0 ">
+                <inertial pos="-7.13724657916415E-08 0.000373799301046029 0.0154182546673216"
+                    mass="0.0631785349056668"
+                    fullinertia="1.7187711929136E-05 1.51262656733829E-05 1.20475796652155E-05 -5.83240695477332E-11 -2.19004554231787E-11 -2.63262418810457E-08" />
+
+                <body name="Leg_module_1_2" pos="0 0 0.03725" euler="0 0 0">
+                    <site name="sensorsurf_1_2" pos="0 -0.03 0.06" size=".005" type="sphere"
+                        rgba="0.0 1.0 0.0 1" />
+                    <!-- 0.84 -->
+                    <joint name="leg_1_2" type="hinge" pos="0 0 0" axis="0 1 0" limited="true"
+                        range="-0.9 0.9" />
+                    <inertial pos="-0.000290776360641731 0.000350553903850227 0.0424303561818183"
+                        mass="0.0824272438246167"
+                        fullinertia="2.30529583873532E-05 2.12214701574574E-05 2.44663283938561E-05 -3.10383306587857E-09 1.49529130127085E-09 -1.38478939744174E-07" />
+                    <body name="Leg_module_1_3" pos="0 0.00029999999999997 0.05675"
+                        euler="-0.0100573048452913 0 0">
+                        <joint name="leg_1_3" type="hinge" pos="0 0 0" axis="1 0 0" limited="true"
+                            range="-0.7 0.7" />
+                        <inertial pos="2.45741484106166E-09 0.000972843111612398 0.0362265364672091"
+                            mass="0.0151486232431239"
+                            fullinertia="1.00807802365218E-05 1.39066075750629E-05 4.80921677651482E-06 4.39144266500018E-12 1.00434444831946E-12 -4.89507332017665E-07" />
+
+                        <body name="Leg_module_1_4" pos="0 -0.000603428117922688 0.0599969655441553"
+                            euler="-0.0105798453585739 0 0">
+                            <site name="sensorsurf_1_4" pos="0 -0.085 -0.0023" size=".01"
+                                type="sphere"
+                                rgba="0.0 1.0 0.0 1" />
+                            <joint name="leg_1_4" type="hinge" pos="0 0 0" axis="1 0 0" />
+                            <inertial
+                                pos="4.2049063279227E-05 -0.039076824241083 0.000258194696472008"
+                                mass="0.0147333532003768"
+                                fullinertia="1.15244152883744E-05 8.83031900445984E-07 1.19866034928746E-05 -2.48276737382714E-13 -7.91098093199601E-11 7.35395711252574E-08" />
+
+                            <geom name="leg_module_1_4" type="mesh" mesh="Leg_module_1_4"
+                                rgba="0.55 0.55 0.55 1" />
+                        </body>
+
+                        <geom name="leg_module_1_3" type="mesh" mesh="Leg_module_1_3"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <body name="Leg_module_1_4bar" pos="0 0.00629999999999993 0.0804999999999999"
+                        euler="-0.0165784581965256 0 0">
+                        <joint name="leg_1_4bar" type="hinge" pos="0 0 0" axis="1 0 0" />
+                        <inertial pos="-0.000153041712520068 -0.0140289201388825 0.0234631009730388"
+                            mass="0.00683592925491239"
+                            fullinertia="2.34158176837936E-06 1.56240282628846E-06 8.57932156498236E-07 1.96473826365662E-09 8.83006715898015E-09 7.88959763188745E-07" />
+                        <geom name="leg_module_1_4bar" type="mesh" mesh="Leg_module_1_4bar"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <geom name="leg_module_1_2" type="mesh" mesh="Leg_module_1_2"
+                        rgba="0.55 0.55 0.55 1" />
+                </body>
+                <geom name="leg_module_1_1" type="mesh" mesh="Leg_module_1_1" rgba="0.3 0.3 0.3 1" />
+            </body>
+
+            <body name="Leg_module_2_1"
+                pos="0.038925000000001 -0.067420077684618 0.00800000000000001"
+                euler="1.5707963267949 0.52359877559831 0">
+                <inertial pos="-6.95517456267281E-08 0.000373796224617955 0.0154182547311469"
+                    mass="0.0631785349056668"
+                    fullinertia="1.7187711736626E-05 1.5126265640837E-05 1.20475795338245E-05 -5.83542950351694E-11 -2.10512182302273E-11 -2.6325167749467E-08" />
+
+                <body name="Leg_module_2_2" pos="0 0 0.03725" euler="0 0 0">
+                    <site name="sensorsurf_2_2" pos="0 -0.03 0.06" size=".005" type="sphere"
+                        rgba="0.0 1.0 0.0 1" />
+                    <!-- -0.84 -->
+                    <joint name="leg_2_2" type="hinge" pos="0 0 0" axis="0 1 0" limited="true"
+                        range="-0.9 0.9" />
+                    <inertial pos="-0.000290776360641731 0.000350553903850227 0.0424303561818183"
+                        mass="0.0824272438246167"
+                        fullinertia="2.30529583873532E-05 2.12214701574574E-05 2.44663283938561E-05 -3.10383306587857E-09 1.49529130127085E-09 -1.38478939744174E-07" />
+
+                    <body name="Leg_module_2_3" pos="0 0.00029999999999997 0.05675"
+                        euler="-0.0100573048452913 0 0">
+                        <joint name="leg_2_3" type="hinge" pos="0 0 0" axis="1 0 0" limited="true"
+                            range="-0.7 0.7" />
+                        <inertial pos="2.45741484106166E-09 0.000972843111612398 0.0362265364672091"
+                            mass="0.0151486232431239"
+                            fullinertia="1.00807802365218E-05 1.39066075750629E-05 4.80921677651482E-06 4.39144266500018E-12 1.00434444831946E-12 -4.89507332017665E-07" />
+
+                        <body name="Leg_module_2_4" pos="0 -0.000603428117922688 0.0599969655441553"
+                            euler="-0.0105798453585739 0 0">
+                            <site name="sensorsurf_2_4" pos="0 -0.085 -0.0023" size=".01"
+                                type="sphere"
+                                rgba="0.0 1.0 0.0 1" />
+                            <joint name="leg_2_4" type="hinge" pos="0 0 0" axis="1 0 0" />
+                            <inertial
+                                pos="4.2049063279227E-05 -0.039076824241083 0.000258194696472008"
+                                mass="0.0147333532003768"
+                                fullinertia="1.15244152883744E-05 8.83031900445984E-07 1.19866034928746E-05 -2.48276737382714E-13 -7.91098093199601E-11 7.35395711252574E-08" />
+                            <!-- <body name="capsule1" pos="0 -0.025 0" euler="0 0 0">
+                            <geom name="capsule1" type="sphere" size = "0.01 0.01 0.01" rgba="0.7 0.1 0.1 1"/>
+                        </body> -->
+                            <geom name="leg_module_2_4" type="mesh" mesh="Leg_module_2_4"
+                                rgba="0.55 0.55 0.55 1" />
+                        </body>
+
+                        <geom name="leg_module_2_3" type="mesh" mesh="Leg_module_2_3"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <body name="Leg_module_2_4bar" pos="0 0.00629999999999993 0.0804999999999999"
+                        euler="-0.0165784581965256 0 0">
+                        <joint name="leg_2_4bar" type="hinge" pos="0 0 0" axis="1 0 0" />
+                        <inertial pos="-0.000153041712520068 -0.0140289201388825 0.0234631009730388"
+                            mass="0.00683592925491239"
+                            fullinertia="2.34158176837936E-06 1.56240282628846E-06 8.57932156498236E-07 1.96473826365662E-09 8.83006715898015E-09 7.88959763188745E-07" />
+                        <!-- <body name="capsule" pos="0 0 0" euler="0 0 0">
+                        <geom name="capsule" type="sphere" size = "0.01 0.01 0.01" rgba="0.7 0.1 0.1 1"/>
+                    </body> -->
+                        <geom name="leg_module_2_4bar" type="mesh" mesh="Leg_module_2_4bar"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <geom name="leg_module_2_2" type="mesh" mesh="Leg_module_2_2"
+                        rgba="0.55 0.55 0.55 1" />
+                </body>
+                <geom name="leg_module_2_1" type="mesh" mesh="Leg_module_2_1" rgba="0.3 0.3 0.3 1" />
+            </body>
+
+            <body name="Leg_module_4_1"
+                pos="0.0389249999999999 0.0674200776846187 0.00800000000000003"
+                euler="1.5707963267949 2.6179938779915 0">
+                <inertial pos="-7.14195381237848E-08 0.000373799284010597 0.0154182546427434"
+                    mass="0.0631785349539091"
+                    fullinertia="1.71877118801813E-05 1.51262657263492E-05 1.20475796631155E-05 -5.8296210718309E-11 -2.19264106429705E-11 -2.63262530129922E-08" />
+
+                <body name="Leg_module_4_2" pos="0 0 0.03725" euler="0 0 0">
+                    <site name="sensorsurf_4_2" pos="0 -0.03 0.06" size=".005" type="sphere"
+                        rgba="0.0 1.0 0.0 1" />
+                    <joint name="leg_4_2" type="hinge" pos="0 0 0" axis="0 1 0" limited="true"
+                        range="-0.9 0.9" />
+                    <inertial pos="-0.000290776360642918 0.000350553903847839 0.0424303561817777"
+                        mass="0.0824270440490109"
+                        fullinertia="2.30529585034879E-05 2.12214709599619E-05 2.44663294862253E-05 -3.10286926634698E-09 1.49495155290744E-09 -1.38476843680271E-07" />
+
+                    <body name="Leg_module_4_3" pos="0 0.000300000000000803 0.05675"
+                        euler="-0.0100573048452958 0 0">
+                        <joint name="leg_4_3" type="hinge" pos="0 0 0" axis="1 0 0" limited="true"
+                            range="-0.7 0.7" />
+                        <inertial pos="2.45741484106166E-09 0.000972843111612398 0.0362265364672091"
+                            mass="0.0151486232431239"
+                            fullinertia="1.00807802365218E-05 1.39066075750629E-05 4.80921677651482E-06 4.39144266500018E-12 1.00434444831946E-12 -4.89507332017665E-07" />
+
+                        <body name="Leg_module_4_4" pos="0 -0.000603428117922688 0.0599969655441553"
+                            euler="-0.0105798453585739 0 0">
+                            <site name="sensorsurf_4_4" pos="0 -0.085 -0.0023" size=".01"
+                                type="sphere"
+                                rgba="0.0 1.0 0.0 1" />
+                            <joint name="leg_4_4" type="hinge" pos="0 0 0" axis="1 0 0" />
+                            <inertial
+                                pos="4.2049063279227E-05 -0.039076824241083 0.000258194696472008"
+                                mass="0.0147333532003768"
+                                fullinertia="1.15244152883744E-05 8.83031900445984E-07 1.19866034928746E-05 -2.48276737382714E-13 -7.91098093199601E-11 7.35395711252574E-08" />
+                            <geom name="leg_module_4_4" type="mesh" mesh="Leg_module_4_4"
+                                rgba="0.55 0.55 0.55 1" />
+                        </body>
+
+                        <geom name="leg_module_4_3" type="mesh" mesh="Leg_module_4_3"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <body name="Leg_module_4_4bar" pos="0 0.00629999999999993 0.0804999999999999"
+                        euler="-0.0165784581965256 0 0">
+                        <joint name="leg_4_4bar" type="hinge" pos="0 0 0" axis="1 0 0" />
+                        <inertial pos="-0.000153041712520068 -0.0140289201388825 0.0234631009730388"
+                            mass="0.00683592925491239"
+                            fullinertia="2.34158176837936E-06 1.56240282628846E-06 8.57932156498236E-07 1.96473826365662E-09 8.83006715898015E-09 7.88959763188745E-07" />
+                        <geom name="leg_module_4_4bar" type="mesh" mesh="Leg_module_4_4bar"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <geom name="leg_module_4_2" type="mesh" mesh="Leg_module_4_2"
+                        rgba="0.55 0.55 0.55 1" />
+                </body>
+                <geom name="leg_module_4_1" type="mesh" mesh="Leg_module_4_1" rgba="0.3 0.3 0.3 1" />
+            </body>
+
+            <body name="Leg_module_5_1"
+                pos="-0.0389250000000003 0.0674200776846184 0.00799999999999998"
+                euler="-1.5707963267949 -0.523598775598304 0">
+                <inertial pos="-7.14195381237848E-08 0.000373799284010597 0.0154182546427434"
+                    mass="0.0631785349539091"
+                    fullinertia="1.71877118801813E-05 1.51262657263492E-05 1.20475796631155E-05 -5.8296210718309E-11 -2.19264106429705E-11 -2.63262530129922E-08" />
+
+                <body name="Leg_module_5_2" pos="0 0 0.03725" euler="0 0 3.14159265358979">
+                    <site name="sensorsurf_5_2" pos="0 -0.03 0.06" size=".005" type="sphere"
+                        rgba="0.0 1.0 0.0 1" />
+                    <joint name="leg_5_2" type="hinge" pos="0 0 0" axis="0 1 0" limited="true"
+                        range="-0.9 0.9" />
+                    <inertial pos="-0.000290776360642918 0.000350553903847839 0.0424303561817777"
+                        mass="0.0824270440490109"
+                        fullinertia="2.30529585034879E-05 2.12214709599619E-05 2.44663294862253E-05 -3.10286926634698E-09 1.49495155290744E-09 -1.38476843680271E-07" />
+
+                    <body name="Leg_module_5_3" pos="0 0.000300000000000803 0.05675"
+                        euler="-0.0100573048452958 0 0">
+                        <joint name="leg_5_3" type="hinge" pos="0 0 0" axis="1 0 0" limited="true"
+                            range="-0.7 0.7" />
+                        <inertial pos="2.45741484106166E-09 0.000972843111612398 0.0362265364672091"
+                            mass="0.0151486232431239"
+                            fullinertia="1.00807802365218E-05 1.39066075750629E-05 4.80921677651482E-06 4.39144266500018E-12 1.00434444831946E-12 -4.89507332017665E-07" />
+
+                        <body name="Leg_module_5_4" pos="0 -0.000603428117922688 0.0599969655441553"
+                            euler="-0.0105798453585739 0 0">
+                            <site name="sensorsurf_5_4" pos="0 -0.085 -0.0023" size=".01"
+                                type="sphere"
+                                rgba="0.0 1.0 0.0 1" />
+                            <joint name="leg_5_4" type="hinge" pos="0 0 0" axis="1 0 0" />
+                            <inertial
+                                pos="4.2049063279227E-05 -0.039076824241083 0.000258194696472008"
+                                mass="0.0147333532003768"
+                                fullinertia="1.15244152883744E-05 8.83031900445984E-07 1.19866034928746E-05 -2.48276737382714E-13 -7.91098093199601E-11 7.35395711252574E-08" />
+                            <geom name="leg_module_5_4" type="mesh" mesh="Leg_module_5_4"
+                                rgba="0.55 0.55 0.55 1" />
+                        </body>
+
+                        <geom name="leg_module_5_3" type="mesh" mesh="Leg_module_5_3"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <body name="Leg_module_5_4bar" pos="0 0.00629999999999993 0.0804999999999999"
+                        euler="-0.0165784581965256 0 0">
+                        <joint name="leg_5_4bar" type="hinge" pos="0 0 0" axis="1 0 0" />
+                        <inertial pos="-0.000153041712520068 -0.0140289201388825 0.0234631009730388"
+                            mass="0.00683592925491239"
+                            fullinertia="2.34158176837936E-06 1.56240282628846E-06 8.57932156498236E-07 1.96473826365662E-09 8.83006715898015E-09 7.88959763188745E-07" />
+                        <!-- <body name="capsule" pos="0 0 0" euler="0 0 0">
+                        <geom name="capsule" type="sphere" size = "0.01 0.01 0.01" rgba="0.7 0.1 0.1 1"/>
+                    </body> -->
+                        <geom name="leg_module_5_4bar" type="mesh" mesh="Leg_module_5_4bar"
+                            rgba="0.55 0.55 0.55 1" />
+                    </body>
+
+                    <geom name="leg_module_5_2" type="mesh" mesh="Leg_module_5_2"
+                        rgba="0.55 0.55 0.55 1" />
+                </body>
+                <geom name="leg_module_5_1" type="mesh" mesh="Leg_module_5_1" rgba="0.3 0.3 0.3 1" />
+            </body>
+
+            <geom name="body" type="mesh" mesh="Body" rgba="0.55 0.55 0.55 1" />
+            <inertial pos="0.000698393115871022 0.000288945802796678 0.00570476280644027"
+                mass="0.243375116892044"
+                fullinertia="0.000212893207585076 0.0001937211842341 0.000369983133865988 5.24940171471578E-07 -2.46229578713819E-07 2.43146414991933E-07" />
+        </body>
+    </worldbody>
+
+    <!-- Set constraints for closed-loop body -->
+    <equality>
+        <connect active="true" name="equality_constraint1" anchor="0 -0.025 0"
+            body1="Leg_module_1_4" body2="Leg_module_1_4bar" />
+        <connect active="true" name="equality_constraint2" anchor="0 -0.025 0"
+            body1="Leg_module_2_4" body2="Leg_module_2_4bar" />
+        <connect active="true" name="equality_constraint4" anchor="0 -0.025 0"
+            body1="Leg_module_4_4" body2="Leg_module_4_4bar" />
+        <connect active="true" name="equality_constraint5" anchor="0 -0.025 0"
+            body1="Leg_module_5_4" body2="Leg_module_5_4bar" />
+    </equality>
+
+    <!-- Exclude contact information -->
+    <contact>
+        <exclude body1="Leg_module_1_3" body2="Leg_module_1_4bar" />
+        <exclude body1="Leg_module_1_4" body2="Leg_module_1_4bar" />
+        <exclude body1="Leg_module_2_3" body2="Leg_module_2_4bar" />
+        <exclude body1="Leg_module_2_4" body2="Leg_module_2_4bar" />
+        <exclude body1="Leg_module_4_3" body2="Leg_module_4_4bar" />
+        <exclude body1="Leg_module_4_4" body2="Leg_module_4_4bar" />
+        <exclude body1="Leg_module_5_3" body2="Leg_module_5_4bar" />
+        <exclude body1="Leg_module_5_4" body2="Leg_module_5_4bar" />
+    </contact>
+
+    <!-- Sensors -->
+    <sensor>
+        <touch name="touchsensor_1_4" site="sensorsurf_1_4" />
+        <touch name="touchsensor_2_4" site="sensorsurf_2_4" />
+        <touch name="touchsensor_4_4" site="sensorsurf_4_4" />
+        <touch name="touchsensor_5_4" site="sensorsurf_5_4" />
+        <touch name="touchsensor_1_2" site="sensorsurf_1_2" />
+        <touch name="touchsensor_2_2" site="sensorsurf_2_2" />
+        <touch name="touchsensor_4_2" site="sensorsurf_4_2" />
+        <touch name="touchsensor_5_2" site="sensorsurf_5_2" />
+    </sensor>
+
+    <!-- Actuators -->
+    <actuator>
+        <motor name="actuator_1_2" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_1_2" />
+        <motor name="actuator_1_3" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_1_3" />
+        <motor name="actuator_2_2" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_2_2" />
+        <motor name="actuator_2_3" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_2_3" />
+        <motor name="actuator_4_2" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_4_2" />
+        <motor name="actuator_4_3" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_4_3" />
+        <motor name="actuator_5_2" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_5_2" />
+        <motor name="actuator_5_3" ctrllimited="true" ctrlrange="-5.0 5.0" joint="leg_5_3" />
+    </actuator>
+
+</mujoco>
