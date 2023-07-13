@@ -1,8 +1,13 @@
-import os,cv2
-import numpy as np
-import mujoco
+import os
+
+import cv2
 import mujoco_viewer
-from util import pr2t,r2w,rpy2r,trim_scale,meters2xyz,compute_view_params,get_rotation_matrix_from_two_points
+import numpy as np
+from util import (compute_view_params, get_rotation_matrix_from_two_points,
+                  meters2xyz, pr2t, r2w, rpy2r, trim_scale)
+
+import mujoco
+
 
 class MuJoCoParserClass(object):
     """
@@ -679,7 +684,7 @@ class MuJoCoParserClass(object):
             contact   = self.data.contact[c_idx]
             # Contact position and frame orientation
             p_contact = contact.pos # contact position
-            R_frame   = contact.frame.reshape((3,3))
+            R_frame   = contact.frame.reshape(( 3,3))
             # Contact force
             f_contact_local = np.zeros(6,dtype=np.float64)
             mujoco.mj_contactForce(self.model,self.data,0,f_contact_local)

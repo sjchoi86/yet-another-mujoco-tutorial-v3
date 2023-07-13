@@ -46,13 +46,13 @@ def t2r(T):
     R = T[:3,:3]
     return R    
 
-def rpy2r(rpy):
+def rpy2r(rpy_rad):
     """
         roll,pitch,yaw in radian to R
     """
-    roll  = rpy[0]
-    pitch = rpy[1]
-    yaw   = rpy[2]
+    roll  = rpy_rad[0]
+    pitch = rpy_rad[1]
+    yaw   = rpy_rad[2]
     Cphi  = np.math.cos(roll)
     Sphi  = np.math.sin(roll)
     Cthe  = np.math.cos(pitch)
@@ -137,6 +137,28 @@ def r2quat(R):
             q[it.multi_index] *= -1
         it.iternext()
     return q
+
+def skew(x):
+    """ 
+        Get a skew-symmetric matrix
+    """
+    x_hat = np.array([[0,-x[2],x[1]],[x[2],0,-x[0]],[-x[1],x[0],0]])
+    return x_hat
+
+def rodrigues(a=np.array([1,0,0]),q_rad=0):
+    """
+        Compute the rotation matrix from an angular velocity vector
+    """
+    a_norm = np.linalg.norm(a)
+    if abs(a_norm-1) > 1e-6:
+        print ("[rodrigues] norm of a should be 1.0 not [%.2e]."%(a_norm))
+        return np.eye(3)
+    
+    a = a / a_norm
+    q_rad = q_rad * a_norm
+    a_hat = skew(a)
+    R = np.eye(3) + a_hat@np.sin(q_rad) + a_hat@a_hat@(1-np.cos(q_rad))
+    
 
 def np_uv(vec):
     """
