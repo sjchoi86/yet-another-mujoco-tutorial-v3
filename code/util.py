@@ -1,4 +1,4 @@
-import math,time
+import math,time,os
 import numpy as np
 import shapely as sp # handle polygon
 from shapely import Polygon,LineString,Point # handle polygons
@@ -399,3 +399,12 @@ def sample_xyzs(n_sample,x_range=[0,1],y_range=[0,1],z_range=[0,1],min_dist=0.1)
         xyzs[p_idx,:] = xyz
     return xyzs
 
+def create_folder_if_not_exists(file_path):
+    """ 
+        Create folder if not exist
+    """
+    folder_path = os.path.dirname(file_path)
+    if not os.path.exists(folder_path):
+        os.makedirs(folder_path)
+        print ("[%s] created."%(folder_path))
+        
