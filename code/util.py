@@ -145,7 +145,7 @@ def skew(x):
     x_hat = np.array([[0,-x[2],x[1]],[x[2],0,-x[0]],[-x[1],x[0],0]])
     return x_hat
 
-def rodrigues(a=np.array([1,0,0]),q_rad=0):
+def rodrigues(a=np.array([1,0,0]),q_rad=0.0):
     """
         Compute the rotation matrix from an angular velocity vector
     """
@@ -157,9 +157,10 @@ def rodrigues(a=np.array([1,0,0]),q_rad=0):
     a = a / a_norm
     q_rad = q_rad * a_norm
     a_hat = skew(a)
-    R = np.eye(3) + a_hat@np.sin(q_rad) + a_hat@a_hat@(1-np.cos(q_rad))
     
-
+    R = np.eye(3) + a_hat*np.sin(q_rad) + a_hat@a_hat*(1-np.cos(q_rad))
+    return R
+    
 def np_uv(vec):
     """
         Get unit vector

@@ -600,10 +600,10 @@ class MuJoCoParserClass(object):
             mat   = R_fr2to,
             type  = mujoco.mjtGeom.mjGEOM_ARROW,
             size  = [r,r,np.linalg.norm(p_to-p_fr)*2],
-            rgba  =rgba,
+            rgba  = rgba,
             label = ''
         )
-        
+
     def plot_line_fr2to(self,p_fr,p_to,rgba=[0.5,0.5,0.5,0.5]):
         R_fr2to = get_rotation_matrix_from_two_points(p_fr=p_fr,p_to=p_to)
         self.viewer.add_marker(
@@ -611,7 +611,18 @@ class MuJoCoParserClass(object):
             mat   = R_fr2to,
             type  = mujoco.mjtGeom.mjGEOM_LINE,
             size  = np.linalg.norm(p_to-p_fr),
-            rgba  =rgba,
+            rgba  = rgba,
+            label = ''
+        )
+    
+    def plot_cylinder_fr2to(self,p_fr,p_to,r=0.01,rgba=[0.5,0.5,0.5,0.5]):
+        R_fr2to = get_rotation_matrix_from_two_points(p_fr=p_fr,p_to=p_to)
+        self.viewer.add_marker(
+            pos   = (p_fr+p_to)/2,
+            mat   = R_fr2to,
+            type  = mujoco.mjtGeom.mjGEOM_CYLINDER,
+            size  = [r,r,np.linalg.norm(p_to-p_fr)/2],
+            rgba  = rgba,
             label = ''
         )
             
