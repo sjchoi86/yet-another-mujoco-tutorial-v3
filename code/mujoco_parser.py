@@ -78,10 +78,12 @@ class MuJoCoParserClass(object):
             ctrl_name = self.model.names[addr:].decode().split('\x00')[0]
             self.ctrl_names.append(ctrl_name) # get ctrl name
         self.ctrl_joint_idxs = []
+        self.ctrl_joint_names = []
         for ctrl_idx in range(self.n_ctrl):
             transmission_idx = self.model.actuator(self.ctrl_names[ctrl_idx]).trnid # transmission index
             joint_idx = self.model.jnt_qposadr[transmission_idx][0] # index of the joint when the actuator acts on a joint
             self.ctrl_joint_idxs.append(joint_idx)
+            self.ctrl_joint_names.append(self.joint_names[transmission_idx[0]])
         self.ctrl_qpos_idxs = self.ctrl_joint_idxs
         self.ctrl_qvel_idxs = []
         for ctrl_idx in range(self.n_ctrl):
@@ -128,6 +130,7 @@ class MuJoCoParserClass(object):
         print ("n_ctrl:[%d]"%(self.n_ctrl))
         print ("ctrl_names:%s"%(self.ctrl_names))
         print ("ctrl_joint_idxs:%s"%(self.ctrl_joint_idxs))
+        print ("ctrl_joint_names:%s"%(self.ctrl_joint_names))
         print ("ctrl_qvel_idxs:%s"%(self.ctrl_qvel_idxs))
         print ("ctrl_ranges:\n%s"%(self.ctrl_ranges))
         print ("n_sensor:[%d]"%(self.n_sensor))
@@ -691,6 +694,8 @@ class MuJoCoParserClass(object):
         f_contacts = []
         geom1s = []
         geom2s = []
+        body1s = []
+        body2s = []
         for c_idx in range(self.data.ncon):
             contact   = self.data.contact[c_idx]
             # Contact position and frame orientation
@@ -703,6 +708,8 @@ class MuJoCoParserClass(object):
             # Contacting geoms
             contact_geom1 = self.geom_names[contact.geom1]
             contact_geom2 = self.geom_names[contact.geom2]
+            contact_body1 = self.body_names[self.model.geom_bodyid[contact.geom1]]
+            contact_body2 = self.body_names[self.model.geom_bodyid[contact.geom2]]
             # Append
             if must_include_prefix is not None:
                 if (contact_geom1[:len(must_include_prefix)] == must_include_prefix) or (contact_geom2[:len(must_include_prefix)] == must_include_prefix):
@@ -710,37 +717,62 @@ class MuJoCoParserClass(object):
                     f_contacts.append(f_contact)
                     geom1s.append(contact_geom1)
                     geom2s.append(contact_geom2)
+                    body1s.append(contact_body1)
+                    body2s.append(contact_body2)
             elif must_exclude_prefix is not None:
                 if (contact_geom1[:len(must_exclude_prefix)] != must_exclude_prefix) and (contact_geom2[:len(must_exclude_prefix)] != must_exclude_prefix):
                     p_contacts.append(p_contact)
                     f_contacts.append(f_contact)
                     geom1s.append(contact_geom1)
                     geom2s.append(contact_geom2)
+                    body1s.append(contact_body1)
+                    body2s.append(contact_body2)
             else:
                 p_contacts.append(p_contact)
                 f_contacts.append(f_contact)
                 geom1s.append(contact_geom1)
                 geom2s.append(contact_geom2)
-        return p_contacts,f_contacts,geom1s,geom2s
+                body1s.append(contact_body1)
+                body2s.append(contact_body2)
+        return p_contacts,f_contacts,geom1s,geom2s,body1s,body2s
 
-    def plot_contact_info(self,must_include_prefix=None):
+    def plot_contact_info(self,must_include_prefix=None,h_arrow=0.3,rgba_arrow=[1,0,0,1],
+                          PRINT_CONTACT_BODY=False,PRINT_CONTACT_GEOM=False,VERBOSE=False):
         """
             Plot contact information
         """
         # Get contact information
-        p_contacts,f_contacts,geom1s,geom2s = self.get_contact_info(
+        p_contacts,f_contacts,geom1s,geom2s,body1s,body2s = self.get_contact_info(
             must_include_prefix=must_include_prefix)
         # Render contact informations
-        for (p_contact,f_contact,geom1,geom2) in zip(p_contacts,f_contacts,geom1s,geom2s):
+        for (p_contact,f_contact,geom1,geom2,body1,body2) in zip(p_contacts,f_contacts,geom1s,geom2s,body1s,body2s):
             f_norm = np.linalg.norm(f_contact)
             f_uv = f_contact / (f_norm+1e-8)
-            f_len = 0.3 # f_norm*0.05
-            self.plot_arrow_contact(p=p_contact,uv=f_uv,r_arrow=0.01,h_arrow=f_len,rgba=[1,0,0,1],
+            # h_arrow = 0.3 # f_norm*0.05
+            self.plot_arrow_contact(p=p_contact,uv=f_uv,r_arrow=0.01,h_arrow=h_arrow,rgba=rgba_arrow,
                         label='')
-            self.plot_arrow_contact(p=p_contact,uv=-f_uv,r_arrow=0.01,h_arrow=f_len,rgba=[1,0,0,1],
+            self.plot_arrow_contact(p=p_contact,uv=-f_uv,r_arrow=0.01,h_arrow=h_arrow,rgba=rgba_arrow,
                         label='')
-            label = '' # '[%s]-[%s]'%(geom1,geom2)
+            if PRINT_CONTACT_BODY:
+                label = '[%s]-[%s]'%(body1,body2)
+            elif PRINT_CONTACT_GEOM:
+                label = '[%s]-[%s]'%(geom1,geom2)
+            else:
+                label = '' 
             self.plot_sphere(p=p_contact,r=0.02,rgba=[1,0.2,0.2,1],label=label)
+        # Print
+        if VERBOSE:
+            self.print_contact_info(must_include_prefix=must_include_prefix)
+            
+    def print_contact_info(self,must_include_prefix=None):
+        """ 
+            Print contact information
+        """
+        # Get contact information
+        p_contacts,f_contacts,geom1s,geom2s,body1s,body2s = self.get_contact_info(
+            must_include_prefix=must_include_prefix)
+        for (p_contact,f_contact,geom1,geom2,body1,body2) in zip(p_contacts,f_contacts,geom1s,geom2s,body1s,body2s):
+            print ("Tick:[%d] Body contact:[%s]-[%s]"%(self.tick,body1,body2))
 
     def open_interactive_viewer(self):
         """

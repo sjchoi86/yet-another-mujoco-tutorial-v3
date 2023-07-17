@@ -1,0 +1,9 @@
+<mujoco model="husky with ur5e scene">
+
+  <!-- Husky with UR5e-->
+  <include file="./husky_ur5e_rg2_d435.xml" />
+
+  <!-- Floor and Sky -->
+  <include file="../object/floor_sky.xml" />
+
+</mujoco>
