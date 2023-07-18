@@ -277,7 +277,7 @@ class MuJoCoParserClass(object):
             h = int(img.shape[0]*resize_rate)
             w = int(img.shape[1]*resize_rate)
             img = cv2.resize(img,(w,h),interpolation=interpolation)
-        return img
+        return img.copy()
 
     def close_viewer(self):
         """

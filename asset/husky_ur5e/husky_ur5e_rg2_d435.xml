@@ -147,7 +147,7 @@
         <!-- <geom size="0.17775 0.05715" quat="0.707107 0.707106 0 0" type="cylinder" rgba="0.3 0.3 0.3 1"/> -->
       </body>  
 
-      <body name="base_ur5e" pos="0.17 0 0.38993" quat="1 0 0 0">
+      <body name="base_ur5e" pos="-0.17 0 0.38993" quat="1 0 0 0">
         <inertial mass="4.0" pos="0 0 0" diaginertia="0.00443333156 0.00443333156 0.0072" />
         <geom mesh="base_0" material="black" class="visual" />
         <geom mesh="base_1" material="jointgray" class="visual" />
@@ -235,7 +235,7 @@
                           friction="0.8 0.8 0.8" mesh="rg2_gripper_base_link" />
 
                         <!-- Camera center -->
-                        <body name="camera_center" pos="0 -0.09 0.01">
+                        <body name="camera_center" pos="0 -0.09 0.03">
                           <geom size="0.005 0.005 0.005" pos="0 0. 0." contype="0" conaffinity="0"
                             type="box" rgba="1.00 0.00 0.0 1" />
                           <camera name="egocentric" pos="0 0 0" xyaxes="1 0 0 0 -1 0" fovy="80" />
