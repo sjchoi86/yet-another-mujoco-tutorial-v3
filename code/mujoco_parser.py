@@ -138,14 +138,19 @@ class MuJoCoParserClass(object):
         print ("n_site:[%d]"%(self.n_site))
         print ("site_names:%s"%(self.site_names))
 
-    def init_viewer(self,viewer_title='MuJoCo',viewer_width=1200,viewer_height=800,viewer_hide_menus=True):
+    def init_viewer(self,viewer_title='MuJoCo',viewer_width=1200,viewer_height=800,
+                    viewer_hide_menus=True,
+                    FONTSCALE_VALUE=mujoco.mjtFontScale.mjFONTSCALE_100.value):
         """
             Initialize viewer
+            - FONTSCALE_VALUE:[50,100,150,200,250,300]
         """
         self.USE_MUJOCO_VIEWER = True
         self.viewer = mujoco_viewer.MujocoViewer(
                 self.model,self.data,mode='window',title=viewer_title,
                 width=viewer_width,height=viewer_height,hide_menus=viewer_hide_menus)
+        # Modify the fontsize
+        self.viewer.ctx = mujoco.MjrContext(self.model,FONTSCALE_VALUE)
 
     def update_viewer(self,azimuth=None,distance=None,elevation=None,lookat=None,
                       VIS_TRANSPARENT=None,VIS_CONTACTPOINT=None,
@@ -190,6 +195,29 @@ class MuJoCoParserClass(object):
                 self.model,self.data,self.viewer.vopt,self.viewer.pert,self.viewer.cam,
                 mujoco.mjtCatBit.mjCAT_ALL.value,self.viewer.scn)
             mujoco.mjr_render(self.viewer.viewport,self.viewer.scn,self.viewer.ctx)
+            
+    def update_font_scale_from_cam_dist(
+        self,cam_dists=[2.0,2.5,3.0,4.0],font_scales=[300,250,200,150,100],VERBOSE=False):
+        """ 
+            Update font scale from cam distance
+        """
+        def map_x_to_output(numbers,outputs,x):
+            if x < numbers[0]:
+                return outputs[0]
+            if x >= numbers[-1]:
+                return outputs[-1]
+            for i in range(len(numbers) - 1):
+                if numbers[i] <= x < numbers[i + 1]:
+                    return outputs[i + 1]
+        
+        cam_dist = self.viewer.cam.distance
+        font_scale_new = map_x_to_output(numbers=cam_dists,outputs=font_scales,x=cam_dist)
+        font_scale_curr = self.viewer.ctx.fontScale
+        
+        if np.abs(font_scale_curr-font_scale_new) > 1.0: # if font scale changes
+            self.viewer.ctx = mujoco.MjrContext(self.model,font_scale_new)
+            if VERBOSE:
+                print ("font_scale modified. [%d]=>[%d]"%(font_scale_curr,font_scale_new))
 
     def get_viewer_cam_info(self,VERBOSE=False):
         """
@@ -877,12 +905,16 @@ class MuJoCoParserClass(object):
         tick = int(self.get_sim_time()/self.dt)
         return tick
 
-    def loop_every(self,HZ=1):
+    def loop_every(self,HZ=None,tick_every=None):
         """
             Loop every
         """
         # tick = int(self.get_sim_time()/self.dt)
-        FLAG = (self.tick-1)%(int(1/self.dt/HZ))==0
+        FLAG = False
+        if HZ is not None:
+            FLAG = (self.tick-1)%(int(1/self.dt/HZ))==0
+        if tick_every is not None:
+            FLAG = (self.tick-1)%(tick_every)==0
         return FLAG
     
     def get_sensor_value(self,sensor_name):

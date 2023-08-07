@@ -269,15 +269,20 @@ def is_point_to_point_connectable(point1,point2,obs_list):
 class TicTocClass(object):
     """
         Tic toc
+        tictoc = TicTocClass()
+        tictoc.tic()
+        ~~
+        tictoc.toc()
     """
     def __init__(self,name='tictoc',print_every=1):
         """
             Initialize
         """
-        self.name        = name
-        self.time_start  = time.time()
-        self.time_end    = time.time()
-        self.print_every = print_every
+        self.name         = name
+        self.time_start   = time.time()
+        self.time_end     = time.time()
+        self.print_every  = print_every
+        self.time_elapsed = 0.0
 
     def tic(self):
         """
@@ -285,7 +290,7 @@ class TicTocClass(object):
         """
         self.time_start = time.time()
 
-    def toc(self,str=None,cnt=0,VERBOSE=True):
+    def toc(self,str=None,cnt=0,VERBOSE=True,RETURN=False):
         """
             Toc
         """
@@ -308,6 +313,8 @@ class TicTocClass(object):
                 else:
                     print ("%s Elapsed time:[%.2f]%s"%
                         (str,time_show,time_unit))
+        if RETURN:
+            return self.time_elapsed
 
 def get_interp_const_vel_traj(traj_anchor,vel=1.0,HZ=100,ord=np.inf):
     """
