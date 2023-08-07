@@ -1,5 +1,6 @@
 import math,time,os
 import numpy as np
+import tkinter as tk
 import shapely as sp # handle polygon
 from shapely import Polygon,LineString,Point # handle polygons
 from scipy.spatial.distance import cdist
@@ -414,4 +415,107 @@ def create_folder_if_not_exists(file_path):
     if not os.path.exists(folder_path):
         os.makedirs(folder_path)
         print ("[%s] created."%(folder_path))
+        
+class MultiSliderClass(object):
+    """
+        GUI with multiple sliders
+    """
+    def __init__(self,
+                 window_width=500,n_slider=10,title='Multiple Sliders',
+                 label_texts=None,
+                 slider_mins=None,slider_maxs=None,slider_vals=None,
+                 resolution=0.1,
+                 VERBOSE=True):
+        """
+            Initialze multiple sliders
+        """
+        self.window_width  = window_width
+        self.n_slider      = n_slider
+        self.title         = title
+        self.resolution    = resolution
+        self.VERBOSE       = VERBOSE
+        
+        # Slider values
+        self.slider_values = np.zeros(self.n_slider)
+        
+        # Initial/default slider settings
+        self.label_texts   = label_texts
+        self.slider_mins   = slider_mins
+        self.slider_maxs   = slider_maxs
+        self.slider_vals   = slider_vals
+        
+        # Create main window
+        self.gui = tk.Tk()
+        self.gui.title("%s"%(self.title))
+        self.gui.geometry("%dx%d+500+100"%(self.window_width,self.n_slider*40))
+        
+        # Create sliders
+        self.sliders = self.create_sliders()
+        
+    def cb_slider(self,slider_idx,slider_value):
+        """
+            Slider callback function
+        """
+        self.slider_values[slider_idx] = slider_value
+        if self.VERBOSE:
+            print ("slider_idx:[%d] slider_value:[%.1f]"%(slider_idx,slider_value))
+        
+    def create_sliders(self):
+        """
+            Create sliders
+        """
+        sliders = []
+        for s_idx in range(self.n_slider):
+            # Get slider frame
+            slider_frame = tk.Frame(self.gui)
+            slider_frame.pack(padx=10,pady=0,anchor=tk.W)
+            # Create label
+            if self.label_texts is None:
+                label_text = "Slider %02d "%(s_idx)
+            else:
+                label_text = "[%d/%d]%s"%(s_idx,self.n_slider,self.label_texts[s_idx])
+            label = tk.Label(slider_frame,text=label_text)
+            label.pack(side=tk.LEFT)
+            # Create slider
+            if self.slider_mins is None: slider_min = 0
+            else: slider_min = self.slider_mins[s_idx]
+            if self.slider_maxs is None: slider_max = 100
+            else: slider_max = self.slider_maxs[s_idx]
+            if self.slider_vals is None: slider_val = 50
+            else: slider_val = self.slider_vals[s_idx]
+            slider = tk.Scale(
+                slider_frame,
+                from_      = slider_min,
+                to         = slider_max,
+                orient     = tk.HORIZONTAL,
+                command    = lambda value,idx=s_idx:self.cb_slider(idx,float(value)),
+                resolution = 0.01,
+                length     = 500
+            )
+            slider.set(slider_val)
+            slider.pack(side=tk.LEFT)
+            sliders.append(slider)
+        return sliders
+    
+    def update(self):
+        if self.is_window_exists():
+            self.gui.update()
+        
+    def run(self):
+        self.gui.mainloop()
+        
+    def is_window_exists(self):
+        try:
+            return self.gui.winfo_exists()
+        except tk.TclError:
+            return False
+        
+    def get_slider_values(self):
+        return self.slider_values
+    
+    def close(self):
+        if self.is_window_exists():
+            self.gui.destroy()
+            self.gui.quit()
+            self.gui.update()
         
