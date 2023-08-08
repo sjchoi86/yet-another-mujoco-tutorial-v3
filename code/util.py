@@ -421,17 +421,30 @@ class MultiSliderClass(object):
         GUI with multiple sliders
     """
     def __init__(self,
-                 window_width=500,n_slider=10,title='Multiple Sliders',
-                 label_texts=None,
-                 slider_mins=None,slider_maxs=None,slider_vals=None,
-                 resolution=0.1,
-                 VERBOSE=True):
+                 n_slider     = 10,
+                 title        = 'Multiple Sliders',
+                 window_width = 500,
+                 x_offset     = 500,
+                 y_offset     = 100,
+                 slider_width = 400,
+                 label_texts  = None,
+                 slider_mins  = None,
+                 slider_maxs  = None,
+                 slider_vals  = None,
+                 resolution   = 0.1,
+                 VERBOSE      = True
+        ):
         """
             Initialze multiple sliders
         """
-        self.window_width  = window_width
         self.n_slider      = n_slider
         self.title         = title
+        
+        self.window_width  = window_width
+        self.x_offset      = x_offset
+        self.y_offset      = y_offset
+        self.slider_width  = slider_width
+        
         self.resolution    = resolution
         self.VERBOSE       = VERBOSE
         
@@ -447,16 +460,38 @@ class MultiSliderClass(object):
         # Create main window
         self.gui = tk.Tk()
         self.gui.title("%s"%(self.title))
-        self.gui.geometry("%dx%d+500+100"%(self.window_width,self.n_slider*40))
+        self.gui.geometry("%dx%d+%d+%d"%
+                          (self.window_width,self.n_slider*40,self.x_offset,self.y_offset))
+        
+        # Create vertical scrollbar
+        self.scrollbar = tk.Scrollbar(self.gui,orient=tk.VERTICAL)
+        
+        # Create a Canvas widget with the scrollbar attached
+        self.canvas = tk.Canvas(self.gui,yscrollcommand=self.scrollbar.set)
+        self.canvas.pack(side=tk.LEFT, fill=tk.BOTH, expand=True)
+        
+        # Configure the scrollbar to control the canvas
+        self.scrollbar.config(command=self.canvas.yview)
+        self.scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
+        
+        # Create a frame inside the canvas to hold the sliders
+        self.sliders_frame = tk.Frame(self.canvas)
+        self.canvas.create_window((0,0),window=self.sliders_frame,anchor=tk.NW)
         
         # Create sliders
         self.sliders = self.create_sliders()
+        
+        # Update the canvas scroll region when the sliders_frame changes size
+        self.sliders_frame.bind("<Configure>",self.cb_scroll)
+        
+    def cb_scroll(self,event):    
+        self.canvas.configure(scrollregion=self.canvas.bbox("all"))
         
     def cb_slider(self,slider_idx,slider_value):
         """
             Slider callback function
         """
-        self.slider_values[slider_idx] = slider_value
+        self.slider_values[slider_idx] = slider_value # append
         if self.VERBOSE:
             print ("slider_idx:[%d] slider_value:[%.1f]"%(slider_idx,slider_value))
         
@@ -466,16 +501,14 @@ class MultiSliderClass(object):
         """
         sliders = []
         for s_idx in range(self.n_slider):
-            # Get slider frame
-            slider_frame = tk.Frame(self.gui)
-            slider_frame.pack(padx=10,pady=0,anchor=tk.W)
             # Create label
             if self.label_texts is None:
                 label_text = "Slider %02d "%(s_idx)
             else:
                 label_text = "[%d/%d]%s"%(s_idx,self.n_slider,self.label_texts[s_idx])
-            label = tk.Label(slider_frame,text=label_text)
-            label.pack(side=tk.LEFT)
+            slider_label = tk.Label(self.sliders_frame, text=label_text)
+            slider_label.grid(row=s_idx,column=0,padx=0,pady=0)
+            
             # Create slider
             if self.slider_mins is None: slider_min = 0
             else: slider_min = self.slider_mins[s_idx]
@@ -484,17 +517,18 @@ class MultiSliderClass(object):
             if self.slider_vals is None: slider_val = 50
             else: slider_val = self.slider_vals[s_idx]
             slider = tk.Scale(
-                slider_frame,
+                self.sliders_frame,
                 from_      = slider_min,
                 to         = slider_max,
                 orient     = tk.HORIZONTAL,
                 command    = lambda value,idx=s_idx:self.cb_slider(idx,float(value)),
-                resolution = 0.01,
-                length     = 500
+                resolution = self.resolution,
+                length     = self.slider_width
             )
+            slider.grid(row=s_idx,column=1,padx=0,pady=0,sticky=tk.W)
             slider.set(slider_val)
-            slider.pack(side=tk.LEFT)
             sliders.append(slider)
+            
         return sliders
     
     def update(self):
