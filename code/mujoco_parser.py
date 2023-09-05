@@ -1,13 +1,7 @@
-import os
-
-import cv2
-import mujoco_viewer
+import cv2,os,mujoco,mujoco_viewer
 import numpy as np
 from util import (compute_view_params, get_rotation_matrix_from_two_points,
-                  meters2xyz, pr2t, r2w, rpy2r, trim_scale)
-
-import mujoco
-
+                  meters2xyz, pr2t, r2w, rpy2r, trim_scale, r2quat)
 
 class MuJoCoParserClass(object):
     """
@@ -246,6 +240,7 @@ class MuJoCoParserClass(object):
         # To initial position
         self.data.qpos = self.qpos0
         mujoco.mj_forward(self.model,self.data)
+        # Reset ticks
         self.tick        = 0
         self.render_tick = 0
 
@@ -355,6 +350,26 @@ class MuJoCoParserClass(object):
         p = self.get_p_joint(joint_name)
         R = self.get_R_joint(joint_name)
         return p,R
+
+    def get_p_geom(self,geom_name):
+        """ 
+            Get geom position
+        """
+        return self.data.geom(geom_name).xpos
+    
+    def get_R_geom(self,geom_name):
+        """ 
+            Get geom rotation
+        """
+        return self.data.geom(geom_name).xmat.reshape((3,3))
+    
+    def get_pR_geom(self,geom_name):
+        """
+            Get geom position and rotation matrix
+        """
+        p = self.get_p_geom(geom_name)
+        R = self.get_R_geom(geom_name)
+        return p,R
     
     def get_p_sensor(self,sensor_name):
         """
@@ -405,6 +420,16 @@ class MuJoCoParserClass(object):
         mujoco.mj_jacBody(self.model,self.data,J_p,J_R,self.data.body(body_name).id)
         J_full = np.array(np.vstack([J_p,J_R]))
         return J_p,J_R,J_full
+    
+    def get_J_geom(self,geom_name):
+        """
+            Get Jocobian matrices of a geom
+        """
+        J_p = np.zeros((3,self.model.nv)) # nv: nDoF
+        J_R = np.zeros((3,self.model.nv))
+        mujoco.mj_jacGeom(self.model,self.data,J_p,J_R,self.data.geom(geom_name).id)
+        J_full = np.array(np.vstack([J_p,J_R]))
+        return J_p,J_R,J_full
 
     def get_ik_ingredients(self,body_name,p_trgt=None,R_trgt=None,IK_P=True,IK_R=True):
         """
@@ -412,6 +437,32 @@ class MuJoCoParserClass(object):
         """
         J_p,J_R,J_full = self.get_J_body(body_name=body_name)
         p_curr,R_curr = self.get_pR_body(body_name=body_name)
+        if (IK_P and IK_R):
+            p_err = (p_trgt-p_curr)
+            R_err = np.linalg.solve(R_curr,R_trgt)
+            w_err = R_curr @ r2w(R_err)
+            J     = J_full
+            err   = np.concatenate((p_err,w_err))
+        elif (IK_P and not IK_R):
+            p_err = (p_trgt-p_curr)
+            J     = J_p
+            err   = p_err
+        elif (not IK_P and IK_R):
+            R_err = np.linalg.solve(R_curr,R_trgt)
+            w_err = R_curr @ r2w(R_err)
+            J     = J_R
+            err   = w_err
+        else:
+            J   = None
+            err = None
+        return J,err
+    
+    def get_ik_ingredients_geom(self,geom_name,p_trgt=None,R_trgt=None,IK_P=True,IK_R=True):
+        """
+            Get IK ingredients
+        """
+        J_p,J_R,J_full = self.get_J_geom(geom_name=geom_name)
+        p_curr,R_curr = self.get_pR_geom(geom_name=geom_name)
         if (IK_P and IK_R):
             p_err = (p_trgt-p_curr)
             R_err = np.linalg.solve(R_curr,R_trgt)
@@ -680,6 +731,18 @@ class MuJoCoParserClass(object):
         self.plot_T(p,R,PLOT_AXIS=PLOT_AXIS,axis_len=axis_len,axis_width=axis_width,
                     PLOT_SPHERE=PLOT_SPHERE,sphere_r=sphere_r,sphere_rgba=sphere_rgba,axis_rgba=axis_rgba,
                     label=label)
+        
+    def plot_geom_T(self,geom_name,
+               PLOT_AXIS=True,axis_len=1.0,axis_width=0.01,
+               PLOT_SPHERE=False,sphere_r=0.05,sphere_rgba=[1,0,0,0.5],axis_rgba=None,
+               label=None):
+        """
+            Plot coordinate axes on a goem
+        """
+        p,R = self.get_pR_geom(geom_name=geom_name)
+        self.plot_T(p,R,PLOT_AXIS=PLOT_AXIS,axis_len=axis_len,axis_width=axis_width,
+                    PLOT_SPHERE=PLOT_SPHERE,sphere_r=sphere_r,sphere_rgba=sphere_rgba,axis_rgba=axis_rgba,
+                    label=label)
 
     def plot_arrow_contact(self,p,uv,r_arrow=0.03,h_arrow=0.3,rgba=[1,0,0,1],label=''):
         """
@@ -706,6 +769,19 @@ class MuJoCoParserClass(object):
             rgba  = rgba,
             label = label
         )
+        
+    def plot_joint_axis(self,axis_len=0.1,axis_r=0.01):
+        """ 
+            Plot revolute joint 
+        """
+        for rev_joint_idx,rev_joint_name in zip(self.rev_joint_idxs,self.rev_joint_names):
+            axis_joint = self.model.jnt_axis[rev_joint_idx]
+            p_joint,R_joint = self.get_pR_joint(joint_name=rev_joint_name)
+            axis_world = R_joint@axis_joint
+            axis_rgba = np.append(np.eye(3)[:,np.argmax(axis_joint)],0.2)
+            self.plot_arrow_fr2to(
+                p_fr=p_joint,p_to=p_joint+axis_len*axis_world,
+                r=axis_r,rgba=axis_rgba)
 
     def get_body_names(self,prefix='obj_'):
         """
@@ -976,3 +1052,54 @@ class MuJoCoParserClass(object):
         """
         self.viewer._paused = False
         
+    def get_idxs_fwd(self,joint_names):
+        """ 
+            Get indices for using env.forward()
+            Example)
+            env.forward(q=q,joint_idxs=idxs_fwd) # <= HERE
+        """
+        return [self.model.joint(jname).qposadr[0] for jname in joint_names]
+    
+    def get_idxs_jac(self,joint_names):
+        """ 
+            Get indices for solving inverse kinematics
+            Example)
+            J,ik_err = env.get_ik_ingredients(...)
+            dq = env.damped_ls(J,ik_err,stepsize=1,eps=1e-2,th=np.radians(1.0))
+            q = q + dq[idxs_jac] # <= HERE
+        """
+        return [self.model.joint(jname).dofadr[0] for jname in joint_names]
+    
+    def get_idxs_step(self,joint_names):
+        """ 
+            Get indices for using env.step()
+            idxs_stepExample)
+            env.step(ctrl=q,ctrl_idxs=idxs_step) # <= HERE
+        """
+        return [self.ctrl_joint_names.index(jname) for jname in joint_names]
+
+    def get_geom_idxs_from_body_name(self,body_name):
+        """ 
+            Get geometry indices for a body name to modify the properties of geom attached to a body
+        """
+        body_idx = self.body_names.index(body_name)
+        geom_idxs = [idx for idx,val in enumerate(self.model.geom_bodyid) if val==body_idx] 
+        return geom_idxs
+    
+    def set_p_root(self,root_name='torso',p=np.array([0,0,0])):
+        """ 
+             Set the position of a specific body
+             FK must be called after
+        """
+        jntadr  = self.model.body(root_name).jntadr[0]
+        qposadr = self.model.jnt_qposadr[jntadr]
+        self.data.qpos[qposadr:qposadr+3] = p
+        
+    def set_R_root(self,root_name='torso',R=np.eye(3,3)):
+        """ 
+            Set the rotation of a root joint
+            FK must be called after
+        """
+        jntadr  = self.model.body(root_name).jntadr[0]
+        qposadr = self.model.jnt_qposadr[jntadr]
+        self.data.qpos[qposadr+3:qposadr+7] = r2quat(R)

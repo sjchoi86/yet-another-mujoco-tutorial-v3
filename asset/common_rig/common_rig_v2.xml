@@ -1,0 +1,214 @@
+<mujoco model="common-rig">
+    <!--  
+            Robot Intelligence Lab
+            Common Rig (Custom Humanoid) model
+            
+            @ Contact us : taemoon-jeong (motor_moon94@korea.ac.kr)
+    -->
+    <compiler coordinate="local" inertiafromgeom="true" angle="radian"/>
+
+    <default>
+        <joint limited="true" damping="1" armature="0"/>
+        <!-- <geom condim="1" material="matgeom"/> -->
+        <geom contype="1" condim="3" margin="0.001" solref=".02 1" solimp=".8 .8 .01" material="matgeom"/>
+        <motor ctrlrange="-.4 .4" ctrllimited="true"/>
+    </default>
+
+    <option timestep="0.005" iterations="50" tolerance="1e-10" solver="Newton" jacobian="dense" cone="pyramidal"/>
+    <size nconmax="50" njmax="200" nstack="10000"/>
+
+    <visual>
+        <map force="0.1" zfar="30"/>
+        <rgba haze="0.15 0.25 0.35 1"/>
+        <quality shadowsize="2048"/>
+        <global offwidth="800" offheight="800"/>
+    </visual>
+
+    <asset>
+        <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="127" height="1278" 
+            rgb1="0.8 0.6 0.4" rgb2="0.8 0.6 0.4" markrgb="1 1 1" random="0.01"/>  
+        <material name="matgeom" texture="texgeom" texuniform="true" rgba="0.8 0.6 0.4 1.0"/>
+    </asset>
+
+    <worldbody>
+        
+        <body name="base" pos="0 0 0.9">
+            <freejoint name="base"/>
+            <geom name="base" type="sphere" pos="0 0 0" size="0.06"/>
+            <body name="torso" pos="0 0 0" euler="0 0 0" >
+                <geom name="root2spine" type="capsule" fromto="0 0 0 0 0 0.1990"  size="0.04" density="2226"/>
+                <joint name="root1" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="60" stiffness="600" armature="0.02" />
+                <joint name="root2" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="60" stiffness="600" armature="0.02" />
+                <joint name="root3" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="60" stiffness="600" armature="0.02" />
+                <body name="spine" pos="0 0 0.1990" euler="0 0 0">
+                    <geom name="spine2neck" type="capsule" fromto="0 0 0 0 0 0.1990"  size="0.04" density="2226"/>
+                    <joint name="spine" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="60" stiffness="600" armature="0.02" />
+                    <body name="neck" pos="0 0 0.1990" euler="0 0 0">
+                        <geom name="neck2rshoulder" type="capsule" fromto="0 0 0 0 -0.1809 0"  size="0.04" />
+                        <geom name="neck2lshoulder" type="capsule" fromto="0 0 0 0 0.1809 0"  size="0.04" />
+                        <body name="right_shoulder" pos="0 -0.1809 0" euler="0 0 0">
+                            <geom name="rshoulder2relbow" type="capsule" fromto="0 0 0 0 -0.2768 0"  size="0.04" />
+                            <joint name="rs1" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" stiffness="200" damping="20" armature="0.0068" />
+                            <joint name="rs2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" stiffness="200" damping="20" armature="0.0051" />
+                            <joint name="rs3" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" stiffness="200" damping="20" armature="0.0051" />
+                            <body name="right_elbow" pos="0 -0.2768 0" euler="0 0 0">
+                                <geom name="relbow2rwrist" type="capsule" fromto="0 0 0 0 -0.1815 0"  size="0.04" />
+                                <joint name="re" type="hinge" pos="0 0 0" axis="0 0 1" range="0.01 2.61666666667" stiffness="150" damping="15" armature="0.0028" />
+                                <body name="right_hand" pos="0 -0.1815 0" euler="0 0 0">
+                                    <geom name="rthumb" type="box" pos="0.03 -0.05 0" size="0.015 0.07 0.015" euler="0 0 60"/>
+                                    <geom name="rpalm" type="box" pos="0 -0.06 0" size="0.04 0.075 0.015" euler="0 0 0"/>
+                                    <joint name="rw1" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                                    <joint name="rw2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                                    <joint name="rw3" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                                </body>
+                            </body>
+                        </body>
+                        <body name="left_shoulder" pos="0 0.1809 0" euler="0 0 0">
+                            <geom name="lshoulder2lelbow" type="capsule" fromto="0 0 0 0 0.2768 0"  size="0.04" />
+                            <joint name="ls1" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" stiffness="200" damping="20" armature="0.0068" />
+                            <joint name="ls2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" stiffness="200" damping="20" armature="0.0051" />
+                            <joint name="ls3" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" stiffness="200" damping="20" armature="0.0051" />
+                            <body name="left_elbow" pos="0 0.2768 0" euler="0 0 0">
+                                <geom name="lelbow2lwrist" type="capsule" fromto="0 0 0 0 0.1815 0"  size="0.04" />
+                                <joint name="le" type="hinge" pos="0 0 0" axis="0 0 1" range="-2.61666666667 -0.01" stiffness="150" damping="15" armature="0.0028" />
+                                <body name="left_hand" pos="0 0.1815 0" euler="0 0 0">
+                                    <geom name="lthumb" type="box" pos="0.03 0.05 0" size="0.015 0.07 0.015" euler="0 0 -60"/>
+                                    <geom name="lpalm" type="box" pos="0 0.06 0" size="0.04 0.075 0.015" euler="0 0 0"/>
+                                    <joint name="lw1" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                                    <joint name="lw2" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                                    <joint name="lw3" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                                </body>
+                            </body>
+                        </body>
+                        <body name="head" pos="0 0 0.2" euler="0 0 0">
+                            <geom name="head" type="box" pos="0 0 0" size="0.06 0.06 0.07" />
+                            <geom name="nose" type="box" pos="0.05 0 0" size="0.05 0.02 0.02" />
+                            <joint name="head1" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                            <joint name="head2" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                            <joint name="head3" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="5" stiffness="50" armature="0.02" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="right_leg" pos="0 0 0" euler="0 0 0">
+                <geom name="base2rpelvis" type="capsule" fromto="0 0 0 0 -0.1357 0"  size="0.04" />
+                <body name="right_pelvis" pos="0 -0.1357 0" euler="0 0 0">
+                    <geom name="rpelvis2rknee" type="capsule" fromto="0 0 0 0 0 -0.4049"  size="0.04" />
+                    <joint name="rp1" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="30" stiffness="900" armature="0.01" />
+                    <joint name="rp2" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="30" stiffness="900" armature="0.01" />
+                    <joint name="rp3" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.52333333333 0.52333333333" damping="30" stiffness="900" armature="0.01" />
+                    <body name="right_knee" pos="0 0 -0.4049" euler="0 0 0">
+                        <geom name="rknee2rankle" type="capsule" fromto="0 0 0 0 0 -0.4057"  size="0.04" />
+                        <joint name="rk" type="hinge" pos="0 0 0" axis="0 1 0" range="0.0175 2.0944" damping="30" stiffness="900" armature="0.0060" />
+                        <body name="right_ankle" pos="0 0 -0.4057" euler="0 0 0">
+                            <geom name="rankle" type="box" pos="0 0 -0.025" size="0.03 0.03 0.025" />
+                            <geom name="rfoot" type="box" pos="0.03 0 -0.05" size="0.1 0.05 0.015" />
+                            <joint name="ra1" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" stiffness="600" damping="20" armature="0.0008" />
+                            <joint name="ra2" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" stiffness="600" damping="20" armature="0.0006" />
+                            <joint name="ra3" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" stiffness="600" damping="20" armature="0.0006" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+            <body name="left_leg" pos="0 0 0" euler="0 0 0">
+                <geom name="base2lpelvis" type="capsule" fromto="0 0 0 0 0.1357 0"  size="0.04" />
+                <body name="left_pelvis" pos="0 0.1357 0" euler="0 0 0">
+                    <geom name="lpelvis2lknee" type="capsule" fromto="0 0 0 0 0 -0.4049"  size="0.04" />
+                    <joint name="lp1" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" damping="30" stiffness="900" armature="0.01" />
+                    <joint name="lp2" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" damping="30" stiffness="900" armature="0.01" />
+                    <joint name="lp3" type="hinge" pos="0 0 0" axis="0 0 1" range="-3.141592 3.141592" damping="30" stiffness="900" armature="0.01" />
+                    <body name="left_knee" pos="0 0 -0.4049" euler="0 0 0">
+                        <geom name="lknee2lankle" type="capsule" fromto="0 0 0 0 0 -0.4057"  size="0.04" />
+                        <joint name="lk" type="hinge" pos="0 0 0" axis="0 1 0" range="0.0175 2.0944" damping="30" stiffness="900" armature="0.0060" />
+                        <body name="left_ankle" pos="0 0 -0.4057" euler="0 0 0">
+                            <geom name="lankle" type="box" pos="0 0 -0.025" size="0.03 0.03 0.025" />
+                            <geom name="lfoot" type="box" pos="0.03 0 -0.05" size="0.1 0.05 0.015" />
+                            <joint name="la1" type="hinge" pos="0 0 0" axis="0 1 0" range="-3.141592 3.141592" stiffness="600" damping="20" armature="0.0008" />
+                            <joint name="la2" type="hinge" pos="0 0 0" axis="1 0 0" range="-3.141592 3.141592" stiffness="600" damping="20" armature="0.0006" />
+                            <joint name="la3" type="hinge" pos="0 0 0" axis="0 0 1" range="-0.52333333333 0.52333333333" stiffness="600" damping="20" armature="0.0006" />
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <actuator>
+        <!-- [1] ~ [4] -->
+        <motor name="root1"       gear="200" joint="root1" />
+        <motor name="root2"       gear="200" joint="root2" />
+        <motor name="root3"       gear="200" joint="root3" />
+        <motor name="spine"       gear="200" joint="spine" />
+        <!-- [5] ~ [11] -->
+        <motor name="rs1"       gear="100" joint="rs1" />
+        <motor name="rs2"       gear="100" joint="rs2" />
+        <motor name="rs3"       gear="100" joint="rs3" />
+        <motor name="re"       gear="200" joint="re" />
+        <motor name="rw1"       gear="100" joint="rw1" />
+        <motor name="rw2"       gear="100" joint="rw2" />
+        <motor name="rw3"       gear="100" joint="rw3" />
+        <!-- [12] ~ [18] -->
+        <motor name="ls1"       gear="100" joint="ls1" />
+        <motor name="ls2"       gear="100" joint="ls2" />
+        <motor name="ls3"       gear="100" joint="ls3" />
+        <motor name="le"       gear="200" joint="le" />
+        <motor name="lw1"       gear="100" joint="lw1" />
+        <motor name="lw2"       gear="100" joint="lw2" />
+        <motor name="lw3"       gear="100" joint="lw3" />
+        <!-- [19] ~ [25] -->
+        <motor name="rp1"       gear="600" joint="rp1" />
+        <motor name="rp2"       gear="200" joint="rp2" />
+        <motor name="rp3"       gear="200" joint="rp3" />
+        <motor name="rk"       gear="400" joint="rk" />
+        <motor name="ra1"       gear="100" joint="ra1" />
+        <motor name="ra2"       gear="100" joint="ra2" />
+        <motor name="ra3"       gear="100" joint="ra3" />
+        <!-- [26] ~ [32] -->
+        <motor name="lp1"       gear="600" joint="lp1" />
+        <motor name="lp2"       gear="200" joint="lp2" />
+        <motor name="lp3"       gear="200" joint="lp3" />
+        <motor name="lk"       gear="400" joint="lk" />
+        <motor name="la1"       gear="100" joint="la1" />
+        <motor name="la2"       gear="100" joint="la2" />
+        <motor name="la3"       gear="100" joint="la3" />
+        <!-- [33] ~ [35] -->
+        <motor name="head1"       gear="200" joint="head1" />
+        <motor name="head2"       gear="200" joint="head2" />
+        <motor name="head3"       gear="200" joint="head3" />
+    </actuator>
+
+    <!-- exclude -->
+    <contact>
+        <exclude body1="neck" body2="right_shoulder"/>
+        <exclude body1="spine" body2="right_shoulder"/>
+        <exclude body1="right_shoulder" body2="right_elbow"/>
+        <exclude body1="right_elbow" body2="right_hand"/>
+
+        <exclude body1="neck" body2="left_shoulder"/>
+        <exclude body1="spine" body2="left_shoulder"/>
+        <exclude body1="left_shoulder" body2="left_elbow"/>
+        <exclude body1="left_elbow" body2="left_hand"/>
+
+        <exclude body1="neck" body2="spine"/>
+        <exclude body1="spine" body2="torso"/>
+        <exclude body1="torso" body2="base"/>
+
+        <exclude body1="torso" body2="right_pelvis"/>
+        <exclude body1="right_leg" body2="base"/>
+        <exclude body1="right_leg" body2="torso"/>
+        <exclude body1="right_leg" body2="right_pelvis"/>
+        <exclude body1="right_pelvis" body2="right_knee"/>
+        <exclude body1="right_knee" body2="right_ankle"/>
+
+        <exclude body1="right_leg" body2="left_leg"/>
+
+        <exclude body1="torso" body2="left_pelvis"/>
+        <exclude body1="left_leg" body2="base"/>
+        <exclude body1="left_leg" body2="torso"/>
+        <exclude body1="left_leg" body2="left_pelvis"/>
+        <exclude body1="left_pelvis" body2="left_knee"/>
+        <exclude body1="left_knee" body2="left_ankle"/>
+    </contact>
+
+
+</mujoco>

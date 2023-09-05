@@ -258,11 +258,13 @@
       body2="rg2_gripper_finger1_finger_tip_link" />
     <exclude body1="rg2_gripper_finger2_inner_knuckle_link"
       body2="rg2_gripper_finger2_finger_tip_link" />
+      <exclude body1="rg2_gripper_finger1_finger_tip_link"
+      body2="rg2_gripper_finger2_finger_tip_link" />
   </contact>
 
   <!-- Define actuators -->
   <actuator>
-    <position class="size3" name="shoulder_pan" joint="shoulder_pan_joint" />
+    <motor class="size3" name="shoulder_pan" joint="shoulder_pan_joint" />
     <position class="size3" name="shoulder_lift" joint="shoulder_lift_joint" />
     <position class="size3_limited" name="elbow" joint="elbow_joint" />
     <position class="size1" name="wrist_1" joint="wrist_1_joint" />

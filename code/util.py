@@ -390,15 +390,15 @@ def compute_view_params(camera_pos,target_pos,up_vector=np.array([0,0,1])):
     # Return computed values
     return azimuth, distance, elevation, lookat
 
-def sample_xyzs(n_sample,x_range=[0,1],y_range=[0,1],z_range=[0,1],min_dist=0.1):
+def sample_xyzs(n_sample,x_range=[0,1],y_range=[0,1],z_range=[0,1],min_dist=0.1,xy_margin=0.0):
     """
         Sample a point in three dimensional space with the minimum distance between points
     """
     xyzs = np.zeros((n_sample,3))
     for p_idx in range(n_sample):
         while True:
-            x_rand = np.random.uniform(low=x_range[0],high=x_range[1])
-            y_rand = np.random.uniform(low=y_range[0],high=y_range[1])
+            x_rand = np.random.uniform(low=x_range[0]+xy_margin,high=x_range[1]-xy_margin)
+            y_rand = np.random.uniform(low=y_range[0]+xy_margin,high=y_range[1]-xy_margin)
             z_rand = np.random.uniform(low=z_range[0],high=z_range[1])
             xyz = np.array([x_rand,y_rand,z_rand])
             if p_idx == 0: break
@@ -421,18 +421,19 @@ class MultiSliderClass(object):
         GUI with multiple sliders
     """
     def __init__(self,
-                 n_slider     = 10,
-                 title        = 'Multiple Sliders',
-                 window_width = 500,
-                 x_offset     = 500,
-                 y_offset     = 100,
-                 slider_width = 400,
-                 label_texts  = None,
-                 slider_mins  = None,
-                 slider_maxs  = None,
-                 slider_vals  = None,
-                 resolution   = 0.1,
-                 VERBOSE      = True
+                 n_slider      = 10,
+                 title         = 'Multiple Sliders',
+                 window_width  = 500,
+                 window_height = None,
+                 x_offset      = 500,
+                 y_offset      = 100,
+                 slider_width  = 400,
+                 label_texts   = None,
+                 slider_mins   = None,
+                 slider_maxs   = None,
+                 slider_vals   = None,
+                 resolution    = 0.1,
+                 VERBOSE       = True
         ):
         """
             Initialze multiple sliders
@@ -441,6 +442,10 @@ class MultiSliderClass(object):
         self.title         = title
         
         self.window_width  = window_width
+        if window_height is None:
+            self.window_height = self.n_slider*40
+        else:
+            self.window_height = window_height
         self.x_offset      = x_offset
         self.y_offset      = y_offset
         self.slider_width  = slider_width
@@ -461,7 +466,7 @@ class MultiSliderClass(object):
         self.gui = tk.Tk()
         self.gui.title("%s"%(self.title))
         self.gui.geometry("%dx%d+%d+%d"%
-                          (self.window_width,self.n_slider*40,self.x_offset,self.y_offset))
+                          (self.window_width,self.window_height,self.x_offset,self.y_offset))
         
         # Create vertical scrollbar
         self.scrollbar = tk.Scrollbar(self.gui,orient=tk.VERTICAL)
