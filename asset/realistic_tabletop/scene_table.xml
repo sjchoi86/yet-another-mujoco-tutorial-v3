@@ -1,0 +1,38 @@
+<mujoco model="ur5e scene with objects">
+    
+    <!-- Default options -->
+    <compiler angle="radian" assetdir="./mesh" autolimits="true" />
+    <option integrator="RK4" noslip_iterations="20" />
+    <default>
+        <joint armature="0.1" damping="0.1" />
+        <default class="visual_only">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+        </default>
+        <default class="no_visual_collision">
+            <!-- visual group of 'collision' should be 3 to not render -->
+            <geom type="capsule" solimp=".9 .99 .001" solref=".015 1" group="3" />
+        </default>
+        <default class="visual_collision">
+            <geom type="mesh" solimp=".9 .99 .001" solref=".015 1" group="2" />
+        </default>
+    </default>
+    
+    <!-- Sky and floor -->
+    <!-- <include file="./floor.xml" /> -->
+    <include file="./floor2.xml" />
+
+    <!-- Base and object tables -->
+    <include file="./object/base_table.xml" />
+    <include file="./object/object_table.xml" />
+
+    <!-- UR5e -->
+    <include file="./ur5e_rg2.xml" /> 
+
+    <!-- Objects -->
+    <include file="./object/obj_redbull.xml" />
+    <include file="./object/obj_coke.xml" />
+    <include file="./object/obj_pringles.xml" />
+    <include file="./object/obj_apple.xml" />
+    <include file="./object/obj_orange.xml" />
+
+</mujoco>

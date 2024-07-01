@@ -1,0 +1,76 @@
+<mujoco model="OVAL_XYLOPHONE">
+  <asset>
+    <texture type="2d" name="OVAL_XYLOPHONE" file="OVAL_XYLOPHONE.png" />
+    <material name="material_OVAL_XYLOPHONE_0" texture="OVAL_XYLOPHONE" specular="0.5" shininess="0.5" />
+    <mesh name="OVAL_XYLOPHONE" file="OVAL_XYLOPHONE.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_0" file="OVAL_XYLOPHONE_collision_0.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_1" file="OVAL_XYLOPHONE_collision_1.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_2" file="OVAL_XYLOPHONE_collision_2.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_3" file="OVAL_XYLOPHONE_collision_3.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_4" file="OVAL_XYLOPHONE_collision_4.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_5" file="OVAL_XYLOPHONE_collision_5.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_6" file="OVAL_XYLOPHONE_collision_6.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_7" file="OVAL_XYLOPHONE_collision_7.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_8" file="OVAL_XYLOPHONE_collision_8.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_9" file="OVAL_XYLOPHONE_collision_9.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_10" file="OVAL_XYLOPHONE_collision_10.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_11" file="OVAL_XYLOPHONE_collision_11.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_12" file="OVAL_XYLOPHONE_collision_12.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_13" file="OVAL_XYLOPHONE_collision_13.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_14" file="OVAL_XYLOPHONE_collision_14.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_15" file="OVAL_XYLOPHONE_collision_15.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_16" file="OVAL_XYLOPHONE_collision_16.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_17" file="OVAL_XYLOPHONE_collision_17.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_18" file="OVAL_XYLOPHONE_collision_18.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_19" file="OVAL_XYLOPHONE_collision_19.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_20" file="OVAL_XYLOPHONE_collision_20.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_21" file="OVAL_XYLOPHONE_collision_21.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_22" file="OVAL_XYLOPHONE_collision_22.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_23" file="OVAL_XYLOPHONE_collision_23.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_24" file="OVAL_XYLOPHONE_collision_24.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_25" file="OVAL_XYLOPHONE_collision_25.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_26" file="OVAL_XYLOPHONE_collision_26.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_27" file="OVAL_XYLOPHONE_collision_27.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_28" file="OVAL_XYLOPHONE_collision_28.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_29" file="OVAL_XYLOPHONE_collision_29.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_30" file="OVAL_XYLOPHONE_collision_30.obj" />
+    <mesh name="OVAL_XYLOPHONE_collision_31" file="OVAL_XYLOPHONE_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="OVAL_XYLOPHONE">
+      <geom material="material_OVAL_XYLOPHONE_0" mesh="OVAL_XYLOPHONE" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="OVAL_XYLOPHONE_collision_0" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_1" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_2" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_3" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_4" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_5" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_6" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_7" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_8" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_9" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_10" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_11" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_12" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_13" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_14" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_15" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_16" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_17" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_18" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_19" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_20" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_21" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_22" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_23" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_24" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_25" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_26" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_27" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_28" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_29" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_30" type="mesh" group="3" />
+      <geom mesh="OVAL_XYLOPHONE_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

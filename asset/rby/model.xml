@@ -1,0 +1,1683 @@
+<mujoco model="rby">
+    <compiler angle="radian" meshdir="mesh" autolimits="true" eulerseq="xyz" />
+    <option timestep="0.005" solver="CG" iterations="30" tolerance="1e-6" />
+
+    <default>
+        <material specular="1.0" shininess="0.2" />
+        <joint armature="1" damping="1" />
+        <position gear="1" ctrlrange="-3.14 3.14" />
+        <default class="visual">
+            <geom group="2" type="mesh" contype="0" conaffinity="0" />
+        </default>
+        <default class="collision">
+            <geom group="3" type="mesh" />
+        </default>
+    </default>
+    <visual>
+        <map force="0.1" zfar="30" />
+        <rgba haze="0.15 0.25 0.35 1" />
+        <quality shadowsize="2048" />
+        <global offwidth="800" offheight="800" />
+    </visual>
+
+    <asset>
+        <!-- <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512"
+            height="512" />
+        <texture name="plane" type="2d" builtin="checker" rgb1=".2 .3 .4" rgb2=".1 0.15 0.2"
+            width="512" height="512" mark="cross" markrgb=".8 .8 .8" />
+        <material name="plane" reflectance="0.3" texture="plane" texrepeat="1 1" texuniform="true" /> -->
+
+        <material name="39,39,39_11.001" rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="69,69,69_8.001" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="75,75,75_68.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_69.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_70.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_1/left_arm_1_0.obj" />
+        <mesh file="left_arm_1/left_arm_1_1.obj" />
+        <mesh file="left_arm_1/left_arm_1_2.obj" />
+        <mesh file="left_arm_1/left_arm_1_3.obj" />
+        <mesh file="left_arm_1/left_arm_1_4.obj" />
+
+        <material name="39,39,39_10.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="39,39,39_12.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_67.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_71.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_2/left_arm_2_0.obj" />
+        <mesh file="left_arm_2/left_arm_2_1.obj" />
+        <mesh file="left_arm_2/left_arm_2_2.obj" />
+        <mesh file="left_arm_2/left_arm_2_3.obj" />
+
+        <material name="247,247,247_54.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_55.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_56.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_57.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_58.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="254,254,255_55.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="69,69,69_9.001" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="75,75,75_64.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_65.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_66.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_3/left_arm_3_0.obj" />
+        <mesh file="left_arm_3/left_arm_3_1.obj" />
+        <mesh file="left_arm_3/left_arm_3_2.obj" />
+        <mesh file="left_arm_3/left_arm_3_3.obj" />
+        <mesh file="left_arm_3/left_arm_3_4.obj" />
+        <mesh file="left_arm_3/left_arm_3_5.obj" />
+        <mesh file="left_arm_3/left_arm_3_6.obj" />
+        <mesh file="left_arm_3/left_arm_3_7.obj" />
+        <mesh file="left_arm_3/left_arm_3_8.obj" />
+        <mesh file="left_arm_3/left_arm_3_9.obj" />
+
+        <material name="247,247,247_51.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_52.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_53.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="39,39,39_8.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="39,39,39_9.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_63.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_4/left_arm_4_0.obj" />
+        <mesh file="left_arm_4/left_arm_4_1.obj" />
+        <mesh file="left_arm_4/left_arm_4_2.obj" />
+        <mesh file="left_arm_4/left_arm_4_3.obj" />
+        <mesh file="left_arm_4/left_arm_4_4.obj" />
+        <mesh file="left_arm_4/left_arm_4_5.obj" />
+
+        <material name="247,247,247_45.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_46.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_47.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_48.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_49.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_50.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <mesh file="left_arm_5/left_arm_5_0.obj" />
+        <mesh file="left_arm_5/left_arm_5_1.obj" />
+        <mesh file="left_arm_5/left_arm_5_2.obj" />
+        <mesh file="left_arm_5/left_arm_5_3.obj" />
+        <mesh file="left_arm_5/left_arm_5_4.obj" />
+        <mesh file="left_arm_5/left_arm_5_5.obj" />
+
+        <material name="152,170,175_10.001" specular="1.0" shininess="0.2"
+            rgba="0.596078 0.666667 0.686275 1.000000" />
+        <material name="247,247,247_44.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="254,254,255_50.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="39,39,39_7.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_56.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_57.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_58.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_60.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_61.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_62.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_6/left_arm_6_0.obj" />
+        <mesh file="left_arm_6/left_arm_6_1.obj" />
+        <mesh file="left_arm_6/left_arm_6_2.obj" />
+        <mesh file="left_arm_6/left_arm_6_3.obj" />
+        <mesh file="left_arm_6/left_arm_6_4.obj" />
+        <mesh file="left_arm_6/left_arm_6_5.obj" />
+        <mesh file="left_arm_6/left_arm_6_6.obj" />
+        <mesh file="left_arm_6/left_arm_6_7.obj" />
+        <mesh file="left_arm_6/left_arm_6_8.obj" />
+        <mesh file="left_arm_6/left_arm_6_9.obj" />
+
+        <material name="39,39,39_6.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="70,70,70_2.001" specular="1.0" shininess="0.2"
+            rgba="0.274510 0.274510 0.274510 1.000000" />
+        <material name="75,75,75_78.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_7/left_arm_7_0.obj" />
+        <mesh file="left_arm_7/left_arm_7_1.obj" />
+        <mesh file="left_arm_7/left_arm_7_2.obj" />
+
+        <material name="70,70,70_1.003" specular="1.0" shininess="0.2"
+            rgba="0.274510 0.274510 0.274510 1.000000" />
+        <material name="75,75,75_1.003" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_f1/left_arm_f1_0.obj" />
+        <mesh file="left_arm_f1/left_arm_f1_1.obj" />
+
+        <material name="70,70,70_1.002" specular="1.0" shininess="0.2"
+            rgba="0.274510 0.274510 0.274510 1.000000" />
+        <material name="75,75,75_1.002" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_arm_f2/left_arm_f2_0.obj" />
+        <mesh file="left_arm_f2/left_arm_f2_1.obj" />
+
+        <material name="160,160,160.002" specular="1.0" shininess="0.2"
+            rgba="0.627451 0.627451 0.627451 1.000000" />
+        <material name="39,39,39.003" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_2.002" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="left_wheel/left_wheel_0.obj" />
+        <mesh file="left_wheel/left_wheel_1.obj" />
+
+        <material name="156,168,171.001" specular="1.0" shininess="0.2"
+            rgba="0.611765 0.658824 0.670588 1.000000" />
+        <material name="156,168,171_2.002" specular="1.0" shininess="0.2"
+            rgba="0.611765 0.658824 0.670588 1.000000" />
+        <material name="203,203,203.001" specular="1.0" shininess="0.2"
+            rgba="0.796078 0.796078 0.796078 1.000000" />
+        <material name="203,203,203_3.002" specular="1.0" shininess="0.2"
+            rgba="0.796078 0.796078 0.796078 1.000000" />
+        <material name="247,247,247_3.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_4.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_5.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_6.002" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_6.003" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="254,254,255_4.002" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="254,254,255_6.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="64,64,64_3.002" specular="1.0" shininess="0.2"
+            rgba="0.250980 0.250980 0.250980 1.000000" />
+        <material name="75,75,75_3.002" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_5.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_76.004" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_76.005" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="link1/link1_0.obj" />
+        <mesh file="link1/link1_1.obj" />
+        <mesh file="link1/link1_2.obj" />
+        <mesh file="link1/link1_3.obj" />
+        <mesh file="link1/link1_4.obj" />
+        <mesh file="link1/link1_5.obj" />
+        <mesh file="link1/link1_6.obj" />
+        <mesh file="link1/link1_7.obj" />
+        <mesh file="link1/link1_8.obj" />
+        <mesh file="link1/link1_9.obj" />
+        <mesh file="link1/link1_10.obj" />
+        <mesh file="link1/link1_11.obj" />
+        <mesh file="link1/link1_12.obj" />
+        <mesh file="link1/link1_13.obj" />
+        <mesh file="link1/link1_14.obj" />
+        <mesh file="link1/link1_15.obj" />
+
+        <material name="156,168,171_2.003" specular="1.0" shininess="0.2"
+            rgba="0.611765 0.658824 0.670588 1.000000" />
+        <material name="203,203,203_3.003" specular="1.0" shininess="0.2"
+            rgba="0.796078 0.796078 0.796078 1.000000" />
+        <material name="247,247,247.002" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_1.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_10.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_11.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_12.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_13.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_14.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_2.004" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_2.005" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_7.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_8.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_9.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="64,64,64_3.003" specular="1.0" shininess="0.2"
+            rgba="0.250980 0.250980 0.250980 1.000000" />
+        <material name="75,75,75_10.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_11.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_3.003" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_4.002" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_76.006" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_76.007" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="link2/link2_0.obj" />
+        <mesh file="link2/link2_1.obj" />
+        <mesh file="link2/link2_2.obj" />
+        <mesh file="link2/link2_3.obj" />
+        <mesh file="link2/link2_4.obj" />
+        <mesh file="link2/link2_5.obj" />
+        <mesh file="link2/link2_6.obj" />
+        <mesh file="link2/link2_7.obj" />
+        <mesh file="link2/link2_8.obj" />
+        <mesh file="link2/link2_9.obj" />
+        <mesh file="link2/link2_10.obj" />
+        <mesh file="link2/link2_11.obj" />
+        <mesh file="link2/link2_12.obj" />
+        <mesh file="link2/link2_13.obj" />
+        <mesh file="link2/link2_14.obj" />
+        <mesh file="link2/link2_15.obj" />
+        <mesh file="link2/link2_16.obj" />
+        <mesh file="link2/link2_17.obj" />
+        <mesh file="link2/link2_18.obj" />
+        <mesh file="link2/link2_19.obj" />
+        <mesh file="link2/link2_20.obj" />
+
+        <material name="125,125,125.004" specular="1.0" shininess="0.2"
+            rgba="0.490196 0.490196 0.490196 1.000000" />
+        <material name="153,153,153.004" specular="1.0" shininess="0.2"
+            rgba="0.600000 0.600000 0.600000 1.000000" />
+        <material name="156,168,171_3.003" specular="1.0" shininess="0.2"
+            rgba="0.611765 0.658824 0.670588 1.000000" />
+        <material name="204,204,204.004" specular="1.0" shininess="0.2"
+            rgba="0.800000 0.800000 0.800000 1.000000" />
+        <material name="220,239,237.003" specular="1.0" shininess="0.2"
+            rgba="0.862745 0.937255 0.929412 1.000000" />
+        <material name="242,242,242.004" specular="1.0" shininess="0.2"
+            rgba="0.949020 0.949020 0.949020 1.000000" />
+        <material name="247,247,247.003" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_15.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_16.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_17.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_18.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_19.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_2.006" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_2.007" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_20.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_21.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_22.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_23.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="255,255,255_1.004" specular="1.0" shininess="0.2"
+            rgba="1.000000 1.000000 1.000000 1.000000" />
+        <material name="69,69,69.004" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="69,69,69_11.002" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="69,69,69_11.004" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="75,75,75_12.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_13.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_4.003" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="link3/link3_0.obj" />
+        <mesh file="link3/link3_1.obj" />
+        <mesh file="link3/link3_2.obj" />
+        <mesh file="link3/link3_3.obj" />
+        <mesh file="link3/link3_4.obj" />
+        <mesh file="link3/link3_5.obj" />
+        <mesh file="link3/link3_6.obj" />
+        <mesh file="link3/link3_7.obj" />
+        <mesh file="link3/link3_8.obj" />
+        <mesh file="link3/link3_9.obj" />
+        <mesh file="link3/link3_10.obj" />
+        <mesh file="link3/link3_11.obj" />
+        <mesh file="link3/link3_12.obj" />
+        <mesh file="link3/link3_13.obj" />
+        <mesh file="link3/link3_14.obj" />
+        <mesh file="link3/link3_15.obj" />
+        <mesh file="link3/link3_16.obj" />
+        <mesh file="link3/link3_17.obj" />
+        <mesh file="link3/link3_18.obj" />
+        <mesh file="link3/link3_19.obj" />
+        <mesh file="link3/link3_20.obj" />
+        <mesh file="link3/link3_21.obj" />
+        <mesh file="link3/link3_22.obj" />
+        <mesh file="link3/link3_23.obj" />
+        <mesh file="link3/link3_24.obj" />
+
+        <material name="75,75,75_14.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_6.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="link4/link4_0.obj" />
+        <mesh file="link4/link4_1.obj" />
+
+        <material name="125,125,125.003" specular="1.0" shininess="0.2"
+            rgba="0.490196 0.490196 0.490196 1.000000" />
+        <material name="153,153,153.003" specular="1.0" shininess="0.2"
+            rgba="0.600000 0.600000 0.600000 1.000000" />
+        <material name="204,204,204.003" specular="1.0" shininess="0.2"
+            rgba="0.800000 0.800000 0.800000 1.000000" />
+        <material name="242,242,242.003" specular="1.0" shininess="0.2"
+            rgba="0.949020 0.949020 0.949020 1.000000" />
+        <material name="254,254,255_7.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="255,255,255_1.003" specular="1.0" shininess="0.2"
+            rgba="1.000000 1.000000 1.000000 1.000000" />
+        <material name="39,39,39_5.002" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="39,39,39_5.003" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="69,69,69.003" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="69,69,69_2.001" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="75,75,75_15.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_16.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_17.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_18.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_8.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_9.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="link5/link5_0.obj" />
+        <mesh file="link5/link5_1.obj" />
+        <mesh file="link5/link5_2.obj" />
+        <mesh file="link5/link5_3.obj" />
+        <mesh file="link5/link5_4.obj" />
+        <mesh file="link5/link5_5.obj" />
+        <mesh file="link5/link5_6.obj" />
+        <mesh file="link5/link5_7.obj" />
+        <mesh file="link5/link5_8.obj" />
+        <mesh file="link5/link5_9.obj" />
+        <mesh file="link5/link5_10.obj" />
+        <mesh file="link5/link5_11.obj" />
+        <mesh file="link5/link5_12.obj" />
+        <mesh file="link5/link5_13.obj" />
+        <mesh file="link5/link5_14.obj" />
+        <mesh file="link5/link5_15.obj" />
+
+        <material name="203,203,203_46.001" specular="1.0" shininess="0.2"
+            rgba="0.796078 0.796078 0.796078 1.000000" />
+        <material name="246,246,243.001" specular="1.0" shininess="0.2"
+            rgba="0.964706 0.964706 0.952941 1.000000" />
+        <material name="247,247,247_36.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_37.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_38.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_39.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_40.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_41.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_59.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="254,254,255_22.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="254,254,255_23.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="254,254,255_24.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="254,254,255_25.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="254,254,255_27.002" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="254,254,255_30.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="32,32,32.001" specular="1.0" shininess="0.2"
+            rgba="0.125490 0.125490 0.125490 1.000000" />
+        <material name="64,64,64_7.001" specular="1.0" shininess="0.2"
+            rgba="0.250980 0.250980 0.250980 1.000000" />
+        <material name="75,75,75_25.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_26.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_27.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_28.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_29.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_30.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_31.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_32.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_33.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_34.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_35.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_36.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_37.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_38.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_39.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_40.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_41.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_42.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_43.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_44.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="link6/link6_0.obj" />
+        <mesh file="link6/link6_1.obj" />
+        <mesh file="link6/link6_2.obj" />
+        <mesh file="link6/link6_3.obj" />
+        <mesh file="link6/link6_4.obj" />
+        <mesh file="link6/link6_5.obj" />
+        <mesh file="link6/link6_6.obj" />
+        <mesh file="link6/link6_7.obj" />
+        <mesh file="link6/link6_8.obj" />
+        <mesh file="link6/link6_9.obj" />
+        <mesh file="link6/link6_10.obj" />
+        <mesh file="link6/link6_11.obj" />
+        <mesh file="link6/link6_12.obj" />
+        <mesh file="link6/link6_13.obj" />
+        <mesh file="link6/link6_14.obj" />
+        <mesh file="link6/link6_15.obj" />
+        <mesh file="link6/link6_16.obj" />
+        <mesh file="link6/link6_17.obj" />
+        <mesh file="link6/link6_18.obj" />
+        <mesh file="link6/link6_19.obj" />
+        <mesh file="link6/link6_20.obj" />
+        <mesh file="link6/link6_21.obj" />
+        <mesh file="link6/link6_22.obj" />
+        <mesh file="link6/link6_23.obj" />
+        <mesh file="link6/link6_24.obj" />
+        <mesh file="link6/link6_25.obj" />
+        <mesh file="link6/link6_26.obj" />
+        <mesh file="link6/link6_27.obj" />
+        <mesh file="link6/link6_28.obj" />
+        <mesh file="link6/link6_29.obj" />
+        <mesh file="link6/link6_30.obj" />
+        <mesh file="link6/link6_31.obj" />
+        <mesh file="link6/link6_32.obj" />
+        <mesh file="link6/link6_33.obj" />
+        <mesh file="link6/link6_34.obj" />
+        <mesh file="link6/link6_35.obj" />
+        <mesh file="link6/link6_36.obj" />
+
+        <material name="103,103,103_1.001" specular="1.0" shininess="0.2"
+            rgba="0.403922 0.403922 0.403922 1.000000" />
+        <material name="103,103,103_13.002" specular="1.0" shininess="0.2"
+            rgba="0.403922 0.403922 0.403922 1.000000" />
+        <material name="103,103,103_13.003" specular="1.0" shininess="0.2"
+            rgba="0.403922 0.403922 0.403922 1.000000" />
+        <material name="160,160,160.001" specular="1.0" shininess="0.2"
+            rgba="0.627451 0.627451 0.627451 1.000000" />
+        <material name="39,39,39_1.001" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_1.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_2.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="mobile_base/mobile_base_0.obj" />
+        <mesh file="mobile_base/mobile_base_1.obj" />
+        <mesh file="mobile_base/mobile_base_2.obj" />
+        <mesh file="mobile_base/mobile_base_3.obj" />
+        <mesh file="mobile_base/mobile_base_4.obj" />
+        <mesh file="mobile_base/mobile_base_5.obj" />
+        <mesh file="mobile_base/mobile_base_6.obj" />
+        <mesh file="mobile_base/mobile_base_7.obj" />
+
+        <material name="39,39,39_3.003" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="69,69,69_5.001" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="75,75,75_21.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_23.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_24.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_1/right_arm_1_0.obj" />
+        <mesh file="right_arm_1/right_arm_1_1.obj" />
+        <mesh file="right_arm_1/right_arm_1_2.obj" />
+        <mesh file="right_arm_1/right_arm_1_3.obj" />
+        <mesh file="right_arm_1/right_arm_1_4.obj" />
+
+        <material name="39,39,39_3.004" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="39,39,39_3.005" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_19.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_20.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_2/right_arm_2_0.obj" />
+        <mesh file="right_arm_2/right_arm_2_1.obj" />
+        <mesh file="right_arm_2/right_arm_2_2.obj" />
+        <mesh file="right_arm_2/right_arm_2_3.obj" />
+
+        <material name="247,247,247_24.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_25.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_26.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_32.002" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_32.003" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="254,254,255_48.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="69,69,69_6.001" specular="1.0" shininess="0.2"
+            rgba="0.270588 0.270588 0.270588 1.000000" />
+        <material name="75,75,75_45.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_46.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_47.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_3/right_arm_3_0.obj" />
+        <mesh file="right_arm_3/right_arm_3_1.obj" />
+        <mesh file="right_arm_3/right_arm_3_2.obj" />
+        <mesh file="right_arm_3/right_arm_3_3.obj" />
+        <mesh file="right_arm_3/right_arm_3_4.obj" />
+        <mesh file="right_arm_3/right_arm_3_5.obj" />
+        <mesh file="right_arm_3/right_arm_3_6.obj" />
+        <mesh file="right_arm_3/right_arm_3_7.obj" />
+        <mesh file="right_arm_3/right_arm_3_8.obj" />
+        <mesh file="right_arm_3/right_arm_3_9.obj" />
+
+        <material name="247,247,247_27.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_28.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_33.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="39,39,39_4.004" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="39,39,39_4.005" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_22.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_4/right_arm_4_0.obj" />
+        <mesh file="right_arm_4/right_arm_4_1.obj" />
+        <mesh file="right_arm_4/right_arm_4_2.obj" />
+        <mesh file="right_arm_4/right_arm_4_3.obj" />
+        <mesh file="right_arm_4/right_arm_4_4.obj" />
+        <mesh file="right_arm_4/right_arm_4_5.obj" />
+
+        <material name="247,247,247_30.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_31.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_34.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_35.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_42.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="247,247,247_43.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <mesh file="right_arm_5/right_arm_5_0.obj" />
+        <mesh file="right_arm_5/right_arm_5_1.obj" />
+        <mesh file="right_arm_5/right_arm_5_2.obj" />
+        <mesh file="right_arm_5/right_arm_5_3.obj" />
+        <mesh file="right_arm_5/right_arm_5_4.obj" />
+        <mesh file="right_arm_5/right_arm_5_5.obj" />
+
+        <material name="152,170,175_8.001" specular="1.0" shininess="0.2"
+            rgba="0.596078 0.666667 0.686275 1.000000" />
+        <material name="247,247,247_29.001" specular="1.0" shininess="0.2"
+            rgba="0.968627 0.968627 0.968627 1.000000" />
+        <material name="254,254,255_49.001" specular="1.0" shininess="0.2"
+            rgba="0.996078 0.996078 1.000000 1.000000" />
+        <material name="39,39,39_4.009" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_48.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_49.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_50.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_52.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_53.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <material name="75,75,75_54.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_6/right_arm_6_0.obj" />
+        <mesh file="right_arm_6/right_arm_6_1.obj" />
+        <mesh file="right_arm_6/right_arm_6_2.obj" />
+        <mesh file="right_arm_6/right_arm_6_3.obj" />
+        <mesh file="right_arm_6/right_arm_6_4.obj" />
+        <mesh file="right_arm_6/right_arm_6_5.obj" />
+        <mesh file="right_arm_6/right_arm_6_6.obj" />
+        <mesh file="right_arm_6/right_arm_6_7.obj" />
+        <mesh file="right_arm_6/right_arm_6_8.obj" />
+        <mesh file="right_arm_6/right_arm_6_9.obj" />
+
+        <material name="39,39,39_4.008" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="70,70,70_1.001" specular="1.0" shininess="0.2"
+            rgba="0.274510 0.274510 0.274510 1.000000" />
+        <material name="75,75,75_77.001" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_7/right_arm_7_0.obj" />
+        <mesh file="right_arm_7/right_arm_7_1.obj" />
+        <mesh file="right_arm_7/right_arm_7_2.obj" />
+
+        <material name="70,70,70.001" specular="1.0" shininess="0.2"
+            rgba="0.274510 0.274510 0.274510 1.000000" />
+        <material name="75,75,75.002" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_f1/right_arm_f1_0.obj" />
+        <mesh file="right_arm_f1/right_arm_f1_1.obj" />
+
+        <material name="70,70,70.002" specular="1.0" shininess="0.2"
+            rgba="0.274510 0.274510 0.274510 1.000000" />
+        <material name="75,75,75.003" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_arm_f2/right_arm_f2_0.obj" />
+        <mesh file="right_arm_f2/right_arm_f2_1.obj" />
+
+        <material name="160,160,160.003" specular="1.0" shininess="0.2"
+            rgba="0.627451 0.627451 0.627451 1.000000" />
+        <material name="39,39,39.002" specular="1.0" shininess="0.2"
+            rgba="0.152941 0.152941 0.152941 1.000000" />
+        <material name="75,75,75_2.003" specular="1.0" shininess="0.2"
+            rgba="0.294118 0.294118 0.294118 1.000000" />
+        <mesh file="right_wheel/right_wheel_0.obj" />
+        <mesh file="right_wheel/right_wheel_1.obj" />
+    </asset>
+
+    <worldbody>
+        <!-- <geom name="floor" pos="0 0 0" size="0 0 .25" type="plane" material="plane" condim="1"
+            solimp="0.95 0.99 0.001 0.5 2" />
+        <light directional="true" diffuse=".8 .8 .8" specular="0 0 0" pos="0 0 5" dir="0 0 -1"
+            castshadow="false" /> -->
+
+        <body name="mobile_base" pos="0 0 0.288">
+            <geom mesh="mobile_base_0" material="39,39,39_1.001" class="visual" />
+            <geom mesh="mobile_base_1" material="75,75,75_1.001" class="visual" />
+            <geom mesh="mobile_base_2" material="75,75,75.001" class="visual" />
+            <geom mesh="mobile_base_3" material="103,103,103_13.003" class="visual" />
+            <geom mesh="mobile_base_4" material="103,103,103_13.002" class="visual" />
+            <geom mesh="mobile_base_5" material="103,103,103_1.001" class="visual" />
+            <geom mesh="mobile_base_6" material="160,160,160.001" class="visual" />
+            <geom mesh="mobile_base_7" material="75,75,75_2.001" class="visual" />
+            <geom mesh="mobile_base_0" class="collision" condim="1" />
+            <!-- <geom mesh="mobile_base_1" class="collision"/> -->
+            <!-- <geom mesh="mobile_base_2" class="collision"/> -->
+            <!-- <geom mesh="mobile_base_3" class="collision"/> -->
+            <!-- <geom mesh="mobile_base_4" class="collision"/> -->
+            <!-- <geom mesh="mobile_base_5" class="collision"/> -->
+            <!-- <geom mesh="mobile_base_6" class="collision"/> -->
+            <!-- <geom mesh="mobile_base_7" class="collision"/> -->
+
+            <inertial pos="0 -0.2 -0.13234" mass="130.0" diaginertia="130 130 130" />
+            <joint name="base" type="free" />
+
+            <body name="link1">
+                <geom mesh="link1_0" material="75,75,75_76.004" class="visual" />
+                <geom mesh="link1_1" material="75,75,75_76.005" class="visual" />
+                <geom mesh="link1_2" material="64,64,64_3.002" class="visual" />
+                <geom mesh="link1_3" material="75,75,75_3.002" class="visual" />
+                <geom mesh="link1_4" material="203,203,203_3.002" class="visual" />
+                <geom mesh="link1_5" material="156,168,171_2.002" class="visual" />
+                <geom mesh="link1_6" material="254,254,255_6.001" class="visual" />
+                <geom mesh="link1_7" material="254,254,255_4.002" class="visual" />
+                <geom mesh="link1_8" material="247,247,247_6.002" class="visual" />
+                <geom mesh="link1_9" material="247,247,247_6.003" class="visual" />
+                <geom mesh="link1_10" material="247,247,247_5.001" class="visual" />
+                <geom mesh="link1_11" material="247,247,247_4.001" class="visual" />
+                <geom mesh="link1_12" material="247,247,247_3.001" class="visual" />
+                <geom mesh="link1_13" material="75,75,75_5.001" class="visual" />
+                <geom mesh="link1_14" material="203,203,203.001" class="visual" />
+                <geom mesh="link1_15" material="156,168,171.001" class="visual" />
+                <!-- <geom mesh="link1_0" class="collision"/>
+        <geom mesh="link1_1" class="collision"/>
+        <geom mesh="link1_2" class="collision"/>
+        <geom mesh="link1_3" class="collision"/>
+        <geom mesh="link1_4" class="collision"/>
+        <geom mesh="link1_5" class="collision"/>
+        <geom mesh="link1_6" class="collision"/>
+        <geom mesh="link1_7" class="collision"/>
+        <geom mesh="link1_8" class="collision"/>
+        <geom mesh="link1_9" class="collision"/>
+        <geom mesh="link1_10" class="collision"/>
+        <geom mesh="link1_11" class="collision"/>
+        <geom mesh="link1_12" class="collision"/>
+        <geom mesh="link1_13" class="collision"/>
+        <geom mesh="link1_14" class="collision"/>
+        <geom mesh="link1_15" class="collision"/> -->
+
+                <inertial pos="-0.01792 -0.068203 0" mass="30.0" diaginertia="20 20 20" />
+                <joint name="link1_joint" pos="0 0 0" axis="0 1 0" />
+
+                <body name="link2">
+                    <geom mesh="link2_0" material="75,75,75_76.006" class="visual" />
+                    <geom mesh="link2_1" material="75,75,75_76.007" class="visual" />
+                    <geom mesh="link2_2" material="247,247,247_7.001" class="visual" />
+                    <geom mesh="link2_3" material="247,247,247_2.005" class="visual" />
+                    <geom mesh="link2_4" material="64,64,64_3.003" class="visual" />
+                    <geom mesh="link2_5" material="75,75,75_3.003" class="visual" />
+                    <!-- <geom mesh="link2_6" material="203,203,203_3.003" class="visual"/> -->
+                    <geom mesh="link2_7" material="156,168,171_2.003" class="visual" />
+                    <geom mesh="link2_8" material="75,75,75_4.002" class="visual" />
+                    <geom mesh="link2_9" material="247,247,247_13.001" class="visual" />
+                    <geom mesh="link2_10" material="75,75,75_10.001" class="visual" />
+                    <geom mesh="link2_11" material="247,247,247_11.001" class="visual" />
+                    <geom mesh="link2_12" material="247,247,247_12.001" class="visual" />
+                    <geom mesh="link2_13" material="247,247,247_10.001" class="visual" />
+                    <geom mesh="link2_14" material="247,247,247_9.001" class="visual" />
+                    <geom mesh="link2_15" material="247,247,247_8.001" class="visual" />
+                    <geom mesh="link2_16" material="247,247,247_1.001" class="visual" />
+                    <geom mesh="link2_17" material="75,75,75_11.001" class="visual" />
+                    <geom mesh="link2_18" material="247,247,247_2.004" class="visual" />
+                    <geom mesh="link2_19" material="247,247,247_14.001" class="visual" />
+                    <geom mesh="link2_20" material="247,247,247.002" class="visual" />
+                    <!-- <geom mesh="link2_0" class="collision"/> -->
+                    <!-- <geom mesh="link2_1" class="collision"/> -->
+                    <!-- <geom mesh="link2_2" class="collision"/> -->
+                    <geom mesh="link2_3" class="collision" />
+                    <!-- <geom mesh="link2_4" class="collision"/> -->
+                    <!-- <geom mesh="link2_5" class="collision"/> -->
+                    <!-- <geom mesh="link2_6" class="collision"/> -->
+                    <!-- <geom mesh="link2_7" class="collision"/> -->
+                    <!-- <geom mesh="link2_8" class="collision"/> -->
+                    <!-- <geom mesh="link2_9" class="collision"/> -->
+                    <!-- <geom mesh="link2_10" class="collision"/> -->
+                    <!-- <geom mesh="link2_11" class="collision"/> -->
+                    <!-- <geom mesh="link2_12" class="collision"/> -->
+                    <!-- <geom mesh="link2_13" class="collision"/> -->
+                    <!-- <geom mesh="link2_14" class="collision"/> -->
+                    <geom mesh="link2_15" class="collision" />
+                    <geom mesh="link2_16" class="collision" />
+                    <!-- <geom mesh="link2_17" class="collision"/> -->
+                    <geom mesh="link2_18" class="collision" />
+                    <!-- <geom mesh="link2_19" class="collision"/> -->
+                    <geom mesh="link2_20" class="collision" />
+
+                    <inertial pos="-0.012103 -0.16369 0.20063" mass="20.0" diaginertia="20 20 20" />
+                    <joint name="link2_joint" pos="0 -0.150 0" axis="1 0 0" />
+
+                    <body name="link3">
+                        <geom mesh="link3_0" material="247,247,247_20.001" class="visual" />
+                        <geom mesh="link3_1" material="69,69,69_11.002" class="visual" />
+                        <geom mesh="link3_2" material="247,247,247_15.001" class="visual" />
+                        <geom mesh="link3_3" material="75,75,75_12.001" class="visual" />
+                        <geom mesh="link3_4" material="75,75,75_13.001" class="visual" />
+                        <geom mesh="link3_5" material="247,247,247_16.001" class="visual" />
+                        <geom mesh="link3_6" material="247,247,247_17.001" class="visual" />
+                        <geom mesh="link3_7" material="247,247,247_18.001" class="visual" />
+                        <geom mesh="link3_8" material="247,247,247_19.001" class="visual" />
+                        <geom mesh="link3_9" material="247,247,247_21.001" class="visual" />
+                        <geom mesh="link3_10" material="247,247,247_22.001" class="visual" />
+                        <geom mesh="link3_11" material="247,247,247_23.001" class="visual" />
+                        <geom mesh="link3_12" material="247,247,247_2.006" class="visual" />
+                        <geom mesh="link3_13" material="247,247,247_2.007" class="visual" />
+                        <geom mesh="link3_14" material="69,69,69_11.004" class="visual" />
+                        <geom mesh="link3_15" material="156,168,171_3.003" class="visual" />
+                        <geom mesh="link3_16" material="220,239,237.003" class="visual" />
+                        <geom mesh="link3_17" material="69,69,69.004" class="visual" />
+                        <geom mesh="link3_18" material="255,255,255_1.004" class="visual" />
+                        <geom mesh="link3_19" material="242,242,242.004" class="visual" />
+                        <geom mesh="link3_20" material="125,125,125.004" class="visual" />
+                        <geom mesh="link3_21" material="153,153,153.004" class="visual" />
+                        <!-- <geom mesh="link3_22" material="204,204,204.004" class="visual"/> -->
+                        <geom mesh="link3_23" material="75,75,75_4.003" class="visual" />
+                        <geom mesh="link3_24" material="247,247,247.003" class="visual" />
+                        <geom mesh="link3_0" class="collision" />
+                        <!-- <geom mesh="link3_1" class="collision"/> -->
+                        <!-- <geom mesh="link3_2" class="collision"/> -->
+                        <!-- <geom mesh="link3_3" class="collision"/> -->
+                        <!-- <geom mesh="link3_4" class="collision"/> -->
+                        <geom mesh="link3_5" class="collision" />
+                        <geom mesh="link3_6" class="collision" />
+                        <!-- <geom mesh="link3_7" class="collision"/> -->
+                        <geom mesh="link3_8" class="collision" />
+                        <!-- <geom mesh="link3_9" class="collision"/> -->
+                        <geom mesh="link3_10" class="collision" />
+                        <geom mesh="link3_11" class="collision" />
+                        <geom mesh="link3_12" class="collision" />
+                        <geom mesh="link3_13" class="collision" />
+                        <!-- <geom mesh="link3_14" class="collision"/> -->
+                        <!-- <geom mesh="link3_15" class="collision"/> -->
+                        <!-- <geom mesh="link3_16" class="collision"/> -->
+                        <!-- <geom mesh="link3_17" class="collision"/> -->
+                        <!-- <geom mesh="link3_18" class="collision"/> -->
+                        <!-- <geom mesh="link3_19" class="collision"/> -->
+                        <!-- <geom mesh="link3_20" class="collision"/> -->
+                        <!-- <geom mesh="link3_21" class="collision"/> -->
+                        <!-- <geom mesh="link3_22" class="collision"/> -->
+                        <!-- <geom mesh="link3_23" class="collision"/> -->
+                        <!-- <geom mesh="link3_24" class="collision"/> -->
+
+                        <inertial pos="-0.00708 -0.16402 0.52841" mass="3.0" diaginertia="1 1 1" />
+                        <joint name="link3_joint" pos="0 -0.150 0.350" axis="1 0 0" />
+
+                        <body name="link4">
+                            <geom mesh="link4_0" material="75,75,75_6.001" class="visual" />
+                            <geom mesh="link4_1" material="75,75,75_14.001" class="visual" />
+                            <geom mesh="link4_0" class="collision" />
+                            <geom mesh="link4_1" class="collision" />
+
+                            <inertial pos="0.004122 -0.14245 0.7" mass="1.0" diaginertia="1 1 1" />
+                            <joint name="link4_joint" pos="0 -0.150 0.700" axis="1 0 0" />
+
+                            <body name="link5">
+                                <geom mesh="link5_0" material="39,39,39_5.003" class="visual" />
+                                <geom mesh="link5_1" material="69,69,69_2.001" class="visual" />
+                                <geom mesh="link5_2" material="254,254,255_7.001" class="visual" />
+                                <geom mesh="link5_3" material="75,75,75_9.001" class="visual" />
+                                <geom mesh="link5_4" material="75,75,75_17.001" class="visual" />
+                                <geom mesh="link5_5" material="75,75,75_18.001" class="visual" />
+                                <geom mesh="link5_6" material="75,75,75_16.001" class="visual" />
+                                <geom mesh="link5_7" material="75,75,75_15.001" class="visual" />
+                                <geom mesh="link5_8" material="75,75,75_8.001" class="visual" />
+                                <geom mesh="link5_9" material="39,39,39_5.002" class="visual" />
+                                <geom mesh="link5_10" material="69,69,69.003" class="visual" />
+                                <geom mesh="link5_11" material="255,255,255_1.003" class="visual" />
+                                <geom mesh="link5_12" material="242,242,242.003" class="visual" />
+                                <geom mesh="link5_13" material="125,125,125.003" class="visual" />
+                                <geom mesh="link5_14" material="153,153,153.003" class="visual" />
+                                <geom mesh="link5_15" material="204,204,204.003" class="visual" />
+                                <!-- <geom mesh="link5_0" class="collision"/> -->
+                                <geom mesh="link5_1" class="collision" />
+                                <!-- <geom mesh="link5_2" class="collision"/> -->
+                                <!-- <geom mesh="link5_3" class="collision"/> -->
+                                <geom mesh="link5_4" class="collision" />
+                                <geom mesh="link5_5" class="collision" />
+                                <geom mesh="link5_6" class="collision" />
+                                <geom mesh="link5_7" class="collision" />
+                                <geom mesh="link5_8" class="collision" />
+                                <!-- <geom mesh="link5_9" class="collision"/> -->
+                                <!-- <geom mesh="link5_10" class="collision"/> -->
+                                <!-- <geom mesh="link5_11" class="collision"/> -->
+                                <!-- <geom mesh="link5_12" class="collision"/> -->
+                                <!-- <geom mesh="link5_13" class="collision"/> -->
+                                <!-- <geom mesh="link5_14" class="collision"/> -->
+                                <!-- <geom mesh="link5_15" class="collision"/> -->
+
+                                <inertial pos="0 -0.077467 0.74119" mass="3.0" diaginertia="1 1 1" />
+                                <joint name="link5_joint" pos="0 0 0.700" axis="0 1 0" />
+
+                                <body name="link6">
+                                    <geom mesh="link6_0" material="75,75,75_26.001" class="visual" />
+                                    <geom mesh="link6_1" material="75,75,75_36.001" class="visual" />
+                                    <geom mesh="link6_2" material="247,247,247_39.001"
+                                        class="visual" />
+                                    <geom mesh="link6_3" material="247,247,247_38.001"
+                                        class="visual" />
+                                    <geom mesh="link6_4" material="75,75,75_41.001" class="visual" />
+                                    <geom mesh="link6_5" material="75,75,75_39.001" class="visual" />
+                                    <geom mesh="link6_6" material="254,254,255_25.001"
+                                        class="visual" />
+                                    <geom mesh="link6_7" material="254,254,255_24.001"
+                                        class="visual" />
+                                    <geom mesh="link6_8" material="75,75,75_33.001" class="visual" />
+                                    <geom mesh="link6_9" material="75,75,75_30.001" class="visual" />
+                                    <geom mesh="link6_10" material="75,75,75_28.001" class="visual" />
+                                    <geom mesh="link6_11" material="247,247,247_36.001"
+                                        class="visual" />
+                                    <geom mesh="link6_12" material="75,75,75_25.001" class="visual" />
+                                    <geom mesh="link6_13" material="246,246,243.001" class="visual" />
+                                    <geom mesh="link6_14" material="247,247,247_59.001"
+                                        class="visual" />
+                                    <geom mesh="link6_15" material="75,75,75_27.001" class="visual" />
+                                    <geom mesh="link6_16" material="75,75,75_44.001" class="visual" />
+                                    <geom mesh="link6_17" material="247,247,247_41.001"
+                                        class="visual" />
+                                    <geom mesh="link6_18" material="75,75,75_43.001" class="visual" />
+                                    <geom mesh="link6_19" material="247,247,247_40.001"
+                                        class="visual" />
+                                    <geom mesh="link6_20" material="75,75,75_42.001" class="visual" />
+                                    <geom mesh="link6_21" material="254,254,255_30.001"
+                                        class="visual" />
+                                    <geom mesh="link6_22" material="32,32,32.001" class="visual" />
+                                    <geom mesh="link6_23" material="203,203,203_46.001"
+                                        class="visual" />
+                                    <geom mesh="link6_24" material="64,64,64_7.001" class="visual" />
+                                    <geom mesh="link6_25" material="254,254,255_27.002"
+                                        class="visual" />
+                                    <geom mesh="link6_26" material="75,75,75_40.001" class="visual" />
+                                    <geom mesh="link6_27" material="75,75,75_38.001" class="visual" />
+                                    <geom mesh="link6_28" material="254,254,255_23.001"
+                                        class="visual" />
+                                    <geom mesh="link6_29" material="75,75,75_37.001" class="visual" />
+                                    <geom mesh="link6_30" material="254,254,255_22.001"
+                                        class="visual" />
+                                    <geom mesh="link6_31" material="247,247,247_37.001"
+                                        class="visual" />
+                                    <geom mesh="link6_32" material="75,75,75_35.001" class="visual" />
+                                    <geom mesh="link6_33" material="75,75,75_34.001" class="visual" />
+                                    <geom mesh="link6_34" material="75,75,75_32.001" class="visual" />
+                                    <geom mesh="link6_35" material="75,75,75_31.001" class="visual" />
+                                    <geom mesh="link6_36" material="75,75,75_29.001" class="visual" />
+                                    <!-- <geom mesh="link6_0" class="collision"/> -->
+                                    <!-- <geom mesh="link6_1" class="collision"/> -->
+                                    <geom mesh="link6_2" class="collision" />
+                                    <geom mesh="link6_3" class="collision" />
+                                    <geom mesh="link6_4" class="collision" />
+                                    <geom mesh="link6_5" class="collision" />
+                                    <geom mesh="link6_6" class="collision" />
+                                    <geom mesh="link6_7" class="collision" />
+                                    <geom mesh="link6_8" class="collision" />
+                                    <geom mesh="link6_9" class="collision" />
+                                    <geom mesh="link6_10" class="collision" />
+                                    <geom mesh="link6_11" class="collision" />
+                                    <geom mesh="link6_12" class="collision" />
+                                    <geom mesh="link6_13" class="collision" />
+                                    <geom mesh="link6_14" class="collision" />
+                                    <geom mesh="link6_15" class="collision" />
+                                    <!-- <geom mesh="link6_16" class="collision"/> -->
+                                    <geom mesh="link6_17" class="collision" />
+                                    <geom mesh="link6_18" class="collision" />
+                                    <geom mesh="link6_19" class="collision" />
+                                    <geom mesh="link6_20" class="collision" />
+                                    <!-- <geom mesh="link6_21" class="collision"/> -->
+                                    <geom mesh="link6_22" class="collision" />
+                                    <!-- <geom mesh="link6_23" class="collision"/> -->
+                                    <geom mesh="link6_24" class="collision" />
+                                    <!-- <geom mesh="link6_25" class="collision"/> -->
+                                    <geom mesh="link6_26" class="collision" />
+                                    <geom mesh="link6_27" class="collision" />
+                                    <geom mesh="link6_28" class="collision" />
+                                    <geom mesh="link6_29" class="collision" />
+                                    <geom mesh="link6_30" class="collision" />
+                                    <geom mesh="link6_31" class="collision" />
+                                    <geom mesh="link6_32" class="collision" />
+                                    <geom mesh="link6_33" class="collision" />
+                                    <geom mesh="link6_34" class="collision" />
+                                    <geom mesh="link6_35" class="collision" />
+                                    <geom mesh="link6_36" class="collision" />
+
+                                    <inertial pos="0.00 -0.15134 1.0626" mass="5.0"
+                                        diaginertia="2 2 2" />
+                                    <joint name="link6_joint" pos="0 -0.154 0" axis="0 0 1" />
+
+                                    <body name="left_arm_1">
+                                        <geom mesh="left_arm_1_0" material="69,69,69_8.001"
+                                            class="visual" />
+                                        <geom mesh="left_arm_1_1" material="75,75,75_70.001"
+                                            class="visual" />
+                                        <geom mesh="left_arm_1_2" material="75,75,75_69.001"
+                                            class="visual" />
+                                        <geom mesh="left_arm_1_3" material="75,75,75_68.001"
+                                            class="visual" />
+                                        <geom mesh="left_arm_1_4" material="39,39,39_11.001"
+                                            class="visual" />
+                                        <geom mesh="left_arm_1_0" class="collision" />
+                                        <geom mesh="left_arm_1_1" class="collision" />
+                                        <geom mesh="left_arm_1_2" class="collision" />
+                                        <geom mesh="left_arm_1_3" class="collision" />
+                                        <geom mesh="left_arm_1_4" class="collision" />
+
+                                        <inertial pos="0.18478 -0.15233 1.0767" mass="1.0"
+                                            diaginertia="0.5 0.5 0.5" />
+                                        <joint name="left_arm_1_joint" pos="0.083 -0.154 1.04"
+                                            axis="0.944200181445777 0 0.329372156318292"
+                                            range="-3.14 3.14" />
+
+                                        <body name="left_arm_2">
+                                            <geom mesh="left_arm_2_0" material="75,75,75_67.001"
+                                                class="visual" />
+                                            <geom mesh="left_arm_2_1" material="39,39,39_10.001"
+                                                class="visual" />
+                                            <geom mesh="left_arm_2_2" material="39,39,39_12.001"
+                                                class="visual" />
+                                            <geom mesh="left_arm_2_3" material="75,75,75_71.001"
+                                                class="visual" />
+                                            <geom mesh="left_arm_2_0" class="collision" />
+                                            <geom mesh="left_arm_2_1" class="collision" />
+                                            <geom mesh="left_arm_2_2" class="collision" />
+                                            <geom mesh="left_arm_2_3" class="collision" />
+
+                                            <inertial pos="0.22495 -0.1403 1.0664" mass="1.0"
+                                                diaginertia="0.5 0.5 0.5" />
+                                            <joint name="left_arm_2_joint" pos="0.22 -0.22 1.09"
+                                                axis="0 -1 0" range="-3.14 3.14" />
+
+                                            <body name="left_arm_3">
+                                                <geom mesh="left_arm_3_0" material="69,69,69_9.001"
+                                                    class="visual" />
+                                                <geom mesh="left_arm_3_1"
+                                                    material="254,254,255_55.001" class="visual" />
+                                                <geom mesh="left_arm_3_2" material="75,75,75_65.001"
+                                                    class="visual" />
+                                                <geom mesh="left_arm_3_3" material="75,75,75_66.001"
+                                                    class="visual" />
+                                                <geom mesh="left_arm_3_4"
+                                                    material="247,247,247_54.001" class="visual" />
+                                                <geom mesh="left_arm_3_5"
+                                                    material="247,247,247_55.001" class="visual" />
+                                                <geom mesh="left_arm_3_6" material="75,75,75_64.001"
+                                                    class="visual" />
+                                                <geom mesh="left_arm_3_7"
+                                                    material="247,247,247_56.001" class="visual" />
+                                                <geom mesh="left_arm_3_8"
+                                                    material="247,247,247_58.001" class="visual" />
+                                                <geom mesh="left_arm_3_9"
+                                                    material="247,247,247_57.001" class="visual" />
+                                                <geom mesh="left_arm_3_0" class="collision" />
+                                                <geom mesh="left_arm_3_1" class="collision" />
+                                                <geom mesh="left_arm_3_2" class="collision" />
+                                                <geom mesh="left_arm_3_3" class="collision" />
+                                                <geom mesh="left_arm_3_4" class="collision" />
+                                                <geom mesh="left_arm_3_5" class="collision" />
+                                                <geom mesh="left_arm_3_6" class="collision" />
+                                                <geom mesh="left_arm_3_7" class="collision" />
+                                                <geom mesh="left_arm_3_8" class="collision" />
+                                                <geom mesh="left_arm_3_9" class="collision" />
+
+                                                <inertial pos="0.2221 -0.15571 0.88123" mass="1.0"
+                                                    diaginertia="0.5 0.5 0.5" />
+                                                <joint name="left_arm_3_joint"
+                                                    pos="0.22 -0.154 0.99" axis="0 0 1"
+                                                    range="-3.14 3.14" />
+
+                                                <body name="left_arm_4">
+                                                    <geom mesh="left_arm_4_0"
+                                                        material="39,39,39_8.001" class="visual" />
+                                                    <geom mesh="left_arm_4_1"
+                                                        material="247,247,247_52.001" class="visual" />
+                                                    <geom mesh="left_arm_4_2"
+                                                        material="247,247,247_51.001" class="visual" />
+                                                    <geom mesh="left_arm_4_3"
+                                                        material="75,75,75_63.001" class="visual" />
+                                                    <geom mesh="left_arm_4_4"
+                                                        material="247,247,247_53.001" class="visual" />
+                                                    <geom mesh="left_arm_4_5"
+                                                        material="39,39,39_9.001" class="visual" />
+                                                    <geom mesh="left_arm_4_0" class="collision" />
+                                                    <geom mesh="left_arm_4_1" class="collision" />
+                                                    <geom mesh="left_arm_4_2" class="collision" />
+                                                    <geom mesh="left_arm_4_3" class="collision" />
+                                                    <geom mesh="left_arm_4_4" class="collision" />
+                                                    <geom mesh="left_arm_4_5" class="collision" />
+
+                                                    <inertial pos="0.21944 -0.22938 0.80409"
+                                                        mass="1.0" diaginertia="0.5 0.5 0.5" />
+                                                    <joint name="left_arm_4_joint"
+                                                        pos="0.282 -0.185 0.814" axis="1 0 0"
+                                                        ref="-1.90949408420305" />
+
+                                                    <body name="left_arm_5">
+                                                        <geom mesh="left_arm_5_0"
+                                                            material="247,247,247_50.001"
+                                                            class="visual" />
+                                                        <geom mesh="left_arm_5_1"
+                                                            material="247,247,247_45.001"
+                                                            class="visual" />
+                                                        <geom mesh="left_arm_5_2"
+                                                            material="247,247,247_46.001"
+                                                            class="visual" />
+                                                        <geom mesh="left_arm_5_3"
+                                                            material="247,247,247_48.001"
+                                                            class="visual" />
+                                                        <geom mesh="left_arm_5_4"
+                                                            material="247,247,247_47.001"
+                                                            class="visual" />
+                                                        <geom mesh="left_arm_5_5"
+                                                            material="247,247,247_49.001"
+                                                            class="visual" />
+                                                        <geom mesh="left_arm_5_0" class="collision" />
+                                                        <geom mesh="left_arm_5_1" class="collision" />
+                                                        <geom mesh="left_arm_5_2" class="collision" />
+                                                        <geom mesh="left_arm_5_3" class="collision" />
+                                                        <geom mesh="left_arm_5_4" class="collision" />
+                                                        <geom mesh="left_arm_5_5" class="collision" />
+
+                                                        <inertial pos="0.24074 -0.39082 0.85342"
+                                                            mass="0.5" diaginertia="0.1 0.1 0.1" />
+                                                        <joint name="left_arm_5_joint"
+                                                            pos="0.22 -0.243 0.801"
+                                                            axis="0 0.943188038541758 -0.332259422668118"
+                                                            range="-3.14 3.14" />
+
+                                                        <body name="left_arm_6">
+                                                            <geom mesh="left_arm_6_0"
+                                                                material="75,75,75_56.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_1"
+                                                                material="75,75,75_61.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_2"
+                                                                material="75,75,75_58.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_3"
+                                                                material="75,75,75_57.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_4"
+                                                                material="39,39,39_7.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_5"
+                                                                material="254,254,255_50.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_6"
+                                                                material="75,75,75_62.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_7"
+                                                                material="247,247,247_44.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_8"
+                                                                material="152,170,175_10.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_9"
+                                                                material="75,75,75_60.001"
+                                                                class="visual" />
+                                                            <geom mesh="left_arm_6_0"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_1"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_2"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_3"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_4"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_5"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_6"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_7"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_8"
+                                                                class="collision" />
+                                                            <geom mesh="left_arm_6_9"
+                                                                class="collision" />
+
+                                                            <inertial pos="0.2203 -0.45656 0.83282"
+                                                                mass="0.5" diaginertia="0.1 0.1 0.1" />
+                                                            <joint name="left_arm_6_joint"
+                                                                pos="0.254 -0.436 0.869"
+                                                                axis="1 0 0" ref="1.206239456233958"
+                                                                range="-3.14 3.14" />
+
+                                                            <body name="left_arm_7">
+                                                                <geom mesh="left_arm_7_0"
+                                                                    material="70,70,70_2.001"
+                                                                    class="visual" />
+                                                                <geom mesh="left_arm_7_1"
+                                                                    material="75,75,75_78.001"
+                                                                    class="visual" />
+                                                                <geom mesh="left_arm_7_2"
+                                                                    material="39,39,39_6.001"
+                                                                    class="visual" />
+                                                                <geom mesh="left_arm_7_0"
+                                                                    class="collision" />
+                                                                <geom mesh="left_arm_7_1"
+                                                                    class="collision" />
+                                                                <geom mesh="left_arm_7_2"
+                                                                    class="collision" />
+
+                                                                <inertial
+                                                                    pos="0.22244 -0.51964 0.77099"
+                                                                    mass="0.1"
+                                                                    diaginertia="0.1 0.1 0.1" />
+                                                                <joint name="left_arm_7_joint"
+                                                                    pos="0.22 -0.489265 0.807236"
+                                                                    axis="0 0.648977564336161 0.760807545301901"
+                                                                    ref="1.570796327"
+                                                                    range="-3.14 3.14" />
+
+                                                                <site name="left_tcp"
+                                                                    pos="0.22 -0.578 0.709"
+                                                                    euler="-0.706239456233958 0 -1.570796327" />
+
+                                                                <body name="left_arm_f1">
+                                                                    <geom mesh="left_arm_f1_0"
+                                                                        material="70,70,70_1.003"
+                                                                        class="visual" />
+                                                                    <geom mesh="left_arm_f1_1"
+                                                                        material="75,75,75_1.003"
+                                                                        class="visual" />
+                                                                    <geom mesh="left_arm_f1_0"
+                                                                        class="collision" />
+                                                                    <geom mesh="left_arm_f1_1"
+                                                                        class="collision" />
+
+                                                                    <inertial
+                                                                        pos="0.16471 -0.5604 0.72393"
+                                                                        mass="0.01"
+                                                                        diaginertia="0.01 0.01 0.01" />
+                                                                    <joint name="left_arm_f1_joint"
+                                                                        type="slide"
+                                                                        pos="0.282 -0.572 0.704"
+                                                                        axis="1 0 0" range="0 0.05" />
+                                                                </body>
+
+                                                                <body name="left_arm_f2">
+                                                                    <geom mesh="left_arm_f2_0"
+                                                                        material="70,70,70_1.002"
+                                                                        class="visual" />
+                                                                    <geom mesh="left_arm_f2_1"
+                                                                        material="75,75,75_1.002"
+                                                                        class="visual" />
+                                                                    <geom mesh="left_arm_f2_0"
+                                                                        class="collision" />
+                                                                    <geom mesh="left_arm_f2_1"
+                                                                        class="collision" />
+
+                                                                    <inertial
+                                                                        pos="0.27529 -0.5604 0.72393"
+                                                                        mass="0.01"
+                                                                        diaginertia="0.01 0.01 0.01" />
+                                                                    <joint name="left_arm_f2_joint"
+                                                                        type="slide"
+                                                                        pos="0.282 -0.572 0.704"
+                                                                        axis="1 0 0" range="-0.05 0" />
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+
+                                    <body name="right_arm_1">
+                                        <geom mesh="right_arm_1_0" material="75,75,75_24.001"
+                                            class="visual" />
+                                        <geom mesh="right_arm_1_1" material="75,75,75_23.001"
+                                            class="visual" />
+                                        <geom mesh="right_arm_1_2" material="75,75,75_21.001"
+                                            class="visual" />
+                                        <geom mesh="right_arm_1_3" material="69,69,69_5.001"
+                                            class="visual" />
+                                        <geom mesh="right_arm_1_4" material="39,39,39_3.003"
+                                            class="visual" />
+                                        <geom mesh="right_arm_1_0" class="collision" />
+                                        <geom mesh="right_arm_1_1" class="collision" />
+                                        <geom mesh="right_arm_1_2" class="collision" />
+                                        <geom mesh="right_arm_1_3" class="collision" />
+                                        <geom mesh="right_arm_1_4" class="collision" />
+
+                                        <inertial pos="-0.184783 -0.15232 1.0767" mass="1.0"
+                                            diaginertia="0.5 0.5 0.5" />
+                                        <joint name="right_arm_1_joint" pos="-0.066 -0.154 1.033"
+                                            axis="0.939202304561388 0 -0.343364283388034" />
+
+                                        <body name="right_arm_2">
+                                            <geom mesh="right_arm_2_0" material="75,75,75_20.001"
+                                                class="visual" />
+                                            <geom mesh="right_arm_2_1" material="75,75,75_19.001"
+                                                class="visual" />
+                                            <geom mesh="right_arm_2_2" material="39,39,39_3.004"
+                                                class="visual" />
+                                            <geom mesh="right_arm_2_3" material="39,39,39_3.005"
+                                                class="visual" />
+                                            <geom mesh="right_arm_2_0" class="collision" />
+                                            <geom mesh="right_arm_2_1" class="collision" />
+                                            <geom mesh="right_arm_2_2" class="collision" />
+                                            <geom mesh="right_arm_2_3" class="collision" />
+
+                                            <inertial pos="-0.22495 -0.14031 1.0664" mass="1.0"
+                                                diaginertia="0.5 0.5 0.5" />
+                                            <joint name="right_arm_2_joint" pos="-0.22 -0.22 1.09"
+                                                axis="0 -1 0" />
+
+                                            <body name="right_arm_3">
+                                                <geom mesh="right_arm_3_0" material="69,69,69_6.001"
+                                                    class="visual" />
+                                                <geom mesh="right_arm_3_1"
+                                                    material="254,254,255_48.001" class="visual" />
+                                                <geom mesh="right_arm_3_2"
+                                                    material="75,75,75_46.001" class="visual" />
+                                                <geom mesh="right_arm_3_3"
+                                                    material="75,75,75_45.001" class="visual" />
+                                                <geom mesh="right_arm_3_4"
+                                                    material="247,247,247_32.002" class="visual" />
+                                                <geom mesh="right_arm_3_5"
+                                                    material="247,247,247_32.003" class="visual" />
+                                                <geom mesh="right_arm_3_6"
+                                                    material="75,75,75_47.001" class="visual" />
+                                                <geom mesh="right_arm_3_7"
+                                                    material="247,247,247_26.001" class="visual" />
+                                                <geom mesh="right_arm_3_8"
+                                                    material="247,247,247_25.001" class="visual" />
+                                                <geom mesh="right_arm_3_9"
+                                                    material="247,247,247_24.001" class="visual" />
+                                                <geom mesh="right_arm_3_0" class="collision" />
+                                                <geom mesh="right_arm_3_1" class="collision" />
+                                                <geom mesh="right_arm_3_2" class="collision" />
+                                                <geom mesh="right_arm_3_3" class="collision" />
+                                                <geom mesh="right_arm_3_4" class="collision" />
+                                                <geom mesh="right_arm_3_5" class="collision" />
+                                                <geom mesh="right_arm_3_6" class="collision" />
+                                                <geom mesh="right_arm_3_7" class="collision" />
+                                                <geom mesh="right_arm_3_8" class="collision" />
+                                                <geom mesh="right_arm_3_9" class="collision" />
+
+                                                <inertial pos="-0.22209 -0.15572 0.88125" mass="1.0"
+                                                    diaginertia="0.5 0.5 0.5" />
+                                                <joint name="right_arm_3_joint"
+                                                    pos="-0.22 -0.154 1.003" axis="0 0 1"
+                                                    range="-3.14 3.14" />
+
+                                                <body name="right_arm_4">
+                                                    <geom mesh="right_arm_4_0"
+                                                        material="75,75,75_22.001" class="visual" />
+                                                    <geom mesh="right_arm_4_1"
+                                                        material="247,247,247_27.001" class="visual" />
+                                                    <geom mesh="right_arm_4_2"
+                                                        material="39,39,39_4.004" class="visual" />
+                                                    <geom mesh="right_arm_4_3"
+                                                        material="39,39,39_4.005" class="visual" />
+                                                    <geom mesh="right_arm_4_4"
+                                                        material="247,247,247_33.001" class="visual" />
+                                                    <geom mesh="right_arm_4_5"
+                                                        material="247,247,247_28.001" class="visual" />
+                                                    <geom mesh="right_arm_4_0" class="collision" />
+                                                    <geom mesh="right_arm_4_1" class="collision" />
+                                                    <geom mesh="right_arm_4_2" class="collision" />
+                                                    <geom mesh="right_arm_4_3" class="collision" />
+                                                    <geom mesh="right_arm_4_4" class="collision" />
+                                                    <geom mesh="right_arm_4_5" class="collision" />
+
+                                                    <inertial pos="-0.21946 -0.22943 0.8041"
+                                                        mass="1.0" diaginertia="0.5 0.5 0.5" />
+                                                    <joint name="right_arm_4_joint"
+                                                        pos="-0.283 -0.185 0.814" axis="1 0 0"
+                                                        ref="-1.90949408420305" range="-3.14 3.14" />
+
+                                                    <body name="right_arm_5">
+                                                        <geom mesh="right_arm_5_0"
+                                                            material="247,247,247_35.001"
+                                                            class="visual" />
+                                                        <geom mesh="right_arm_5_1"
+                                                            material="247,247,247_42.001"
+                                                            class="visual" />
+                                                        <geom mesh="right_arm_5_2"
+                                                            material="247,247,247_43.001"
+                                                            class="visual" />
+                                                        <geom mesh="right_arm_5_3"
+                                                            material="247,247,247_34.001"
+                                                            class="visual" />
+                                                        <geom mesh="right_arm_5_4"
+                                                            material="247,247,247_31.001"
+                                                            class="visual" />
+                                                        <geom mesh="right_arm_5_5"
+                                                            material="247,247,247_30.001"
+                                                            class="visual" />
+                                                        <geom mesh="right_arm_5_0" class="collision" />
+                                                        <geom mesh="right_arm_5_1" class="collision" />
+                                                        <geom mesh="right_arm_5_2" class="collision" />
+                                                        <geom mesh="right_arm_5_3" class="collision" />
+                                                        <geom mesh="right_arm_5_4" class="collision" />
+                                                        <geom mesh="right_arm_5_5" class="collision" />
+
+                                                        <inertial pos="-0.2407 -0.39083 0.85342"
+                                                            mass="0.5" diaginertia="0.1 0.1 0.1" />
+                                                        <joint name="right_arm_5_joint"
+                                                            pos="-0.22 -0.243 0.801"
+                                                            axis="0 0.943188038541758 -0.332259422668118"
+                                                            range="-3.14 3.14" />
+
+                                                        <body name="right_arm_6">
+                                                            <geom mesh="right_arm_6_0"
+                                                                material="75,75,75_48.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_1"
+                                                                material="75,75,75_53.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_2"
+                                                                material="75,75,75_50.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_3"
+                                                                material="75,75,75_49.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_4"
+                                                                material="39,39,39_4.009"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_5"
+                                                                material="254,254,255_49.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_6"
+                                                                material="75,75,75_54.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_7"
+                                                                material="247,247,247_29.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_8"
+                                                                material="152,170,175_8.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_9"
+                                                                material="75,75,75_52.001"
+                                                                class="visual" />
+                                                            <geom mesh="right_arm_6_0"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_1"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_2"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_3"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_4"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_5"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_6"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_7"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_8"
+                                                                class="collision" />
+                                                            <geom mesh="right_arm_6_9"
+                                                                class="collision" />
+
+                                                            <inertial pos="-0.2203 -0.45655 0.83284"
+                                                                mass="0.5" diaginertia="0.1 0.1 0.1" />
+                                                            <joint name="right_arm_6_joint"
+                                                                pos="-0.162 -0.436 0.869"
+                                                                axis="1 0 0" ref="1.206239456233958"
+                                                                range="-3.14 3.14" />
+
+                                                            <body name="right_arm_7">
+                                                                <geom mesh="right_arm_7_0"
+                                                                    material="39,39,39_4.008"
+                                                                    class="visual" />
+                                                                <geom mesh="right_arm_7_1"
+                                                                    material="70,70,70_1.001"
+                                                                    class="visual" />
+                                                                <geom mesh="right_arm_7_2"
+                                                                    material="75,75,75_77.001"
+                                                                    class="visual" />
+                                                                <geom mesh="right_arm_7_0"
+                                                                    class="collision" />
+                                                                <geom mesh="right_arm_7_1"
+                                                                    class="collision" />
+                                                                <geom mesh="right_arm_7_2"
+                                                                    class="collision" />
+
+                                                                <inertial
+                                                                    pos="-0.22289 -0.51939 0.77113"
+                                                                    mass="0.1"
+                                                                    diaginertia="0.1 0.1 0.1" />
+                                                                <joint name="right_arm_7_joint"
+                                                                    pos="-0.22 -0.489265 0.807236"
+                                                                    axis="0 0.648977564336161 0.760807545301901"
+                                                                    ref="1.570796327"
+                                                                    range="-3.14 3.14" />
+
+                                                                <site name="right_tcp"
+                                                                    pos="-0.22 -0.578 0.709"
+                                                                    euler="-0.706239456233958 0 -1.570796327" />
+
+                                                                <body name="right_arm_f1">
+                                                                    <geom mesh="right_arm_f1_0"
+                                                                        material="70,70,70.001"
+                                                                        class="visual" />
+                                                                    <geom mesh="right_arm_f1_1"
+                                                                        material="75,75,75.002"
+                                                                        class="visual" />
+                                                                    <geom mesh="right_arm_f1_0"
+                                                                        class="collision" />
+                                                                    <geom mesh="right_arm_f1_1"
+                                                                        class="collision" />
+
+                                                                    <inertial
+                                                                        pos="-0.16471 -0.5604 0.72393"
+                                                                        mass="0.01"
+                                                                        diaginertia="0.01 0.01 0.01" />
+                                                                    <joint name="right_arm_f1_joint"
+                                                                        type="slide"
+                                                                        pos="-0.282 -0.578 0.709"
+                                                                        axis="-1 0 0" range="0 0.05" />
+                                                                </body>
+
+                                                                <body name="right_arm_f2">
+                                                                    <geom mesh="right_arm_f2_0"
+                                                                        material="70,70,70.002"
+                                                                        class="visual" />
+                                                                    <geom mesh="right_arm_f2_1"
+                                                                        material="75,75,75.003"
+                                                                        class="visual" />
+                                                                    <geom mesh="right_arm_f2_0"
+                                                                        class="collision" />
+                                                                    <geom mesh="right_arm_f2_1"
+                                                                        class="collision" />
+
+                                                                    <inertial
+                                                                        pos="-0.27529 -0.5604 0.72393"
+                                                                        mass="0.01"
+                                                                        diaginertia="0.01 0.01 0.01" />
+                                                                    <joint name="right_arm_f2_joint"
+                                                                        type="slide"
+                                                                        pos="-0.282 -0.578 0.709"
+                                                                        axis="-1 0 0"
+                                                                        range="-0.05 0" />
+                                                                </body>
+                                                            </body>
+                                                        </body>
+                                                    </body>
+                                                </body>
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+
+            <body name="right_wheel">
+                <geom mesh="right_wheel_0" material="75,75,75_2.003" class="visual" />
+                <geom mesh="right_wheel_1" material="39,39,39.002" class="visual" />
+                <geom mesh="right_wheel_0" class="collision" />
+                <geom mesh="right_wheel_1" class="collision" friction="1 0.005 0.0001" />
+
+                <inertial pos="-0.27994 -0.30299 -0.11799" mass="1.5" diaginertia="1 1 1" />
+                <joint name="right_wheel_joint" pos="0 -0.303 -0.118" axis="1 0 0" />
+            </body>
+
+            <body name="left_wheel">
+                <geom mesh="left_wheel_0" material="75,75,75_2.002" class="visual" />
+                <geom mesh="left_wheel_1" material="39,39,39.003" class="visual" />
+                <geom mesh="left_wheel_0" class="collision" />
+                <geom mesh="left_wheel_1" class="collision" />
+
+                <inertial pos="0.27994 -0.303 -0.11802" mass="1.5" diaginertia="1 1 1" />
+                <joint name="left_wheel_joint" pos="0 -0.303 -0.118" axis="1 0 0" />
+            </body>
+        </body>
+    </worldbody>
+
+    <equality>
+        <joint name="left_arm_f" joint1="left_arm_f1_joint" joint2="left_arm_f2_joint"
+            polycoef="0 -1 0 0 0" />
+        <joint name="right_arm_f" joint1="right_arm_f1_joint" joint2="right_arm_f2_joint"
+            polycoef="0 -1 0 0 0" />
+    </equality>
+
+    <actuator>
+        <velocity name="left_wheel_act" joint="left_wheel_joint" kv="10" ctrlrange="-50 50"
+            forcerange="-300 300" />
+        <velocity name="right_wheel_act" joint="right_wheel_joint" kv="10" ctrlrange="-50 50"
+            forcerange="-300 300" />
+
+        <position name="link1_act" joint="link1_joint" kp="10000" kv="2000" ctrlrange="-0.35 0.35" />
+        <position name="link2_act" joint="link2_joint" kp="10000" kv="2000" ctrlrange="-0.2 1.12" />
+        <position name="link3_act" joint="link3_joint" kp="5000" kv="400" ctrlrange="-2 1.13" />
+        <position name="link4_act" joint="link4_joint" kp="2000" kv="200" ctrlrange="-1 2" />
+        <position name="link5_act" joint="link5_joint" kp="2000" kv="200" ctrlrange="-1.3 1.3" />
+        <position name="link6_act" joint="link6_joint" kp="2000" kv="100" ctrlrange="-3.14 3.14" />
+
+        <position name="left_arm_1_act" joint="left_arm_1_joint" kp="1000" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="left_arm_2_act" joint="left_arm_2_joint" kp="1000" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="left_arm_3_act" joint="left_arm_3_joint" kp="1000" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="left_arm_4_act" joint="left_arm_4_joint" kp="800" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="left_arm_5_act" joint="left_arm_5_joint" kp="100" kv="20"
+            ctrlrange="-3.14 3.14" />
+        <position name="left_arm_6_act" joint="left_arm_6_joint" kp="100" kv="20"
+            ctrlrange="-3.14 3.14" />
+        <position name="left_arm_7_act" joint="left_arm_7_joint" kp="50" kv="10"
+            ctrlrange="-3.14 3.14" />
+        <motor name="left_arm_f_act" joint="left_arm_f1_joint" ctrlrange="-1 1" forcerange="-1 1" />
+
+        <position name="right_arm_1_act" joint="right_arm_1_joint" kp="1000" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="right_arm_2_act" joint="right_arm_2_joint" kp="1000" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="right_arm_3_act" joint="right_arm_3_joint" kp="1000" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="right_arm_4_act" joint="right_arm_4_joint" kp="800" kv="200"
+            ctrlrange="-3.14 3.14" />
+        <position name="right_arm_5_act" joint="right_arm_5_joint" kp="100" kv="20"
+            ctrlrange="-3.14 3.14" />
+        <position name="right_arm_6_act" joint="right_arm_6_joint" kp="100" kv="20"
+            ctrlrange="-3.14 3.14" />
+        <position name="right_arm_7_act" joint="right_arm_7_joint" kp="50" kv="10"
+            ctrlrange="-3.14 3.14" />
+        <motor name="right_arm_f_act" joint="right_arm_f1_joint" ctrlrange="-1 1" forcerange="-1 1" />
+    </actuator>
+
+</mujoco>

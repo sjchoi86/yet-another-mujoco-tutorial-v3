@@ -1,0 +1,12 @@
+<mujocoinclude>
+    <actuator>
+        <!-- Physical limits of the actuator. -->
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="panda_joint1" name="panda_torq_j1"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="panda_joint2" name="panda_torq_j2"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="panda_joint3" name="panda_torq_j3"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="panda_joint4" name="panda_torq_j4"/>
+        <motor ctrllimited="true" ctrlrange="-80.0 80.0" joint="panda_joint5" name="panda_torq_j5"/>
+        <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="panda_joint6" name="panda_torq_j6"/>
+        <motor ctrllimited="true" ctrlrange="-12.0 12.0" joint="panda_joint7" name="panda_torq_j7"/>
+    </actuator>
+</mujocoinclude>

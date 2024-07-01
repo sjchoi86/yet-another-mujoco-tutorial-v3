@@ -1,9 +1,0 @@
-<mujoco model="common-rig scene">
-
-  <!-- UR5e -->
-  <include file="./common_rig_v2.xml" />
-
-  <!-- Floor and Sky -->
-  <include file="../object/floor_sky.xml" />
-
-</mujoco>

@@ -1,0 +1,76 @@
+<mujoco model="SAMBA_HEMP">
+  <asset>
+    <texture type="2d" name="SAMBA_HEMP" file="SAMBA_HEMP.png" />
+    <material name="material_SAMBA_HEMP_0" texture="SAMBA_HEMP" specular="0.5" shininess="0.5" />
+    <mesh name="SAMBA_HEMP" file="SAMBA_HEMP.obj" />
+    <mesh name="SAMBA_HEMP_collision_0" file="SAMBA_HEMP_collision_0.obj" />
+    <mesh name="SAMBA_HEMP_collision_1" file="SAMBA_HEMP_collision_1.obj" />
+    <mesh name="SAMBA_HEMP_collision_2" file="SAMBA_HEMP_collision_2.obj" />
+    <mesh name="SAMBA_HEMP_collision_3" file="SAMBA_HEMP_collision_3.obj" />
+    <mesh name="SAMBA_HEMP_collision_4" file="SAMBA_HEMP_collision_4.obj" />
+    <mesh name="SAMBA_HEMP_collision_5" file="SAMBA_HEMP_collision_5.obj" />
+    <mesh name="SAMBA_HEMP_collision_6" file="SAMBA_HEMP_collision_6.obj" />
+    <mesh name="SAMBA_HEMP_collision_7" file="SAMBA_HEMP_collision_7.obj" />
+    <mesh name="SAMBA_HEMP_collision_8" file="SAMBA_HEMP_collision_8.obj" />
+    <mesh name="SAMBA_HEMP_collision_9" file="SAMBA_HEMP_collision_9.obj" />
+    <mesh name="SAMBA_HEMP_collision_10" file="SAMBA_HEMP_collision_10.obj" />
+    <mesh name="SAMBA_HEMP_collision_11" file="SAMBA_HEMP_collision_11.obj" />
+    <mesh name="SAMBA_HEMP_collision_12" file="SAMBA_HEMP_collision_12.obj" />
+    <mesh name="SAMBA_HEMP_collision_13" file="SAMBA_HEMP_collision_13.obj" />
+    <mesh name="SAMBA_HEMP_collision_14" file="SAMBA_HEMP_collision_14.obj" />
+    <mesh name="SAMBA_HEMP_collision_15" file="SAMBA_HEMP_collision_15.obj" />
+    <mesh name="SAMBA_HEMP_collision_16" file="SAMBA_HEMP_collision_16.obj" />
+    <mesh name="SAMBA_HEMP_collision_17" file="SAMBA_HEMP_collision_17.obj" />
+    <mesh name="SAMBA_HEMP_collision_18" file="SAMBA_HEMP_collision_18.obj" />
+    <mesh name="SAMBA_HEMP_collision_19" file="SAMBA_HEMP_collision_19.obj" />
+    <mesh name="SAMBA_HEMP_collision_20" file="SAMBA_HEMP_collision_20.obj" />
+    <mesh name="SAMBA_HEMP_collision_21" file="SAMBA_HEMP_collision_21.obj" />
+    <mesh name="SAMBA_HEMP_collision_22" file="SAMBA_HEMP_collision_22.obj" />
+    <mesh name="SAMBA_HEMP_collision_23" file="SAMBA_HEMP_collision_23.obj" />
+    <mesh name="SAMBA_HEMP_collision_24" file="SAMBA_HEMP_collision_24.obj" />
+    <mesh name="SAMBA_HEMP_collision_25" file="SAMBA_HEMP_collision_25.obj" />
+    <mesh name="SAMBA_HEMP_collision_26" file="SAMBA_HEMP_collision_26.obj" />
+    <mesh name="SAMBA_HEMP_collision_27" file="SAMBA_HEMP_collision_27.obj" />
+    <mesh name="SAMBA_HEMP_collision_28" file="SAMBA_HEMP_collision_28.obj" />
+    <mesh name="SAMBA_HEMP_collision_29" file="SAMBA_HEMP_collision_29.obj" />
+    <mesh name="SAMBA_HEMP_collision_30" file="SAMBA_HEMP_collision_30.obj" />
+    <mesh name="SAMBA_HEMP_collision_31" file="SAMBA_HEMP_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="SAMBA_HEMP">
+      <geom material="material_SAMBA_HEMP_0" mesh="SAMBA_HEMP" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="SAMBA_HEMP_collision_0" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_1" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_2" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_3" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_4" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_5" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_6" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_7" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_8" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_9" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_10" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_11" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_12" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_13" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_14" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_15" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_16" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_17" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_18" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_19" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_20" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_21" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_22" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_23" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_24" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_25" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_26" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_27" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_28" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_29" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_30" type="mesh" group="3" />
+      <geom mesh="SAMBA_HEMP_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

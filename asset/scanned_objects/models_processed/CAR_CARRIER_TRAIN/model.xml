@@ -1,0 +1,76 @@
+<mujoco model="CAR_CARRIER_TRAIN">
+  <asset>
+    <texture type="2d" name="CAR_CARRIER_TRAIN" file="CAR_CARRIER_TRAIN.png" />
+    <material name="material_CAR_CARRIER_TRAIN_0" texture="CAR_CARRIER_TRAIN" specular="0.5" shininess="0.5" />
+    <mesh name="CAR_CARRIER_TRAIN" file="CAR_CARRIER_TRAIN.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_0" file="CAR_CARRIER_TRAIN_collision_0.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_1" file="CAR_CARRIER_TRAIN_collision_1.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_2" file="CAR_CARRIER_TRAIN_collision_2.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_3" file="CAR_CARRIER_TRAIN_collision_3.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_4" file="CAR_CARRIER_TRAIN_collision_4.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_5" file="CAR_CARRIER_TRAIN_collision_5.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_6" file="CAR_CARRIER_TRAIN_collision_6.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_7" file="CAR_CARRIER_TRAIN_collision_7.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_8" file="CAR_CARRIER_TRAIN_collision_8.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_9" file="CAR_CARRIER_TRAIN_collision_9.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_10" file="CAR_CARRIER_TRAIN_collision_10.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_11" file="CAR_CARRIER_TRAIN_collision_11.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_12" file="CAR_CARRIER_TRAIN_collision_12.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_13" file="CAR_CARRIER_TRAIN_collision_13.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_14" file="CAR_CARRIER_TRAIN_collision_14.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_15" file="CAR_CARRIER_TRAIN_collision_15.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_16" file="CAR_CARRIER_TRAIN_collision_16.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_17" file="CAR_CARRIER_TRAIN_collision_17.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_18" file="CAR_CARRIER_TRAIN_collision_18.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_19" file="CAR_CARRIER_TRAIN_collision_19.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_20" file="CAR_CARRIER_TRAIN_collision_20.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_21" file="CAR_CARRIER_TRAIN_collision_21.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_22" file="CAR_CARRIER_TRAIN_collision_22.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_23" file="CAR_CARRIER_TRAIN_collision_23.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_24" file="CAR_CARRIER_TRAIN_collision_24.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_25" file="CAR_CARRIER_TRAIN_collision_25.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_26" file="CAR_CARRIER_TRAIN_collision_26.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_27" file="CAR_CARRIER_TRAIN_collision_27.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_28" file="CAR_CARRIER_TRAIN_collision_28.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_29" file="CAR_CARRIER_TRAIN_collision_29.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_30" file="CAR_CARRIER_TRAIN_collision_30.obj" />
+    <mesh name="CAR_CARRIER_TRAIN_collision_31" file="CAR_CARRIER_TRAIN_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="CAR_CARRIER_TRAIN">
+      <geom material="material_CAR_CARRIER_TRAIN_0" mesh="CAR_CARRIER_TRAIN" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="CAR_CARRIER_TRAIN_collision_0" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_1" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_2" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_3" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_4" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_5" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_6" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_7" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_8" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_9" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_10" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_11" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_12" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_13" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_14" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_15" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_16" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_17" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_18" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_19" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_20" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_21" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_22" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_23" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_24" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_25" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_26" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_27" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_28" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_29" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_30" type="mesh" group="3" />
+      <geom mesh="CAR_CARRIER_TRAIN_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

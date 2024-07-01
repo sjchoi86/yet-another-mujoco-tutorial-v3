@@ -1,0 +1,6 @@
+<mujocoinclude>    
+    <actuator>
+        <position ctrllimited="true" ctrlrange="0.0 0.04" joint="panda_finger_joint1" kp="1000" name="panda_gripper_finger_joint1" forcelimited="true" forcerange="-20 20"/>
+        <position ctrllimited="true" ctrlrange="-0.04 0.0" joint="panda_finger_joint2" kp="1000" name="panda_gripper_finger_joint2" forcelimited="true" forcerange="-20 20"/>
+    </actuator>
+</mujocoinclude>

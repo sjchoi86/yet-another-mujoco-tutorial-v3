@@ -1,0 +1,37 @@
+<mujocoinclude>
+    <asset>
+        <mesh name="panda_link0" file="meshes/visual/link0.stl" />
+        <mesh name="panda_link1" file="meshes/visual/link1.stl" />
+        <mesh name="panda_link2" file="meshes/visual/link2.stl" />
+        <mesh name="panda_link3" file="meshes/visual/link3.stl" />
+        <mesh name="panda_link4" file="meshes/visual/link4.stl" />
+        <mesh name="panda_link5" file="meshes/visual/link5.stl" />
+        <mesh name="panda_link6" file="meshes/visual/link6.stl" />
+        <mesh name="panda_link7" file="meshes/visual/link7.stl" />
+        <mesh name="panda_link0_vis" file="meshes/visual/link0.stl" />
+        <mesh name="panda_link1_vis" file="meshes/visual/link1.stl" />
+        <mesh name="panda_link2_vis" file="meshes/visual/link2.stl" />
+        <mesh name="panda_link3_vis" file="meshes/visual/link3.stl" />
+        <mesh name="panda_link4_vis" file="meshes/visual/link4.stl" />
+        <mesh name="panda_link5_vis" file="meshes/visual/link5.stl" />
+        <mesh name="panda_link6_vis" file="meshes/visual/link6.stl" />
+        <mesh name="panda_link7_vis" file="meshes/visual/link7.stl" />
+    </asset>
+    
+    <asset>
+        <mesh name="panda_pedestal" file="meshes/rethink_mount/pedestal.stl" />
+    </asset>
+    
+    <asset>
+        <mesh name="panda_hand" file="meshes/visual/hand.stl" />
+        <mesh name="panda_hand_vis" file="meshes/visual/hand_vis.stl" />
+        <mesh name="panda_finger" file="meshes/visual/finger.stl" />
+        <mesh name="panda_finger_vis" file="meshes/visual/finger_vis.stl" />
+        <mesh name="panda_finger_vis2" file="meshes/visual/finger_longer.stl" />
+    </asset>
+    
+    <sensor>
+        <force name="force_ee" site="panda_ft_frame"/>
+        <torque name="torque_ee" site="panda_ft_frame"/>
+    </sensor>
+</mujocoinclude>

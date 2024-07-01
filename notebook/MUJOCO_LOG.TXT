@@ -1,0 +1,45 @@
+Tue Jul  2 06:38:02 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/yet-another-mujoco-tutorial-v3/asset/object/floor_isaac_style.xml'
+
+Tue Jul  2 06:38:43 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/asset/unitree_g1/scene_g1.xml'
+
+Tue Jul  2 06:39:26 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/asset/unitree_g1/scene_g1.xml'
+
+Tue Jul  2 06:39:47 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/yet-another-mujoco-tutorial-v3/asset/rby/scene_rby.xml'
+
+Tue Jul  2 06:40:22 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/yet-another-mujoco-tutorial-v3/asset/scanned_objects/scene_objects.xml'
+
+Tue Jul  2 06:40:37 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/asset/scanned_objects/scene_objects.xml'
+
+Tue Jul  2 06:40:48 2024
+WARNING: Insufficient arena memory for the number of constraints generated. Increase arena memory allocation above 15M bytes. Time = 0.0000.
+
+Tue Jul  2 06:40:52 2024
+WARNING: Insufficient arena memory for the number of constraints generated. Increase arena memory allocation above 15M bytes. Time = 0.0000.
+
+Tue Jul  2 06:41:28 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/yet-another-mujoco-tutorial-v3/asset/tabletop_manipulation/scene_ur5e_objects.xml'
+
+Tue Jul  2 06:47:55 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/yet-another-mujoco-tutorial-v3/asset/realistic_tabletop/scene_table.xml'
+
+Tue Jul  2 06:53:31 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/asset/snapbot/scene_snapbot.xml'
+
+Tue Jul  2 06:53:33 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/yet-another-mujoco-tutorial-v3/asset/snapbot/scene_snapbot.xml'
+
+Tue Jul  2 06:54:17 2024
+WARNING: mju_openResource: unknown file '/Users/sj/Dropbox/Mac/Research/Implementation/2024/asset/snapbot/scene_snapbot.xml'
+
+Tue Jul  2 06:57:20 2024
+WARNING: Insufficient arena memory for the number of constraints generated. Increase arena memory allocation above 15M bytes. Time = 0.0000.
+
+Tue Jul  2 06:57:20 2024
+WARNING: Insufficient arena memory for the number of constraints generated. Increase arena memory allocation above 15M bytes. Time = 0.0000.
+

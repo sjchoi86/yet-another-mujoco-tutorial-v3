@@ -1,0 +1,43 @@
+<mujoco model="Scanned Objects">
+    
+    <!-- Default options -->
+    <compiler angle="radian" assetdir="./mesh" autolimits="true" />
+    <option integrator="RK4" noslip_iterations="20" />
+    <default>
+        <joint armature="0.1" damping="0.1" />
+        <default class="visual_only">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+        </default>
+        <default class="no_visual_collision">
+            <!-- visual group of 'collision' should be 3 to not render -->
+            <geom type="capsule" solimp=".9 .99 .001" solref=".015 1" group="3" />
+        </default>
+        <default class="visual_collision">
+            <geom type="mesh" solimp=".9 .99 .001" solref=".015 1" group="2" />
+        </default>
+    </default>
+    
+    <!-- Sky and floor -->
+    <include file="./floor_isaac_style.xml" />
+
+    <!-- Table -->
+    <include file="./base_table.xml" />
+
+    <!-- Objects -->
+    <!-- <include file="./models_processed/3D_Dollhouse_Happy_Brother/model.xml" /> -->
+    <!-- <include file="./models_processed/3D_Dollhouse_Lamp/model.xml" /> -->
+    <!-- <include file="./models_processed/3D_Dollhouse_Refrigerator/model.xml" /> -->
+    <include file="./models_processed/3D_Dollhouse_Sink/model.xml" />
+    <include file="./models_processed/3D_Dollhouse_Sofa/model.xml" />
+    <include file="./models_processed/3D_Dollhouse_Swing/model.xml" />
+    <include file="./models_processed/3D_Dollhouse_TablePurple/model.xml" />
+
+    <include file="./models_processed/Android_Figure_Chrome/model.xml" />
+    <include file="./models_processed/Android_Figure_Orange/model.xml" />
+    <include file="./models_processed/Android_Figure_Panda/model.xml" />
+    <!-- <include file="./models_processed/Android_Lego/model.xml" /> -->
+    <!-- <include file="./models_processed/BABY_CAR/model.xml" /> -->
+    <!-- <include file="./models_processed/BAGEL_WITH_CHEESE/model.xml" /> -->
+    <!-- <include file="./models_processed/BALANCING_CACTUS/model.xml" /> -->
+    
+</mujoco>

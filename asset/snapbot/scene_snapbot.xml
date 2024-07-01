@@ -4,6 +4,6 @@
   <include file="./snapbot.xml" />
 
   <!-- Floor and Sky -->
-  <include file="../object/floor_sky.xml" />
+  <include file="./floor_isaac_style.xml" />
 
 </mujoco>

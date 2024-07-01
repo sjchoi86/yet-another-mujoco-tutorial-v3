@@ -1,0 +1,17 @@
+<mujoco model="obj_pringles">
+    <asset>
+        <texture type="2d" name="pringles" file="pringles.png" />
+        <material name="pringles_mat" texture="pringles" specular="0.0" shininess="0.5" />
+        <mesh file="pringles.obj" scale="0.0012 0.0012 0.0012" />
+    </asset>
+    <worldbody>
+        <body name="obj_pringles" pos="0 0 0" euler="0 0 0">
+            <joint type="free" />
+            <body pos="0 0 0.1" euler="1.57 0 0">
+                <geom type="mesh" material="pringles_mat" mesh="pringles" class="visual_collision" />
+                <geom type="box" pos="0 -0.099 0" euler="-1.57 0 0" size="0.027 0.027 0.0005" class="no_visual_collision"/>
+                <inertial pos="0 0 0" mass="0.3" diaginertia="0.1 0.1 0.1" />
+            </body>
+        </body>
+    </worldbody>
+</mujoco>

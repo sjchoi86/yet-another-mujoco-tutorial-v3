@@ -1,0 +1,76 @@
+<mujoco model="MOSAIC">
+  <asset>
+    <texture type="2d" name="MOSAIC" file="MOSAIC.png" />
+    <material name="material_MOSAIC_0" texture="MOSAIC" specular="0.5" shininess="0.5" />
+    <mesh name="MOSAIC" file="MOSAIC.obj" />
+    <mesh name="MOSAIC_collision_0" file="MOSAIC_collision_0.obj" />
+    <mesh name="MOSAIC_collision_1" file="MOSAIC_collision_1.obj" />
+    <mesh name="MOSAIC_collision_2" file="MOSAIC_collision_2.obj" />
+    <mesh name="MOSAIC_collision_3" file="MOSAIC_collision_3.obj" />
+    <mesh name="MOSAIC_collision_4" file="MOSAIC_collision_4.obj" />
+    <mesh name="MOSAIC_collision_5" file="MOSAIC_collision_5.obj" />
+    <mesh name="MOSAIC_collision_6" file="MOSAIC_collision_6.obj" />
+    <mesh name="MOSAIC_collision_7" file="MOSAIC_collision_7.obj" />
+    <mesh name="MOSAIC_collision_8" file="MOSAIC_collision_8.obj" />
+    <mesh name="MOSAIC_collision_9" file="MOSAIC_collision_9.obj" />
+    <mesh name="MOSAIC_collision_10" file="MOSAIC_collision_10.obj" />
+    <mesh name="MOSAIC_collision_11" file="MOSAIC_collision_11.obj" />
+    <mesh name="MOSAIC_collision_12" file="MOSAIC_collision_12.obj" />
+    <mesh name="MOSAIC_collision_13" file="MOSAIC_collision_13.obj" />
+    <mesh name="MOSAIC_collision_14" file="MOSAIC_collision_14.obj" />
+    <mesh name="MOSAIC_collision_15" file="MOSAIC_collision_15.obj" />
+    <mesh name="MOSAIC_collision_16" file="MOSAIC_collision_16.obj" />
+    <mesh name="MOSAIC_collision_17" file="MOSAIC_collision_17.obj" />
+    <mesh name="MOSAIC_collision_18" file="MOSAIC_collision_18.obj" />
+    <mesh name="MOSAIC_collision_19" file="MOSAIC_collision_19.obj" />
+    <mesh name="MOSAIC_collision_20" file="MOSAIC_collision_20.obj" />
+    <mesh name="MOSAIC_collision_21" file="MOSAIC_collision_21.obj" />
+    <mesh name="MOSAIC_collision_22" file="MOSAIC_collision_22.obj" />
+    <mesh name="MOSAIC_collision_23" file="MOSAIC_collision_23.obj" />
+    <mesh name="MOSAIC_collision_24" file="MOSAIC_collision_24.obj" />
+    <mesh name="MOSAIC_collision_25" file="MOSAIC_collision_25.obj" />
+    <mesh name="MOSAIC_collision_26" file="MOSAIC_collision_26.obj" />
+    <mesh name="MOSAIC_collision_27" file="MOSAIC_collision_27.obj" />
+    <mesh name="MOSAIC_collision_28" file="MOSAIC_collision_28.obj" />
+    <mesh name="MOSAIC_collision_29" file="MOSAIC_collision_29.obj" />
+    <mesh name="MOSAIC_collision_30" file="MOSAIC_collision_30.obj" />
+    <mesh name="MOSAIC_collision_31" file="MOSAIC_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="MOSAIC">
+      <geom material="material_MOSAIC_0" mesh="MOSAIC" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="MOSAIC_collision_0" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_1" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_2" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_3" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_4" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_5" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_6" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_7" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_8" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_9" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_10" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_11" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_12" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_13" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_14" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_15" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_16" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_17" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_18" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_19" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_20" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_21" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_22" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_23" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_24" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_25" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_26" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_27" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_28" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_29" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_30" type="mesh" group="3" />
+      <geom mesh="MOSAIC_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,76 @@
+<mujoco model="FYW_DIVISION">
+  <asset>
+    <texture type="2d" name="FYW_DIVISION" file="FYW_DIVISION.png" />
+    <material name="material_FYW_DIVISION_0" texture="FYW_DIVISION" specular="0.5" shininess="0.5" />
+    <mesh name="FYW_DIVISION" file="FYW_DIVISION.obj" />
+    <mesh name="FYW_DIVISION_collision_0" file="FYW_DIVISION_collision_0.obj" />
+    <mesh name="FYW_DIVISION_collision_1" file="FYW_DIVISION_collision_1.obj" />
+    <mesh name="FYW_DIVISION_collision_2" file="FYW_DIVISION_collision_2.obj" />
+    <mesh name="FYW_DIVISION_collision_3" file="FYW_DIVISION_collision_3.obj" />
+    <mesh name="FYW_DIVISION_collision_4" file="FYW_DIVISION_collision_4.obj" />
+    <mesh name="FYW_DIVISION_collision_5" file="FYW_DIVISION_collision_5.obj" />
+    <mesh name="FYW_DIVISION_collision_6" file="FYW_DIVISION_collision_6.obj" />
+    <mesh name="FYW_DIVISION_collision_7" file="FYW_DIVISION_collision_7.obj" />
+    <mesh name="FYW_DIVISION_collision_8" file="FYW_DIVISION_collision_8.obj" />
+    <mesh name="FYW_DIVISION_collision_9" file="FYW_DIVISION_collision_9.obj" />
+    <mesh name="FYW_DIVISION_collision_10" file="FYW_DIVISION_collision_10.obj" />
+    <mesh name="FYW_DIVISION_collision_11" file="FYW_DIVISION_collision_11.obj" />
+    <mesh name="FYW_DIVISION_collision_12" file="FYW_DIVISION_collision_12.obj" />
+    <mesh name="FYW_DIVISION_collision_13" file="FYW_DIVISION_collision_13.obj" />
+    <mesh name="FYW_DIVISION_collision_14" file="FYW_DIVISION_collision_14.obj" />
+    <mesh name="FYW_DIVISION_collision_15" file="FYW_DIVISION_collision_15.obj" />
+    <mesh name="FYW_DIVISION_collision_16" file="FYW_DIVISION_collision_16.obj" />
+    <mesh name="FYW_DIVISION_collision_17" file="FYW_DIVISION_collision_17.obj" />
+    <mesh name="FYW_DIVISION_collision_18" file="FYW_DIVISION_collision_18.obj" />
+    <mesh name="FYW_DIVISION_collision_19" file="FYW_DIVISION_collision_19.obj" />
+    <mesh name="FYW_DIVISION_collision_20" file="FYW_DIVISION_collision_20.obj" />
+    <mesh name="FYW_DIVISION_collision_21" file="FYW_DIVISION_collision_21.obj" />
+    <mesh name="FYW_DIVISION_collision_22" file="FYW_DIVISION_collision_22.obj" />
+    <mesh name="FYW_DIVISION_collision_23" file="FYW_DIVISION_collision_23.obj" />
+    <mesh name="FYW_DIVISION_collision_24" file="FYW_DIVISION_collision_24.obj" />
+    <mesh name="FYW_DIVISION_collision_25" file="FYW_DIVISION_collision_25.obj" />
+    <mesh name="FYW_DIVISION_collision_26" file="FYW_DIVISION_collision_26.obj" />
+    <mesh name="FYW_DIVISION_collision_27" file="FYW_DIVISION_collision_27.obj" />
+    <mesh name="FYW_DIVISION_collision_28" file="FYW_DIVISION_collision_28.obj" />
+    <mesh name="FYW_DIVISION_collision_29" file="FYW_DIVISION_collision_29.obj" />
+    <mesh name="FYW_DIVISION_collision_30" file="FYW_DIVISION_collision_30.obj" />
+    <mesh name="FYW_DIVISION_collision_31" file="FYW_DIVISION_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="FYW_DIVISION">
+      <geom material="material_FYW_DIVISION_0" mesh="FYW_DIVISION" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="FYW_DIVISION_collision_0" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_1" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_2" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_3" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_4" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_5" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_6" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_7" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_8" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_9" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_10" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_11" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_12" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_13" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_14" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_15" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_16" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_17" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_18" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_19" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_20" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_21" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_22" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_23" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_24" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_25" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_26" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_27" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_28" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_29" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_30" type="mesh" group="3" />
+      <geom mesh="FYW_DIVISION_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

@@ -1,0 +1,23 @@
+<mujocoinclude>
+
+    <asset>
+        <texture type="2d" name="light_wood" file="light_wood_v3.png" />
+        <material name="wood_table_mat" texture="light_wood" specular="0.5" shininess="0.5"
+            rgba="0.5 0.5 0.5 1" />
+    </asset>
+
+    <worldbody>
+        <body name="front_object_table" pos="0 0 0" euler="0 0 0">
+            <geom name="front_object_table" size="0.8 0.5 0.4" pos="0.3 0 0.4" type="box"
+                material="wood_table_mat" />
+            <inertial pos="0 0 0" mass="1" diaginertia="0 0 0" />
+        </body>
+
+        <body name="side_object_table" pos="0 0 0" euler="0 0 0">
+            <geom name="side_object_table" size="0.5 0.3 0.4" pos="0 -0.8 0.4" type="box"
+                material="wood_table_mat" />
+            <inertial pos="0 0 0" mass="1" diaginertia="0 0 0" />
+        </body>
+    </worldbody>
+
+</mujocoinclude>

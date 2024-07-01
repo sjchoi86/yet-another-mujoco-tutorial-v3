@@ -1,0 +1,21 @@
+<mujoco model="franka_panda">
+    <compiler angle="radian" meshdir="" inertiagrouprange="0 0" />
+    <option impratio="20" cone="elliptic" density="1.2" viscosity="0.00002" />
+    <size nconmax="5000" njmax="5000" />
+
+    <!-- panda assets-->
+    <include file="assets/panda_assets.xml" />
+
+    <!-- arena -->
+    <include file="./floor_isaac_style.xml"/>
+
+    <!-- panda body xml-->
+    <include file="assets/panda_body.xml" />
+
+    <!-- panda arm actuator-->
+    <include file="assets/panda_arm_motor_actuator.xml" />
+
+    <!-- panda gripper actuator-->
+    <include file="assets/panda_gripper_position_actuator.xml" />
+
+</mujoco>

@@ -1,0 +1,76 @@
+<mujoco model="Animal_Planet_Foam_2Headed_Dragon">
+  <asset>
+    <texture type="2d" name="Animal_Planet_Foam_2Headed_Dragon" file="Animal_Planet_Foam_2Headed_Dragon.png" />
+    <material name="material_Animal_Planet_Foam_2Headed_Dragon_0" texture="Animal_Planet_Foam_2Headed_Dragon" specular="0.155303" shininess="0.000197856" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon" file="Animal_Planet_Foam_2Headed_Dragon.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_0" file="Animal_Planet_Foam_2Headed_Dragon_collision_0.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_1" file="Animal_Planet_Foam_2Headed_Dragon_collision_1.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_2" file="Animal_Planet_Foam_2Headed_Dragon_collision_2.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_3" file="Animal_Planet_Foam_2Headed_Dragon_collision_3.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_4" file="Animal_Planet_Foam_2Headed_Dragon_collision_4.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_5" file="Animal_Planet_Foam_2Headed_Dragon_collision_5.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_6" file="Animal_Planet_Foam_2Headed_Dragon_collision_6.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_7" file="Animal_Planet_Foam_2Headed_Dragon_collision_7.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_8" file="Animal_Planet_Foam_2Headed_Dragon_collision_8.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_9" file="Animal_Planet_Foam_2Headed_Dragon_collision_9.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_10" file="Animal_Planet_Foam_2Headed_Dragon_collision_10.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_11" file="Animal_Planet_Foam_2Headed_Dragon_collision_11.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_12" file="Animal_Planet_Foam_2Headed_Dragon_collision_12.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_13" file="Animal_Planet_Foam_2Headed_Dragon_collision_13.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_14" file="Animal_Planet_Foam_2Headed_Dragon_collision_14.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_15" file="Animal_Planet_Foam_2Headed_Dragon_collision_15.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_16" file="Animal_Planet_Foam_2Headed_Dragon_collision_16.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_17" file="Animal_Planet_Foam_2Headed_Dragon_collision_17.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_18" file="Animal_Planet_Foam_2Headed_Dragon_collision_18.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_19" file="Animal_Planet_Foam_2Headed_Dragon_collision_19.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_20" file="Animal_Planet_Foam_2Headed_Dragon_collision_20.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_21" file="Animal_Planet_Foam_2Headed_Dragon_collision_21.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_22" file="Animal_Planet_Foam_2Headed_Dragon_collision_22.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_23" file="Animal_Planet_Foam_2Headed_Dragon_collision_23.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_24" file="Animal_Planet_Foam_2Headed_Dragon_collision_24.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_25" file="Animal_Planet_Foam_2Headed_Dragon_collision_25.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_26" file="Animal_Planet_Foam_2Headed_Dragon_collision_26.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_27" file="Animal_Planet_Foam_2Headed_Dragon_collision_27.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_28" file="Animal_Planet_Foam_2Headed_Dragon_collision_28.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_29" file="Animal_Planet_Foam_2Headed_Dragon_collision_29.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_30" file="Animal_Planet_Foam_2Headed_Dragon_collision_30.obj" />
+    <mesh name="Animal_Planet_Foam_2Headed_Dragon_collision_31" file="Animal_Planet_Foam_2Headed_Dragon_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="Animal_Planet_Foam_2Headed_Dragon">
+      <geom material="material_Animal_Planet_Foam_2Headed_Dragon_0" mesh="Animal_Planet_Foam_2Headed_Dragon" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_0" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_1" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_2" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_3" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_4" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_5" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_6" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_7" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_8" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_9" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_10" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_11" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_12" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_13" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_14" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_15" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_16" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_17" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_18" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_19" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_20" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_21" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_22" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_23" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_24" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_25" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_26" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_27" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_28" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_29" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_30" type="mesh" group="3" />
+      <geom mesh="Animal_Planet_Foam_2Headed_Dragon_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

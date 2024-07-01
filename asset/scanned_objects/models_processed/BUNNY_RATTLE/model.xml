@@ -1,0 +1,76 @@
+<mujoco model="BUNNY_RATTLE">
+  <asset>
+    <texture type="2d" name="BUNNY_RATTLE" file="BUNNY_RATTLE.png" />
+    <material name="material_BUNNY_RATTLE_0" texture="BUNNY_RATTLE" specular="0.5" shininess="0.5" />
+    <mesh name="BUNNY_RATTLE" file="BUNNY_RATTLE.obj" />
+    <mesh name="BUNNY_RATTLE_collision_0" file="BUNNY_RATTLE_collision_0.obj" />
+    <mesh name="BUNNY_RATTLE_collision_1" file="BUNNY_RATTLE_collision_1.obj" />
+    <mesh name="BUNNY_RATTLE_collision_2" file="BUNNY_RATTLE_collision_2.obj" />
+    <mesh name="BUNNY_RATTLE_collision_3" file="BUNNY_RATTLE_collision_3.obj" />
+    <mesh name="BUNNY_RATTLE_collision_4" file="BUNNY_RATTLE_collision_4.obj" />
+    <mesh name="BUNNY_RATTLE_collision_5" file="BUNNY_RATTLE_collision_5.obj" />
+    <mesh name="BUNNY_RATTLE_collision_6" file="BUNNY_RATTLE_collision_6.obj" />
+    <mesh name="BUNNY_RATTLE_collision_7" file="BUNNY_RATTLE_collision_7.obj" />
+    <mesh name="BUNNY_RATTLE_collision_8" file="BUNNY_RATTLE_collision_8.obj" />
+    <mesh name="BUNNY_RATTLE_collision_9" file="BUNNY_RATTLE_collision_9.obj" />
+    <mesh name="BUNNY_RATTLE_collision_10" file="BUNNY_RATTLE_collision_10.obj" />
+    <mesh name="BUNNY_RATTLE_collision_11" file="BUNNY_RATTLE_collision_11.obj" />
+    <mesh name="BUNNY_RATTLE_collision_12" file="BUNNY_RATTLE_collision_12.obj" />
+    <mesh name="BUNNY_RATTLE_collision_13" file="BUNNY_RATTLE_collision_13.obj" />
+    <mesh name="BUNNY_RATTLE_collision_14" file="BUNNY_RATTLE_collision_14.obj" />
+    <mesh name="BUNNY_RATTLE_collision_15" file="BUNNY_RATTLE_collision_15.obj" />
+    <mesh name="BUNNY_RATTLE_collision_16" file="BUNNY_RATTLE_collision_16.obj" />
+    <mesh name="BUNNY_RATTLE_collision_17" file="BUNNY_RATTLE_collision_17.obj" />
+    <mesh name="BUNNY_RATTLE_collision_18" file="BUNNY_RATTLE_collision_18.obj" />
+    <mesh name="BUNNY_RATTLE_collision_19" file="BUNNY_RATTLE_collision_19.obj" />
+    <mesh name="BUNNY_RATTLE_collision_20" file="BUNNY_RATTLE_collision_20.obj" />
+    <mesh name="BUNNY_RATTLE_collision_21" file="BUNNY_RATTLE_collision_21.obj" />
+    <mesh name="BUNNY_RATTLE_collision_22" file="BUNNY_RATTLE_collision_22.obj" />
+    <mesh name="BUNNY_RATTLE_collision_23" file="BUNNY_RATTLE_collision_23.obj" />
+    <mesh name="BUNNY_RATTLE_collision_24" file="BUNNY_RATTLE_collision_24.obj" />
+    <mesh name="BUNNY_RATTLE_collision_25" file="BUNNY_RATTLE_collision_25.obj" />
+    <mesh name="BUNNY_RATTLE_collision_26" file="BUNNY_RATTLE_collision_26.obj" />
+    <mesh name="BUNNY_RATTLE_collision_27" file="BUNNY_RATTLE_collision_27.obj" />
+    <mesh name="BUNNY_RATTLE_collision_28" file="BUNNY_RATTLE_collision_28.obj" />
+    <mesh name="BUNNY_RATTLE_collision_29" file="BUNNY_RATTLE_collision_29.obj" />
+    <mesh name="BUNNY_RATTLE_collision_30" file="BUNNY_RATTLE_collision_30.obj" />
+    <mesh name="BUNNY_RATTLE_collision_31" file="BUNNY_RATTLE_collision_31.obj" />
+  </asset>
+  <worldbody>
+    <body name="BUNNY_RATTLE">
+      <geom material="material_BUNNY_RATTLE_0" mesh="BUNNY_RATTLE" type="mesh" contype="0" conaffinity="0" group="2" />
+      <freejoint /><geom mesh="BUNNY_RATTLE_collision_0" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_1" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_2" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_3" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_4" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_5" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_6" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_7" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_8" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_9" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_10" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_11" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_12" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_13" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_14" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_15" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_16" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_17" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_18" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_19" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_20" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_21" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_22" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_23" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_24" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_25" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_26" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_27" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_28" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_29" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_30" type="mesh" group="3" />
+      <geom mesh="BUNNY_RATTLE_collision_31" type="mesh" group="3" />
+    </body>
+  </worldbody>
+</mujoco>

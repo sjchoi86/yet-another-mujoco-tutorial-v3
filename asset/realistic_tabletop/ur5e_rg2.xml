@@ -1,0 +1,390 @@
+<mujoco model="ur5e_rg2">
+    <compiler angle="radian" assetdir="./mesh" autolimits="true" />
+
+    <default>
+        <joint axis="0 1 0" range="-6.28319 6.28319" armature="0.05" damping="0.05" />
+        <position ctrlrange="-6.2831 6.2831" />
+
+        <default class="visual">
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+        </default>
+        <default class="collision">
+            <geom type="capsule" group="3" />
+            <default class="eef_collision">
+                <geom type="cylinder" />
+            </default>
+        </default>
+        <site size="0.001" rgba="0.5 0.5 0.5 0.3" group="4" />
+
+        <!-- Reference:
+      https://www.universal-robots.com/articles/ur/robot-care-maintenance/max-joint-torques/ -->
+        <default class="size3">
+            <joint armature="0.1" damping="200" />
+            <position kp="3500" forcerange="-500 500" />
+            <default class="size3_limited">
+                <joint range="-3.1415 3.1415" />
+                <position ctrlrange="-3.1415 3.1415" />
+            </default>
+        </default>
+        <default class="size1">
+            <joint armature="0.1" damping="15" />
+            <position kp="3000" forcerange="-28 28" />
+        </default>
+
+        <!-- gripper 4-bar linkage -->
+        <default class="GRIPPER">
+            <joint damping='5' type="hinge" />
+        </default>
+
+        <!-- D435i Assets -->
+        <default class="d435i">
+            <material specular="0" shininess="0.25" />
+            <default class="visual_d435i">
+                <geom group="2" type="mesh" contype="0" conaffinity="0" mass="0" />
+            </default>
+            <default class="collision_d435i">
+                <geom group="3" type="mesh" mass="0" />
+            </default>
+        </default>
+
+    </default>
+
+    <asset>
+        <material name="black" specular="0.5" shininess="0.25" rgba="0.033 0.033 0.033 1" />
+        <material name="jointgray" specular="0.5" shininess="0.25" rgba="0.278 0.278 0.278 1" />
+        <material name="linkgray" specular="0.5" shininess="0.25" rgba="0.82 0.82 0.82 1" />
+        <material name="urblue" specular="0.5" shininess="0.25" rgba="0.49 0.678 0.8 1" />
+        <!-- UR5e mesh files -->
+        <mesh file="base_0.obj" />
+        <mesh file="base_1.obj" />
+        <mesh file="shoulder_0.obj" />
+        <mesh file="shoulder_1.obj" />
+        <mesh file="shoulder_2.obj" />
+        <mesh file="upperarm_0.obj" />
+        <mesh file="upperarm_1.obj" />
+        <mesh file="upperarm_2.obj" />
+        <mesh file="upperarm_3.obj" />
+        <mesh file="forearm_0.obj" />
+        <mesh file="forearm_1.obj" />
+        <mesh file="forearm_2.obj" />
+        <mesh file="forearm_3.obj" />
+        <mesh file="wrist1_0.obj" />
+        <mesh file="wrist1_1.obj" />
+        <mesh file="wrist1_2.obj" />
+        <mesh file="wrist2_0.obj" />
+        <mesh file="wrist2_1.obj" />
+        <mesh file="wrist2_2.obj" />
+        <mesh file="wrist3.obj" />
+
+        <!-- D435 Mesh files -->
+        <material class="d435i" name="Black_Acrylic" rgba="0.070360 0.070360 0.070360 1" />
+        <material class="d435i" name="Cameras_Gray" rgba="0.296138 0.296138 0.296138 1" />
+        <material class="d435i" name="IR_Emitter_Lens" rgba="0.287440 0.665387 0.327778 1" />
+        <material class="d435i" name="IR_Lens" rgba="0.035601 0.035601 0.035601 1" />
+        <material class="d435i" name="IR_Rim" rgba="0.799102 0.806952 0.799103 1" />
+        <material class="d435i" name="Metal_Casing" rgba="1 1 1 1" />
+        <material class="d435i" name="RGB_Pupil" rgba="0.087140 0.002866 0.009346 1" />
+        <mesh file="d435i_0.obj" />
+        <mesh file="d435i_1.obj" />
+        <mesh file="d435i_2.obj" />
+        <mesh file="d435i_3.obj" />
+        <mesh file="d435i_4.obj" />
+        <mesh file="d435i_5.obj" />
+        <mesh file="d435i_6.obj" />
+        <mesh file="d435i_7.obj" />
+        <mesh file="d435i_8.obj" />
+
+        <!-- D435 and RG2 gripper mesh files -->
+        <mesh name="mount" file="mount.stl" scale="0.0001 0.0001 0.0001" />
+        <!-- <mesh name="d435" file="d435.stl" scale="0.001 0.001 0.001" /> -->
+        <mesh name="rg2_gripper_base_link" file="./gripper_base_link.STL" />
+        <mesh name="rg2_gripper_finger1_finger_link" file="./gripper_finger1_finger_link.STL" />
+        <mesh name="rg2_gripper_finger1_inner_knuckle_link"
+            file="./gripper_finger1_inner_knuckle_link.STL" />
+        <mesh name="rg2_gripper_finger1_finger_tip_link"
+            file="./gripper_finger1_finger_tip_link.STL" />
+        <mesh name="rg2_gripper_finger2_finger_link" file="./gripper_finger2_finger_link.STL" />
+        <mesh name="rg2_gripper_finger2_inner_knuckle_link"
+            file="./gripper_finger2_inner_knuckle_link.STL" />
+        <mesh name="rg2_gripper_finger2_finger_tip_link"
+            file="./gripper_finger2_finger_tip_link.STL" />
+    </asset>
+
+    <worldbody>
+        <body name="ur_base" pos="0.18 0 0.79" quat="1 0 0 0">
+            <inertial mass="4.0" pos="0 0 0" diaginertia="0.00443333156 0.00443333156 0.0072" />
+            <geom mesh="base_0" material="black" class="visual" />
+            <geom mesh="base_1" material="jointgray" class="visual" />
+            <body name="ur_shoulder_link" pos="0 0 0.163">
+                <inertial mass="3.7" pos="0 0 0" diaginertia="0.0102675 0.0102675 0.00666" />
+                <joint name="shoulder_pan_joint" class="size3" axis="0 0 1" />
+                <geom mesh="shoulder_0" material="urblue" class="visual" />
+                <geom mesh="shoulder_1" material="black" class="visual" />
+                <geom mesh="shoulder_2" material="jointgray" class="visual" />
+                <geom class="collision" size="0.06 0.06" pos="0 0 -0.04" />
+                <body name="ur_upper_arm_link" pos="0 0.138 0" quat="1 0 1 0">
+                    <inertial mass="8.393" pos="0 0 0.2125"
+                        diaginertia="0.133886 0.133886 0.0151074" />
+                    <joint name="shoulder_lift_joint" class="size3" />
+                    <geom mesh="upperarm_0" material="linkgray" class="visual" />
+                    <geom mesh="upperarm_1" material="black" class="visual" />
+                    <geom mesh="upperarm_2" material="jointgray" class="visual" />
+                    <geom mesh="upperarm_3" material="urblue" class="visual" />
+                    <geom class="collision" pos="0 -0.04 0" quat="1 1 0 0" size="0.06 0.06" />
+                    <geom class="collision" size="0.05 0.2" pos="0 0 0.2" />
+                    <body name="ur_forearm_link" pos="0 -0.131 0.425">
+                        <inertial mass="2.275" pos="0 0 0.196"
+                            diaginertia="0.0311796 0.0311796 0.004095" />
+                        <joint name="elbow_joint" class="size3_limited" />
+                        <geom mesh="forearm_0" material="urblue" class="visual" />
+                        <geom mesh="forearm_1" material="linkgray" class="visual" />
+                        <geom mesh="forearm_2" material="black" class="visual" />
+                        <geom mesh="forearm_3" material="jointgray" class="visual" />
+                        <geom class="collision" pos="0 0.08 0" quat="1 1 0 0" size="0.055 0.06" />
+                        <geom class="collision" size="0.038 0.19" pos="0 0 0.2" />
+                        <body name="ur_wrist_1_link" pos="0 0 0.392" quat="1 0 1 0">
+                            <inertial mass="1.219" pos="0 0.127 0"
+                                diaginertia="0.0025599 0.0025599 0.0021942" />
+                            <joint name="wrist_1_joint" class="size1" />
+                            <geom mesh="wrist1_0" material="black" class="visual" />
+                            <geom mesh="wrist1_1" material="urblue" class="visual" />
+                            <geom mesh="wrist1_2" material="jointgray" class="visual" />
+                            <geom class="collision" pos="0 0.05 0" quat="1 1 0 0" size="0.04 0.07" />
+                            <body name="ur_wrist_2_link" pos="0 0.127 0">
+                                <inertial mass="1.219" pos="0 0 0.1"
+                                    diaginertia="0.0025599 0.0025599 0.0021942" />
+                                <joint name="wrist_2_joint" axis="0 0 1" class="size1" />
+                                <geom mesh="wrist2_0" material="black" class="visual" />
+                                <geom mesh="wrist2_1" material="urblue" class="visual" />
+                                <geom mesh="wrist2_2" material="jointgray" class="visual" />
+                                <geom class="collision" size="0.04 0.06" pos="0 0 0.04" />
+                                <geom class="collision" pos="0 0.02 0.1" quat="1 1 0 0"
+                                    size="0.04 0.04" />
+                                <body name="ur_wrist_3_link" pos="0 0 0.1">
+                                    <inertial mass="0.1889" pos="0 0.0771683 0" quat="1 0 0 1"
+                                        diaginertia="0.000132134 9.90863e-05 9.90863e-05" />
+                                    <joint name="wrist_3_joint" class="size1" />
+                                    <geom material="linkgray" mesh="wrist3" class="visual" />
+                                    <geom class="eef_collision" pos="0 0.08 0" quat="1 1 0 0"
+                                        size="0.04 0.02" />
+                                    <site name="attachment_site" pos="0 0.1 0" quat="-1 1 0 0" />
+
+                                    <body name="ur_tcp_link" pos="0. 0.27 0.">
+                                        <geom size="0.005 0.005 0.005" pos="0 0. 0." contype="0"
+                                            conaffinity="0"
+                                            type="box" rgba="1.00 0.00 0.0 0" />
+                                    </body>
+                                    <!-- Camera -->
+                                    <body name="ur_camera_mount" pos="0 0 0.">
+                                        <geom pos="0 0.09 0" quat="0.000796327 1 0 0" type="mesh"
+                                            contype="0"
+                                            conaffinity="0" group="1" rgba="0.7 0.7 0.7 1"
+                                            mesh="mount" />
+                                        <!-- mounted gear -->
+                                        <!-- <geom pos="0 0.09 -0.0870397" quat="0. 0.70767 0
+                                        0.70767" type="mesh"
+                      contype="0" conaffinity="1" group="1" rgba="0.8 0.8 0.8 0.8" mesh="d435" /> -->
+                                        <!-- D435i Camera -->
+                                        <body name="ur_d435i" childclass="d435i" pos="0 0.115 -0.08"
+                                            quat="1 -1 0 0">
+                                            <geom mesh="d435i_0" material="IR_Lens"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_1" material="IR_Emitter_Lens"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_2" material="IR_Rim"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_3" material="IR_Lens"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_4" material="Cameras_Gray"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_5" material="Black_Acrylic"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_6" material="Black_Acrylic"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_7" material="RGB_Pupil"
+                                                class="visual_d435i" />
+                                            <geom mesh="d435i_8" mass="0.072"
+                                                material="Metal_Casing" class="visual_d435i" />
+                                            <geom class="collision_d435i" type="capsule"
+                                                mesh="d435i_8" />
+                                        </body>
+                                        <!-- Gripper -->
+                                        <body name="ur_rg2_gripper_base_link" pos="0 0.08 0"
+                                            quat="0. 0 0.70682518 0.70738827">
+                                            <inertial
+                                                pos="-0.000118835633453291 4.70054905894546E-06 0.0572680906518555"
+                                                quat="0.707058 0.00723369 0.00723345 0.707081"
+                                                mass="0.199035856566616"
+                                                diaginertia="0.000170600248402307 0.000213152093040191 5.59878626220752E-05" />
+                                            <geom type="mesh" contype="0" conaffinity="1"
+                                                rgba="0.5 0.5 0.5 1"
+                                                friction="0.8 0.8 0.8" mesh="rg2_gripper_base_link" />
+
+                                            <!-- Camera center -->
+                                            <body name="ur_camera_center" pos="0 -0.09 0.02">
+                                                <geom size="0.005 0.005 0.005" pos="0. 0. 0."
+                                                    contype="0" conaffinity="0"
+                                                    type="box" rgba="1.00 0.00 0.0 0" />
+                                                <camera name="egocentric" pos="0 0 0"
+                                                    xyaxes="1 0 0 0 -1 0" fovy="45" />
+                                            </body>
+
+                                            <!-- Finger -->
+                                            <body name="ur_rg2_gripper_finger1_finger_link"
+                                                pos="0.0169 0.0103 0.105"
+                                                quat="0 0 0 1">
+                                                <inertial pos="0.0170975 -3.93809e-10 0.0224918"
+                                                    quat="0.947655 0 -0.319297 0" mass="0.0110931"
+                                                    diaginertia="5.59353e-06 3.96549e-06 1.88108e-06" />
+                                                <geom type="mesh" contype="0" conaffinity="1"
+                                                    rgba="0.5 0.5 0.5 1"
+                                                    friction="0.8 0.8 0.8"
+                                                    mesh="rg2_gripper_finger1_finger_link" />
+                                                <joint name="gripper_finger1_joint" class="GRIPPER"
+                                                    pos="0. 0. 0."
+                                                    axis="0 1 0" limited="true" range="-1.5 0" />
+                                            </body>
+
+                                            <body name="ur_rg2_gripper_finger1_inner_knuckle_link"
+                                                pos="0.0074 0.01 0.1215"
+                                                quat="0 0 0 1">
+                                                <inertial pos="0.00602756 0 0.00669926"
+                                                    quat="0.699065 0.106339 0.106339 0.699065"
+                                                    mass="0.00724255"
+                                                    diaginertia="1.70064e-06 1.58577e-06 3.69621e-07" />
+                                                <geom type="mesh" contype="0" conaffinity="1"
+                                                    rgba="0.5 0.5 0.5 1"
+                                                    friction="0.8 0.8 0.8"
+                                                    mesh="rg2_gripper_finger1_inner_knuckle_link" />
+                                                <joint name="gripper_finger1_inner_knuckle_joint"
+                                                    class="GRIPPER"
+                                                    pos="0. 0. 0." axis="0 1 0" limited="true"
+                                                    range="-1.5 0" />
+
+                                                <body name="ur_rg2_gripper_finger1_finger_tip_link"
+                                                    pos="-0.0009 0.01449 0.055" quat="0 0 0 1">
+                                                    <inertial pos="0.0168606 3.93808e-10 0.02267"
+                                                        quat="0.949317 0 -0.314322 0"
+                                                        mass="0.0110931"
+                                                        diaginertia="5.59353e-06 3.96549e-06 1.88108e-06" />
+                                                    <geom type="mesh"
+                                                        name="rg2_gripper_finger1_finger_tip_geom"
+                                                        contype="1" conaffinity="1"
+                                                        rgba="0.5 0.5 0.5 1"
+                                                        friction="0.8 0.8 0.8"
+                                                        mesh="rg2_gripper_finger1_finger_tip_link" />
+                                                    <joint name="gripper_finger1_finger_tip_joint"
+                                                        class="GRIPPER"
+                                                        pos="0. 0. 0." axis="0 1 0" limited="true"
+                                                        range="-2.5 2.5" />
+                                                </body>
+                                            </body>
+
+                                            <body name="ur_rg2_gripper_finger2_finger_link"
+                                                pos="-0.0171 0.0103 0.105"
+                                                quat="0 0 0 1">
+                                                <inertial pos="0.0170975 -3.93809e-10 0.0224918"
+                                                    quat="0.947655 0 -0.319297 0" mass="0.0110931"
+                                                    diaginertia="5.59353e-06 3.96549e-06 1.88108e-06" />
+                                                <geom type="mesh" contype="0" conaffinity="1"
+                                                    rgba="0.5 0.5 0.5 1"
+                                                    friction="0.8 0.8 0.8"
+                                                    mesh="rg2_gripper_finger2_finger_link" />
+                                                <joint name="gripper_finger2_joint" class="GRIPPER"
+                                                    pos="0. 0. 0."
+                                                    axis="0 1 0" limited="true" range="0 1.5" />
+                                            </body>
+
+                                            <body name="ur_rg2_gripper_finger2_inner_knuckle_link"
+                                                pos="-0.0076 0.01 0.1215" quat="0 0 0 1">
+                                                <inertial pos="0.00602756 0 0.00669926"
+                                                    quat="0.699065 0.106339 0.106339 0.699065"
+                                                    mass="0.00724255"
+                                                    diaginertia="1.70064e-06 1.58577e-06 3.69621e-07" />
+                                                <geom type="mesh" contype="0" conaffinity="1"
+                                                    rgba="0.5 0.5 0.5 1"
+                                                    friction="0.8 0.8 0.8"
+                                                    mesh="rg2_gripper_finger2_inner_knuckle_link" />
+                                                <joint name="gripper_finger2_inner_knuckle_joint"
+                                                    class="GRIPPER"
+                                                    pos="0. 0. 0." axis="0 1 0" limited="true"
+                                                    range="0 1.5" />
+
+                                                <body name="ur_rg2_gripper_finger2_finger_tip_link"
+                                                    pos="0.00084055833321731 0.01449 0.055"
+                                                    quat="0 0 0 1">
+                                                    <inertial pos="0.0168606 3.93808e-10 0.02267"
+                                                        quat="0.949317 0 -0.314322 0"
+                                                        mass="0.0110931"
+                                                        diaginertia="5.59353e-06 3.96549e-06 1.88108e-06" />
+                                                    <geom type="mesh"
+                                                        name="rg2_gripper_finger2_finger_tip_geom"
+                                                        contype="1" conaffinity="1"
+                                                        rgba="0.5 0.5 0.5 1"
+                                                        friction="0.8 0.8 0.8"
+                                                        mesh="rg2_gripper_finger2_finger_tip_link" />
+                                                    <joint name="gripper_finger2_finger_tip_joint"
+                                                        class="GRIPPER"
+                                                        pos="0. 0. 0." axis="0 1 0" limited="true"
+                                                        range="-2.5 2.5" />
+                                                </body>
+                                            </body>
+
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+
+    <!-- Constraints for closed-loop mechanism -->
+    <equality>
+        <joint joint1="gripper_finger1_joint" joint2="gripper_finger1_inner_knuckle_joint"
+            polycoef="0 1.1 0 0 0" />
+        <joint joint1="gripper_finger1_joint" joint2="gripper_finger1_finger_tip_joint" />
+        <joint joint1="gripper_finger2_joint" joint2="gripper_finger2_inner_knuckle_joint"
+            polycoef="0 1.1 0 0 0" />
+        <joint joint1="gripper_finger2_joint" joint2="gripper_finger2_finger_tip_joint" />
+        <joint joint1="gripper_finger1_finger_tip_joint" joint2="gripper_finger2_finger_tip_joint"
+            polycoef="0 -1 0 0 0" />
+    </equality>
+
+    <!-- Exclude contact information -->
+    <contact>
+        <exclude body1="ur_rg2_gripper_finger1_finger_link"
+            body2="ur_rg2_gripper_finger1_inner_knuckle_link" />
+        <exclude body1="ur_rg2_gripper_finger2_finger_link"
+            body2="ur_rg2_gripper_finger2_inner_knuckle_link" />
+        <exclude body1="ur_rg2_gripper_finger1_finger_link"
+            body2="ur_rg2_gripper_finger1_finger_tip_link" />
+        <exclude body1="ur_rg2_gripper_finger2_finger_link"
+            body2="ur_rg2_gripper_finger2_finger_tip_link" />
+        <exclude body1="ur_rg2_gripper_finger1_inner_knuckle_link"
+            body2="ur_rg2_gripper_finger1_finger_tip_link" />
+        <exclude body1="ur_rg2_gripper_finger2_inner_knuckle_link"
+            body2="ur_rg2_gripper_finger2_finger_tip_link" />
+    </contact>
+
+    <!-- Define actuators -->
+    <actuator>
+        <position class="size3" name="shoulder_pan" joint="shoulder_pan_joint" />
+        <position class="size3" name="shoulder_lift" joint="shoulder_lift_joint" />
+        <position class="size3_limited" name="elbow" joint="elbow_joint" />
+        <position class="size1" name="wrist_1" joint="wrist_1_joint" />
+        <position class="size1" name="wrist_2" joint="wrist_2_joint" />
+        <position class="size1" name="wrist_3" joint="wrist_3_joint" />
+        <position name='gripper' ctrllimited="true" ctrlrange="0 2" joint='gripper_finger2_joint'
+            kp="50" />
+    </actuator>
+
+    <!-- # of actuator is 7 -->
+    <!-- <keyframe>
+    <key name="home" qpos="0 0 0 -1.57079 0 1.57079 -0.7853 0.04 0.04"
+        ctrl="0 0 0 -1.57079 0 1.57079 -0.7853 255"/>
+  </keyframe> -->
+
+</mujoco>

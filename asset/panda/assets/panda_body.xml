@@ -1,0 +1,70 @@
+<mujocoinclude>
+    <worldbody>
+        <body name="panda_base" pos="0.0 0 0">
+            <!-- robot view -->
+            <camera mode="fixed" name="panda_robotview" pos="1.0 0 0.4" quat="0.653 0.271 0.271 0.653"/>
+            <inertial diaginertia="0 0 0" mass="0" pos="0 0 0"/>
+            <body name="panda_pedestal" pos="0 0 0.92">
+                <inertial diaginertia="6.0869 5.81635 4.20915" mass="60.864" pos="0 0 0" quat="0.659267 -0.259505 -0.260945 0.655692"/>
+                <geom conaffinity="0" contype="0" group="1" mesh="panda_pedestal" type="mesh" name="pedestal_vis" rgba="0.2 0.2 0.2 1" />
+                <!-- <geom pos="-0.02 0 -0.29" rgba="0.2 0.2 0.2 1" size="0.18 0.31" type="cylinder" name="pedestal_col"/> -->
+            <!-- mount attached here -->
+                <body name="panda_link_0" pos="0 0 0">
+                    <inertial pos="0 0 0.05" mass="4" diaginertia="0.4 0.4 0.4" />
+                    <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link0_vis" name="panda_link_0_visual" rgba="1 1 1 1" />
+                    <geom type="mesh" group="0" mesh="panda_link0" name="panda_link_0_collision"/>
+                    <body name="panda_link_1" pos="0 0 0.333">
+                        <inertial pos="0 0 -0.07" mass="3" diaginertia="0.3 0.3 0.3" />
+                        <joint name="panda_joint1" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="0.1"/>
+                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link1_vis" name="panda_link_1_visual" rgba="1 1 1 1" />
+                        <geom type="mesh" group="0" mesh="panda_link1" name="panda_link_1_collision"/>
+                        <body name="panda_link_2" pos="0 0 0" quat="0.707107 -0.707107 0 0">
+                            <inertial pos="0 -0.1 0" mass="3" diaginertia="0.3 0.3 0.3" />
+                            <joint name="panda_joint2" pos="0 0 0" axis="0 0 1" limited="true" range="-1.7628 1.7628" damping="0.1"/>
+                            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link2_vis" name="panda_link_2_visual" rgba="1 1 1 1" />
+                            <geom type="mesh" group="0" mesh="panda_link2" name="panda_link_2_collision"/>
+                            <body name="panda_link_3" pos="0 -0.316 0" quat="0.707107 0.707107 0 0">
+                                <inertial pos="0.04 0 -0.05" mass="2" diaginertia="0.2 0.2 0.2" />
+                                <joint name="panda_joint3" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="0.1"/>
+                                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link3_vis" name="panda_link_3_visual" rgba="1 1 1 1" />
+                                <geom type="mesh" group="0" mesh="panda_link3" name="panda_link_3_collision"/>
+                                <body name="panda_link_4" pos="0.0825 0 0" quat="0.707107 0.707107 0 0">
+                                    <inertial pos="-0.04 0.05 0" mass="2" diaginertia="0.2 0.2 0.2" />
+                                    <joint name="panda_joint4" pos="0 0 0" axis="0 0 1" limited="true" range="-3.0718 -0.0698" damping="0.1"/>
+                                    <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link4_vis" name="panda_link_4_visual" rgba="1 1 1 1" />
+                                    <geom type="mesh" group="0" mesh="panda_link4" name="panda_link_4_collision"/>
+                                    <body name="panda_link_5" pos="-0.0825 0.384 0" quat="0.707107 -0.707107 0 0">
+                                        <inertial pos="0 0 -0.15" mass="2" diaginertia="0.2 0.2 0.2" />
+                                        <joint name="panda_joint5" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="0.1"/>
+                                        <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link5_vis" name="panda_link_5_visual" rgba="1 1 1 1" />
+                                        <geom type="mesh" group="0" mesh="panda_link5" name="panda_link_5_collision"/>
+                                        <body name="panda_link_6" pos="0 0 0" quat="0.707107 0.707107 0 0">
+                                            <inertial pos="0.06 0 0" mass="1.5" diaginertia="0.1 0.1 0.1" />
+                                            <joint name="panda_joint6" pos="0 0 0" axis="0 0 1" limited="true" range="-0.0175 3.7525" damping="0.01"/>
+                                            <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link6_vis" name="panda_link_6_visual" rgba="1 1 1 1" />
+                                            <geom type="mesh" group="0" mesh="panda_link6" name="panda_link_6_collision"/>
+                                            <body name="panda_link_7" pos="0.088 0 0" quat="0.707107 0.707107 0 0">
+                                                <inertial pos="0 0 0.08" mass="0.5" diaginertia="0.05 0.05 0.05" />
+                                                <joint name="panda_joint7" pos="0 0 0" axis="0 0 1" limited="true" range="-2.8973 2.8973" damping="0.01"/>
+                                                <geom type="mesh" contype="0" conaffinity="0" group="1" mesh="panda_link7_vis" name="panda_link_7_visual" rgba="1. 1. 1. 1." />
+                                                <geom type="mesh" group="0" mesh="panda_link7" name="panda_link_7_collision"/>
+                                                <!-- rotate 135deg to align physically to the tool-->
+                                                <body name="right_hand" pos="0 0 0.1065" quat="0.924 0 0 -0.383">
+                                                    <inertial pos="0 0 0" mass="0.5" diaginertia="0.05 0.05 0.05" />
+                                                    <!-- This camera points out from the eef. -->
+                                                    <camera mode="fixed" name="panda_eye_in_hand" pos="0.05 0 0" quat="0 0.707108 0.707108 0" fovy="75"/>
+                                                    <!-- to add gripper -->
+                                                    <include file="assets/panda_gripper.xml"/>
+                                                </body>                                            
+                                            </body>
+                                        </body>
+                                    </body>
+                                </body>
+                            </body>
+                        </body>
+                    </body>
+                </body>
+            </body>
+        </body>
+    </worldbody>
+</mujocoinclude>

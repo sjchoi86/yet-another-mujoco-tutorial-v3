@@ -1,0 +1,35 @@
+<mujoco model="Scanned Objects">
+
+    <!-- Default options -->
+    <compiler angle="radian" assetdir="./mesh" autolimits="true" />
+    <option integrator="RK4" noslip_iterations="20" />
+    <default>
+        <joint armature="0.1" damping="0.1" />
+        <default class="visual_only">
+            <!-- visual group of 'collision' of 2 is to render -->
+            <!-- All geoms with contype⁠=⁠conaffinity⁠=0 are discarded -->
+            <geom type="mesh" contype="0" conaffinity="0" group="2" />
+        </default>
+        <default class="visual_collision">
+            <!-- visual group of 'collision' of 2 is to render -->
+            <geom type="mesh" solimp=".9 .99 .001" solref=".015 1" group="2" />
+        </default>
+        <default class="no_visual_collision">
+            <!-- visual group of 'collision' of 3 is NOT to render -->
+            <geom type="capsule" solimp=".9 .99 .001" solref=".015 1" group="3" />
+        </default>
+    </default>
+
+    <!-- Sky and floor -->
+    <include file="./object/floor_isaac_style.xml" />
+
+    <!-- Table -->
+    <include file="./object/object_table.xml" />
+
+    <!-- UR52 -->
+    <include file="./object/ur5e_rg2.xml" />
+
+    <!-- Objects to pick -->
+    <include file="./object/obj_cylinder.xml" />
+
+</mujoco>
