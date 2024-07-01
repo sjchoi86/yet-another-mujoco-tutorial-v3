@@ -29,4 +29,4 @@ MuJoCo is a free and open source physics engine that aims to facilitate research
 ## Contact
 
 Created by **Sungjoon Choi**  
-Contact: [sungjoon dach choi at korea dot ac dot kr](mailto:sungjoon@korea.ac.kr)
+Contact: [sungjoon dash choi at korea dot ac dot kr](mailto:sungjoon@korea.ac.kr)
