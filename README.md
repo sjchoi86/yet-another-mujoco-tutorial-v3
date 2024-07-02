@@ -1,6 +1,6 @@
 # Introduction to MuJoCo
 
-MuJoCo is a free and open source physics engine that aims to facilitate research and development in robotics, biomechanics, graphics and animation, and other areas where fast and accurate simulation is needed.
+MuJoCo is a free and open-source physics engine that aims to facilitate research and development in robotics, biomechanics, graphics and animation, and other areas where fast and accurate simulation is needed.
 
 - **MuJoCo** stands for **Mu**lti-**Jo**int dynamics with **Co**ntact
 - It is a (rigid-body) simulator
@@ -26,7 +26,5 @@ MuJoCo is a free and open source physics engine that aims to facilitate research
 
 ---
 
-## Contact
-
-Created by **Sungjoon Choi**  
-Contact: [sungjoon dash choi at korea dot ac dot kr](mailto:sungjoon@korea.ac.kr)
+### Contact
+Sungjoon [sungjoon dash choi at korea dot ac dot kr](mailto:sungjoon@korea.ac.kr)
